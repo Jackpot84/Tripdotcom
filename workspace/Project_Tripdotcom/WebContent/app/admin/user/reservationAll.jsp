@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +24,10 @@
 <link rel="stylesheet" href="dist/css/min.css">
 </head>
 <body class="hold-transition sidebar-mini">
+	
+	<c:set var="user" value="${requestScope.user }" /> <!--로그인객체받아옴 --> 
+	
+	
 	<div class="wrapper">
 
 		<!-- Navbar -->
@@ -61,53 +67,53 @@
 					</div>
 				</li>
 
-				<form action="login_view.jsp">
-				<button type="submit" class="btn btn-primary btn-sm">로그인</button>
-				</form>
+<!-- 				<form action="login_view.jsp"> -->
+<!-- 				<button type="submit" class="btn btn-primary btn-sm">로그인</button> -->
+<!-- 				</form> -->
 				
-				<form action="joinUser_view.jsp">
-				<button type="submit" class="btn btn-secondary btn-sm" >회원가입</button>
-				</form>
+<!-- 				<form action="joinUser_view.jsp"> -->
+<!-- 				<button type="submit" class="btn btn-secondary btn-sm" >회원가입</button> -->
+<!-- 				</form> -->
 				
-<!-- 				내 정보 -->
-<!-- 				<li class="nav-item dropdown"><a class="nav-link" -->
-<!-- 					data-toggle="dropdown" href="#">  -->
-<!-- 						<i class="fas fa-child"></i>  -->
-<!-- 						<span class="text-xsm">안녕하세요!</span> -->
-<!-- 				</a> -->
-<!-- 					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right"> -->
+				내 정보
+				<li class="nav-item dropdown"><a class="nav-link"
+					data-toggle="dropdown" href="#"> 
+						<i class="fas fa-child"></i> 
+						<span class="text-xsm">안녕하세요!${user_lastname }${user_firstname }님</span>
+				</a>
+					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 
-<!-- 						<div class="dropdown-divider"></div> -->
-<!-- 						<a href="#" class="dropdown-item text-sm text-muted"><i -->
-<!-- 							class="fas fa-caret-right"></i> 내 예약 </a> -->
-<!-- 						<div class="dropdown-divider"></div> -->
-<!-- 						<a href="#" class="dropdown-item text-sm text-muted"> <i -->
-<!-- 							class="fas fa-caret-right"></i> 즐겨찾기 -->
-<!-- 						</a> -->
-<!-- 						<div class="dropdown-divider"></div> -->
-<!-- 						<a href="#" class="dropdown-item text-sm text-muted"> <i -->
-<!-- 							class="fas fa-caret-right"></i> 트립코인 -->
-<!-- 						</a> -->
-<!-- 						<div class="dropdown-divider"></div> -->
-<!-- 						<a href="#" class="dropdown-item text-sm text-muted"> <i -->
-<!-- 							class="fas fa-caret-right"></i> 내 정보 -->
-<!-- 						</a> -->
-<!-- 						<div class="dropdown-divider"></div> -->
-<!-- 						<a href="#" class="dropdown-item text-sm text-muted"> <i -->
-<!-- 							class="fas fa-caret-right"></i> 계정 및 비밀번호 -->
-<!-- 						</a> -->
-<!-- 						<div class="dropdown-divider"></div> -->
-<!-- 						<a href="#" class="dropdown-item text-sm text-muted"> <i -->
-<!-- 							class="fas fa-caret-right"></i> 로그아웃 -->
-<!-- 						</a> -->
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item text-sm text-muted"><i
+							class="fas fa-caret-right"></i> 내 예약 </a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item text-sm text-muted"> <i
+							class="fas fa-caret-right"></i> 즐겨찾기
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item text-sm text-muted"> <i
+							class="fas fa-caret-right"></i> 트립코인
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item text-sm text-muted"> <i
+							class="fas fa-caret-right"></i> 내 정보
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item text-sm text-muted"> <i
+							class="fas fa-caret-right"></i> 계정 및 비밀번호
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item text-sm text-muted"> <i
+							class="fas fa-caret-right"></i> 로그아웃
+						</a>
 
-<!-- 					</div></li> -->
-<!-- 				코인 -->
-<!-- 				<li class="nav-item dropdown"><a class="nav-link" -->
-<!-- 					data-toggle="dropdown" href="#"> <i class="far fa-copyright"></i> -->
-<!-- 						<span class="text-xsm">1,000,000,000C</span> -->
-<!-- 					</a> -->
-<!-- 				</li> -->
+					</div></li>
+				코인
+				<li class="nav-item dropdown"><a class="nav-link"
+					data-toggle="dropdown" href="#"> <i class="far fa-copyright"></i>
+						<span class="text-xsm">${user.user_coin }</span>
+					</a>
+				</li>
 			
 			
 			</ul>

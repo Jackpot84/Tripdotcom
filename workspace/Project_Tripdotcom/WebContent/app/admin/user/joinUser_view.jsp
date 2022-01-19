@@ -14,7 +14,7 @@
 
 <body class="join">
 
-	<form action="joinUser.do">
+	<form action="${pageContext.request.contextPath }/joinUser.do">
 	    <div class="container">
 	        <div class="input-form-backgroud row">
 	            <div class="input-form col-md-12 mx-auto">
