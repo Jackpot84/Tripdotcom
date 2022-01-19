@@ -9,7 +9,9 @@
 .mg_b10 {
     margin-bottom: 10px;
 }
-
+.txt-c{
+    text-align: center;
+}
 .form-control {
     height: calc(1.85rem + 2px);
     padding-top: 4px;
@@ -37,6 +39,9 @@
 
 .pull-right {
     float: right !important;
+}
+input.disabled, input:disabled {
+    cursor: not-allowed;
 }
 
 .card-header.search {
