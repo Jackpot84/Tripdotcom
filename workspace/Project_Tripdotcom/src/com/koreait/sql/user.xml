@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="User">
+	<insert id="join" parameterType="com.koreait.user.dto.UserBean" >
+		INSERT INTO TRIP_USER (USER_ID ,USER_EMAIL,USER_PW,USER_JOINDATE) VALUES (TRIP_USER_seq.nextval,#{user_email},#{user_pw},sysdate)
+	</insert>
+	
+	<select id="login" parameterType="com.koreait.user.dto.UserBean" resultType="com.koreait.user.dto.UserBean">
+		SELECT * FROM TRIP_USER tu WHERE USER_EMAIL = #{user_email} AND USER_PW = #{user_pw}
+	</select>
+	
+</mapper>
+
+
+
+
+
