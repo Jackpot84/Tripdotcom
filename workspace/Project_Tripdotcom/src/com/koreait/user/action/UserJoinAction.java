@@ -19,7 +19,7 @@ public class UserJoinAction implements Action{
 			forward.setPath(request.getContextPath()+"app/admin/user/login_view.jsp");
 		}else {
 			forward.setRedirect(true);
-			forward.setPath(request.getContextPath()+"app/admin/user/joinUser_view");
+			forward.setPath(request.getContextPath()+"app/admin/user/joinUser_view.jsp?join_false");
 		}
 		
 		return forward;

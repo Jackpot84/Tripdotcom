@@ -25,19 +25,16 @@ public class UserDao {
 		if(sqlsession.insert("User.join", userbean) == 1) {
 			//조인 성공
 			result = true;
+		}else {
+			result = false;
 		}
 		return result;	
 	}
 
 
 	public UserBean loginUser(UserBean user) {
-		System.out.println(user.getUser_email());
 		
-		UserBean result = null;
-		
-		if(sqlsession.selectOne("User.login", user) != null) {
-			result = user;
-		}
+		UserBean result = sqlsession.selectOne("User.login", user);
 		
 		return result;
 	}

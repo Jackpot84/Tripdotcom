@@ -36,9 +36,13 @@ public class FrontController extends HttpServlet{
 				forward = new UserJoinAction().execute(req, resp);
 				break;
 			//로그인 db조회
-			case "/reservationAll.do":
+			case "/userLogin.do":
 				forward = new UserLoginAction().execute(req, resp);
 				break;
+			case "/goUserLogin.do":
+				//db안들림
+				forward.setRedirect(false);
+				forward.setPath("/app/admin/user/login_view.jsp");
 			}
 		
 		

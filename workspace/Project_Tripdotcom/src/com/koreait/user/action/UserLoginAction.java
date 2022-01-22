@@ -22,13 +22,13 @@ public class UserLoginAction implements Action {
 		user = udao.loginUser(user);
 		
 		request.setAttribute("user", user);
-		
+
 		if(user != null) {
 			forward.setRedirect(false);
 			forward.setPath(request.getContextPath()+"app/admin/user/reservationAll.jsp");
 		}else {
 			forward.setRedirect(true);
-			forward.setPath(request.getContextPath()+"app/admin/user/login_view.jsp?login=false");
+			forward.setPath(request.getContextPath()+"app/admin/user/login_view.jsp?loginTest=false");
 		}
 		
 		return forward;
