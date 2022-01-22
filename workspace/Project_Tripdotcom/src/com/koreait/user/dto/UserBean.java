@@ -4,15 +4,15 @@ import java.sql.Date;
 
 public class UserBean {
 	private int user_id;
-	private String user_email ="";
-	private String user_pw ="";
-	private String user_lastname="";
-	private String user_firstname="";
-	Date user_birth;
-	String user_gender ="";
-	Date user_joindate;
-	int user_coin = 0;
-	String join_code="";
+	private String user_email ;
+	private String user_pw ;
+	private String user_lastname;
+	private String user_firstname;
+	private Date user_birth;
+	private String user_gender ;
+	private Date user_joindate;
+	private int user_coin ;
+	private String join_code;
 	
 	public int getUser_id() {
 		return user_id;

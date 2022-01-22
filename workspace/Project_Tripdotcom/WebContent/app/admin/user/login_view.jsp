@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -13,14 +15,14 @@
 </head>
 
 <body class="logoin">
-	<c:if test="${not empty param.login}">
-		<c:if test="${not param.login }">
+	<c:if test="${not empty param.loginTest}">
+		<c:if test="${not param.loginTest }">
 			<script>
-				alert("로그인에 실패하셨습니다!");
+				alert("아이디 혹은 패스워드가 잘못되었습니다.");
 			</script>
 		</c:if>
 	</c:if>
-	<form action="${pageContext.request.contextPath }/reservationAll.do">
+	<form action="${pageContext.request.contextPath }/userLogin.do" method="post">
 	    <div class="container">
 	        <div class="input-form-backgroud row">
 	            <div class="input-form col-md-12 mx-auto">

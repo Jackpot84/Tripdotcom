@@ -1,3 +1,4 @@
+<%@page import="com.koreait.user.dto.UserBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -26,8 +27,6 @@
 <body class="hold-transition sidebar-mini">
 	
 	<c:set var="user" value="${requestScope.user }" /> <!--로그인객체받아옴 --> 
-	
-	
 	<div class="wrapper">
 
 		<!-- Navbar -->
@@ -79,7 +78,7 @@
 				<li class="nav-item dropdown"><a class="nav-link"
 					data-toggle="dropdown" href="#"> 
 						<i class="fas fa-child"></i> 
-						<span class="text-xsm">안녕하세요!${user_lastname }${user_firstname }님</span>
+						<span class="text-xsm">안녕하세요!${user.user_lastname }${user.user_firstname }님</span>
 				</a>
 					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 
