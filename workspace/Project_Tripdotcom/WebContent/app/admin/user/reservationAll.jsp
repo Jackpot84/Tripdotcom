@@ -7,7 +7,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>트립닷컴 | 내 예약</title>
 
 <!-- Google Font: Source Sans Pro -->
