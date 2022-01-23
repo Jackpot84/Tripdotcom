@@ -32,6 +32,7 @@
 	                    </div>
 	                    <div class="mb-3"> <label for="email">비밀번호</label> <input type="password" class="form-control" name="user_pw"  >
 	                     </div>
+	                    <div class="mb-4"></div> <input type="button" class="btn btn-primary btn-lg btn-block" value="회원가입 하기" onclick="location.href='${pageContext.request.contextPath }/app/admin/user/joinUser_view.jsp'">
 	                    <div class="mb-4"></div> <button class="btn btn-primary btn-lg btn-block" type="submit">로그인 하기</button>
 	                </form>
 	            </div>

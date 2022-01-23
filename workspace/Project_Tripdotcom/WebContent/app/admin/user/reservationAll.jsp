@@ -27,6 +27,7 @@
 <body class="hold-transition sidebar-mini">
 	
 	<c:set var="user" value="${requestScope.user }" /> <!--로그인객체받아옴 --> 
+	<c:set var="reservationList" value="${requestScope.reservationList }"/><!-- 예약목록 객체받아옴 -->
 	<div class="wrapper">
 
 		<!-- Navbar -->
@@ -78,15 +79,22 @@
 				<li class="nav-item dropdown"><a class="nav-link"
 					data-toggle="dropdown" href="#"> 
 						<i class="fas fa-child"></i> 
-						<span class="text-xsm">안녕하세요!${user.user_lastname }${user.user_firstname }님</span>
+						<c:choose>
+							<c:when test="${user.user_lastname != null or user.user_firstname != null }">
+								<span class="text-xsm">안녕하세요!${user.user_lastname }${user.user_firstname }님</span>
+							</c:when>
+							<c:otherwise>
+								<span class="text-xsm">안녕하세요!</span>
+							</c:otherwise>
+						</c:choose>
 				</a>
 					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 
 						<div class="dropdown-divider"></div>
-						<a href="#" class="dropdown-item text-sm text-muted"><i
+						<a href="goReservationAll.do" class="dropdown-item text-sm text-muted"><i
 							class="fas fa-caret-right"></i> 내 예약 </a>
 						<div class="dropdown-divider"></div>
-						<a href="#" class="dropdown-item text-sm text-muted"> <i
+						<a href="goMyFavorite.do" class="dropdown-item text-sm text-muted" > <i
 							class="fas fa-caret-right"></i> 즐겨찾기
 						</a>
 						<div class="dropdown-divider"></div>
@@ -110,7 +118,14 @@
 				코인
 				<li class="nav-item dropdown"><a class="nav-link"
 					data-toggle="dropdown" href="#"> <i class="far fa-copyright"></i>
-						<span class="text-xsm">${user.user_coin }</span>
+					<c:choose>
+							<c:when test="${user.user_coin == null }">
+								<span class="text-xsm">0코인</span>
+							</c:when>
+							<c:otherwise>
+								<span class="text-xsm">${user.user_coin }코인</span>
+							</c:otherwise>
+						</c:choose>
 					</a>
 				</li>
 			
@@ -139,25 +154,24 @@
 						<!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-						<li class="nav-item"><a href="#" class="nav-link active">
+						<li class="nav-item"><a href="goReservationAll.do" class="nav-link active">
 								<i class="nav-icon fas fa-list"></i>
 								<p>내 예약</p>
 						</a></li>
-						<li class="nav-item"><a href="#" class="nav-link "> <i
+						<li class="nav-item"><a href="goMyFavorite.do" class="nav-link "> <i
 								class="nav-icon fas fa-list"></i>
 								<p>즐겨찾기</p>
-						</a></li>
-
-						<li class="nav-item"><a href="#" class="nav-link"> <i
+						</form>
+						<li class="nav-item"><a href="goMyTripcoin.do" class="nav-link"> <i
 								class="nav-icon fas fa-list"></i>
 								<p>트립코인</p>
 						</a></li>
-						<li class="nav-item"><a href="#" class="nav-link"> <i
+						<li class="nav-item"><a href="goMyInformation.do" class="nav-link"> <i
 								class="nav-icon fas fa-list fas"></i>
 								<p>내 정보</p>
 						</a></li>
 
-						<li class="nav-item"><a href="#" class="nav-link"> <i
+						<li class="nav-item"><a href="goMyAccount.do" class="nav-link"> <i
 								class="nav-icon fas fa-list"></i>
 								<p>계정 및 비밀번호</p>
 						</a></li>
@@ -197,17 +211,36 @@
 						  <div class="tab-pane active" id="reservationAll" role="tabpanel" aria-labelledby="reservationAll-tab">
 						  	<div class="card text-center">
 								<div class="nav-tabs-content">
-									<div class="card">
-										<div class="card-header">
-											<h5 class="m-0">예약번호:123456 예약날짜:2021년xx월xx일</h5>
-										</div>
-										<div class="card-body">
-										<h6 class="card-title">호텔이름:트립호텔</h6>
-										<div class="txt-r">객실금액:12345원</div>
-										<p class="card-text">체크인날짜 체크아웃날짜 투숙객이름</p>
-										<a href="#" class="btn btn-primary">예약확인</a>
-										</div>
-									</div>
+									<c:choose>
+										<c:when test="${reservationList != null  and fn:length(reservationList)>0}">
+											<c:forEach var="reservation" items="${reservationList }">
+												<div class="card">
+													<div class="card-header">
+														<h5 class="m-0">예약번호:${reservation.reservation_id } 예약날짜:${reservation.reservation_date }</h5>
+													</div>
+													<div class="card-body">
+													<h6 class="card-title">호텔이름:트립호텔</h6>
+													<div class="txt-r">객실금액:12345원</div>
+													<p class="card-text">체크인날짜:${reservation.checkin_date } 체크아웃날짜:${reservation.checkout_date } 투숙객이름:${reservation.reservation_lastname+reservation.reservation_firstname }</p>
+													<a href="#" class="btn btn-primary">예약확인</a>
+													</div>
+												</div>
+											</c:forEach>
+										</c:when>
+										<c:otherwise>
+										<div class="card">
+													<div class="card-header">
+														<h5 class="m-0">예약번호:123예약날짜:2021년xx월xx일</h5>
+													</div>
+													<div class="card-body">
+													<h6 class="card-title">호텔이름:트립호텔</h6>
+													<div class="txt-r">객실금액:12345원</div>
+													<p class="card-text">체크인날짜 체크아웃날짜 투숙객이름</p>
+													<a href="#" class="btn btn-primary">예약확인</a>
+													</div>
+												</div>
+										</c:otherwise>
+									</c:choose>
 									<!--페이지이동-->
 									<nav aria-label="Page navigation example">
 										<ul class="pagination">

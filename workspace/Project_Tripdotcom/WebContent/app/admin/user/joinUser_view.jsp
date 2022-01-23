@@ -15,7 +15,7 @@
 </head>
 
 <body class="join">
-	<form action="${pageContext.request.contextPath }/joinUser.do" method="post">
+	<form action="${pageContext.request.contextPath }/joinUser.do" method="post" id="joinUser" name="joinUser"/>
 	    <div class="container">
 	        <div class="input-form-backgroud row">
 	            <div class="input-form col-md-12 mx-auto">
@@ -25,16 +25,18 @@
 	                    </div>
 	                    <div class="mb-3"> <label for="email">비밀번호</label> <input type="password" class="form-control" name="user_pw"  >
 	                     </div>
-	                    <div class="mb-4"></div> <button class="btn btn-primary btn-lg btn-block" type="submit">가입 하기</button>
+	                    <div class="mb-3"> <label for="email">비밀번호 확인</label> <input type="password" class="form-control" name="user_pw_re"  >
+	                     </div>
 	                </form>
+	                    <div class="mb-4"></div> <input class="btn btn-primary btn-lg btn-block" value="회원가입하기" onclick="sendit()">
+	                    <div class="mb-4"></div> <input type="button" class="btn btn-primary btn-lg btn-block" value="로그인하기" onclick="location.href='${pageContext.request.contextPath }/goUserLogin.do'">
 	            </div>
 	        </div>
 	        <footer class="my-3 text-center text-small">
 	            <p class="mb-1">&copy; 2021 home3</p>
 	        </footer>
 	    </div>
-	</form>
 	
 </body>
-
+<script src="userValidation.js"></script>
 </html>
