@@ -221,7 +221,7 @@
 													<div class="card-body">
 													<h6 class="card-title">호텔이름:트립호텔</h6>
 													<div class="txt-r">객실금액:12345원</div>
-													<p class="card-text">체크인날짜:${reservation.checkin_date } 체크아웃날짜:${reservation.checkout_date } 투숙객이름:${reservation.reservation_lastname+reservation.reservation_firstname }</p>
+													<p class="card-text">체크인날짜:${reservation.checkin_date } 체크아웃날짜:${reservation.checkout_date } 투숙객이름:${reservation.reservation_lastname}${reservation.reservation_firstname }</p>
 													<a href="#" class="btn btn-primary">예약확인</a>
 													</div>
 												</div>
