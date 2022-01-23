@@ -10,12 +10,16 @@ public class ReservationPaymentsBean {
 	private String reservation_email = "";
 	private int reservation_phone;
 	private Date reservation_date;
-	private Date reservation_pay_date;
+	private Date Reservation_pay_date;
 	private String reservation_state = "";
 	private String payments_process = "";
 	private Date checkin_date;
 	private Date checkout_date;
-	
+	private String cancel_rule = "";
+	private String coupon_code = "";
+	private int total_amount = 0;
+	private int room_charge = 0;
+	private int user_id;
 	public int getReservation_id() {
 		return reservation_id;
 	}
@@ -53,10 +57,10 @@ public class ReservationPaymentsBean {
 		this.reservation_date = reservation_date;
 	}
 	public Date getReservation_pay_date() {
-		return reservation_pay_date;
+		return Reservation_pay_date;
 	}
 	public void setReservation_pay_date(Date reservation_pay_date) {
-		this.reservation_pay_date = reservation_pay_date;
+		Reservation_pay_date = reservation_pay_date;
 	}
 	public String getReservation_state() {
 		return reservation_state;
@@ -112,9 +116,6 @@ public class ReservationPaymentsBean {
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
-	String cancel_rule = "";
-	String coupon_code = "";
-	int total_amount = 0;
-	int room_charge = 0;
-	int user_id;
+	
+
 }

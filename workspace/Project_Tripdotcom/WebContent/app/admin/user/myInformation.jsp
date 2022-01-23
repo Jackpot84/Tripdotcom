@@ -133,28 +133,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						<!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-								<li class="nav-item"><a href="#" class="nav-link ">
-										<i class="nav-icon fas fa-list"></i>
-										<p>내 예약</p>
-								</a></li>
-								<li class="nav-item"><a href="#" class="nav-link "> <i
-										class="nav-icon fas fa-list"></i>
-										<p>즐겨찾기</p>
-								</a></li>
+					<li class="nav-item"><a href="goReservationAll.do" class="nav-link ">
+								<i class="nav-icon fas fa-list"></i>
+								<p>내 예약</p>
+						</a></li>
+						<li class="nav-item"><a href="goMyFavorite.do" class="nav-link "> <i
+								class="nav-icon fas fa-list"></i>
+								<p>즐겨찾기</p>
+						</form>
+						<li class="nav-item"><a href="goMyTripcoin.do" class="nav-link"> <i
+								class="nav-icon fas fa-list"></i>
+								<p>트립코인</p>
+						</a></li>
+						<li class="nav-item"><a href="goMyInformation.do" class="nav-link active"> <i
+								class="nav-icon fas fa-list fas"></i>
+								<p>내 정보</p>
+						</a></li>
 
-								<li class="nav-item"><a href="#" class="nav-link "> <i
-										class="nav-icon fas fa-list"></i>
-										<p>트립코인</p>
-								</a></li>
-								<li class="nav-item"><a href="#" class="nav-link active" > <i
-										class="nav-icon fas fa-list fas"></i>
-										<p>내 정보</p>
-								</a></li>
-
-								<li class="nav-item"><a href="#" class="nav-link"> <i
-										class="nav-icon fas fa-list"></i>
-										<p>계정 및 비밀번호</p>
-								</a></li>
+						<li class="nav-item"><a href="goMyAccount.do" class="nav-link "> <i
+								class="nav-icon fas fa-list"></i>
+								<p>계정 및 비밀번호</p>
+						</a></li>
 					</ul>
 
 

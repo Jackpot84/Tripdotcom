@@ -1,9 +1,12 @@
 package com.koreait.user.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.koreait.mybatis.SqlMapConfig;
+import com.koreait.user.dto.ReservationPaymentsBean;
 import com.koreait.user.dto.UserBean;
 
 public class UserDao {
@@ -37,6 +40,13 @@ public class UserDao {
 		UserBean result = sqlsession.selectOne("User.login", user);
 		
 		return result;
+	}
+
+
+	public List<ReservationPaymentsBean> getReservation(int user_id) {
+		List<ReservationPaymentsBean> reservationList = sqlsession.selectList("User.getReservation", user_id);
+		
+		return reservationList;
 	}
 	
 	

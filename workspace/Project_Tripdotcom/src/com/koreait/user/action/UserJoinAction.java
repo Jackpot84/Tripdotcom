@@ -14,6 +14,7 @@ public class UserJoinAction implements Action{
 		ActionForward forward = new ActionForward();
 		UserDao udao = new UserDao();
 		
+		
 		if(udao.joinUser(request.getParameter("user_email"), request.getParameter("user_pw"))) {
 			forward.setRedirect(true);
 			forward.setPath(request.getContextPath()+"app/admin/user/login_view.jsp");

@@ -40,16 +40,49 @@ public class FrontController extends HttpServlet{
 				forward = new UserLoginAction().execute(req, resp);
 				break;
 			case "/goUserLogin.do":
-				//db안들림
+				//로그인화면으로 이동
+				forward = new ActionForward();
 				forward.setRedirect(false);
 				forward.setPath("/app/admin/user/login_view.jsp");
 				break;
+<<<<<<< HEAD
 			case "/aaaa.do":
 				//db안들림
 				forward.setRedirect(false);
 				forward.setPath("/app/admin/user/login_view.jsp");
+=======
+			case "/goReservationAll.do":
+				//내 예약 페이지로 이동
+				forward = new ActionForward();
+				forward.setRedirect(false);
+				forward.setPath(req.getContextPath()+"/app/admin/user/reservationAll.jsp");
+				break;
+			case "/goMyFavorite.do":
+				//즐겨찾기 페이지로 이동
+				forward = new ActionForward();
+				forward.setRedirect(false);
+				forward.setPath(req.getContextPath()+"/app/admin/user/myFavorite.jsp");
+				break;
+			case "/goMyTripcoin.do":
+				//트립코인 페이지로 이동
+				forward = new ActionForward();
+				forward.setRedirect(false);
+				forward.setPath(req.getContextPath()+"/app/admin/user/myTripcoin.jsp");
+				break;
+			case "/goMyInformation.do":
+				//내정보 페이지로 이동
+				forward = new ActionForward();
+				forward.setRedirect(false);
+				forward.setPath(req.getContextPath()+"/app/admin/user/myInformation.jsp");
+				break;
+			case "/goMyAccount.do":
+				//계정및비밀번호 페이지로 이동
+				forward = new ActionForward();
+				forward.setRedirect(false);
+				forward.setPath(req.getContextPath()+"/app/admin/user/myAccount.jsp");
+				break;
+>>>>>>> cf347f2744244db095efac3d98913c34261a104e
 			}
-		
 		
 		
 		
@@ -63,11 +96,15 @@ public class FrontController extends HttpServlet{
 			if( forward.isRedirect() ) {
 				// redirect 방식
 				resp.sendRedirect(forward.getPath());
+				System.out.println("두번째 리다이렉트");
 			} else {
 				// forward방식
 				RequestDispatcher disp = req.getRequestDispatcher(forward.getPath());
 				disp.forward(req, resp);
+				System.out.println("두번째 포워드");
 			}
+		}else {
+			System.out.println("forward가 null");
 		}
 		
 	}
