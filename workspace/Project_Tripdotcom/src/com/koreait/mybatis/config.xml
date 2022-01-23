@@ -23,6 +23,7 @@
 
 	<mappers>
 		<mapper resource="com/koreait/sql/user.xml" />
+		<mapper resource="com/koreait/sql/manager.xml" />
 	</mappers>
 
 	
