@@ -45,12 +45,6 @@ public class FrontController extends HttpServlet{
 				forward.setRedirect(false);
 				forward.setPath("/app/admin/user/login_view.jsp");
 				break;
-<<<<<<< HEAD
-			case "/aaaa.do":
-				//db안들림
-				forward.setRedirect(false);
-				forward.setPath("/app/admin/user/login_view.jsp");
-=======
 			case "/goReservationAll.do":
 				//내 예약 페이지로 이동
 				forward = new ActionForward();
@@ -81,7 +75,6 @@ public class FrontController extends HttpServlet{
 				forward.setRedirect(false);
 				forward.setPath(req.getContextPath()+"/app/admin/user/myAccount.jsp");
 				break;
->>>>>>> cf347f2744244db095efac3d98913c34261a104e
 			}
 		
 		
