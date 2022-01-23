@@ -43,6 +43,11 @@ public class FrontController extends HttpServlet{
 				//db안들림
 				forward.setRedirect(false);
 				forward.setPath("/app/admin/user/login_view.jsp");
+				break;
+			case "/aaaa.do":
+				//db안들림
+				forward.setRedirect(false);
+				forward.setPath("/app/admin/user/login_view.jsp");
 			}
 		
 		
