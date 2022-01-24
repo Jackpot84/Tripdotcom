@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인 화면 </title> <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="dist/css/addstyle.css?ver=1">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/dist/css/addstyle.css?ver=1">
 </head>
 
-<body class="logoin">
+<body class="join">
 	<c:if test="${not empty param.loginTest}">
 		<c:if test="${not param.loginTest }">
 			<script>
@@ -22,9 +22,9 @@
 			</script>
 		</c:if>
 	</c:if>
-	<form action="${pageContext.request.contextPath }/userLogin.do" method="post">
+	<form action="${pageContext.request.contextPath }/userLogin.do" method="post" name="loginUser" id="loginUser"  >
 	    <div class="container">
-	        <div class="input-form-backgroud row">
+	        <div class="input-form-backgroud row">	
 	            <div class="input-form col-md-12 mx-auto">
 	                <h4 class="mb-3">로그인</h4>
 	                <form class="validation-form" novalidate>
@@ -32,9 +32,9 @@
 	                    </div>
 	                    <div class="mb-3"> <label for="email">비밀번호</label> <input type="password" class="form-control" name="user_pw"  >
 	                     </div>
-	                    <div class="mb-4"></div> <input type="button" class="btn btn-primary btn-lg btn-block" value="회원가입 하기" onclick="location.href='${pageContext.request.contextPath }/app/admin/user/joinUser_view.jsp'">
-	                    <div class="mb-4"></div> <button class="btn btn-primary btn-lg btn-block" type="submit">로그인 하기</button>
 	                </form>
+	                    <div class="mb-4"></div> <input type="button" class="btn btn-primary btn-lg btn-block" value="회원가입 하기" onclick="location.href='${pageContext.request.contextPath }/goUserJoin.do'">
+	                    <div class="mb-4"></div> <input type="button" class="btn btn-primary btn-lg btn-block" onclick="login()" value="로그인하기">
 	            </div>
 	        </div>
 	        <footer class="my-3 text-center text-small">
@@ -43,5 +43,5 @@
 	    </div>
 	</form>
 </body>
-
+<script src="${pageContext.request.contextPath }/app/admin/user/userValidation.js"></script>
 </html>

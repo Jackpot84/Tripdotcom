@@ -43,7 +43,13 @@ public class FrontController extends HttpServlet{
 				//로그인화면으로 이동
 				forward = new ActionForward();
 				forward.setRedirect(false);
-				forward.setPath("/app/admin/user/login_view.jsp");
+				forward.setPath(req.getContextPath()+"/app/admin/user/login_view.jsp");
+				break;
+			case "/goUserJoin.do":
+				//로그인화면으로 이동
+				forward = new ActionForward();
+				forward.setRedirect(false);
+				forward.setPath(req.getContextPath()+"/app/admin/user/joinUser_view.jsp");
 				break;
 			case "/goReservationAll.do":
 				//내 예약 페이지로 이동
@@ -75,6 +81,9 @@ public class FrontController extends HttpServlet{
 				forward.setRedirect(false);
 				forward.setPath(req.getContextPath()+"/app/admin/user/myAccount.jsp");
 				break;
+			case "/moveResPage.do":
+				forward = new MoveResPage().execute(req, resp);
+				break;
 			}
 		
 		
@@ -89,12 +98,10 @@ public class FrontController extends HttpServlet{
 			if( forward.isRedirect() ) {
 				// redirect 방식
 				resp.sendRedirect(forward.getPath());
-				System.out.println("두번째 리다이렉트");
 			} else {
 				// forward방식
 				RequestDispatcher disp = req.getRequestDispatcher(forward.getPath());
 				disp.forward(req, resp);
-				System.out.println("두번째 포워드");
 			}
 		}else {
 			System.out.println("forward가 null");

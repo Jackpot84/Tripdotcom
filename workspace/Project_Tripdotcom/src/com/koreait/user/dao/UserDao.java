@@ -1,5 +1,6 @@
 package com.koreait.user.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -47,6 +48,26 @@ public class UserDao {
 		List<ReservationPaymentsBean> reservationList = sqlsession.selectList("User.getReservation", user_id);
 		
 		return reservationList;
+	}
+
+
+	public int getReservationCount(int user_id) {
+		return sqlsession.selectOne("User.resCount", user_id);
+	}
+
+
+	public int getResCount(int user_id) {
+		return sqlsession.selectOne("User.getResCount", user_id);
+	}
+
+
+	public List<ReservationPaymentsBean> getResList(int startRow, int endRow, int user_id) {
+		HashMap<String, Integer> datas = new HashMap<>();
+		datas.put("startRow", startRow);
+		datas.put("endRow", endRow);
+		datas.put("user_id", user_id);
+		List<ReservationPaymentsBean> resList = sqlsession.selectList("User.getResList",datas);
+		return resList;
 	}
 	
 	

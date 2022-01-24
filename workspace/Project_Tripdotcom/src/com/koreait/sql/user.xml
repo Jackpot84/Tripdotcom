@@ -15,6 +15,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getReservation" parameterType="_int" resultType="com.koreait.user.dto.ReservationPaymentsBean">
 		SELECT * FROM RESERVATION_PAYMENTS WHERE USER_ID = #{user_id}
 	</select>
+	
+	<select id="resCount" parameterType="_int" resultType="_int">
+	SELECT COUNT(*) FROM RESERVATION_PAYMENTS rp WHERE USER_ID =#{user_id}
+	</select>
+	
+		<select id="getResList" resultType="com.koreait.user.dto.ReservationPaymentsBean" parameterType="hashmap">
+	 SELECT * FROM 
+		(SELECT rownum R, d.*
+			FROM (SELECT * FROM RESERVATION_PAYMENTS WHERE user_id = #{user_id} ORDER BY RESERVATION_ID DESC) D ) B
+	 WHERE B.R BETWEEN #{startRow} AND #{endRow}
+	</select>
+	
 </mapper>
 
 
