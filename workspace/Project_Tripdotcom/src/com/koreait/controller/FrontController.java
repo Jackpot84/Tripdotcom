@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.koreait.action.ActionForward;
+import com.koreait.user.action.MoveResPage;
 import com.koreait.user.action.UserJoinAction;
 import com.koreait.user.action.UserLoginAction;
 

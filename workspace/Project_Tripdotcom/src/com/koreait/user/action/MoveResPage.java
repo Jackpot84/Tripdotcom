@@ -1,4 +1,4 @@
-package com.koreait.controller;
+package com.koreait.user.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
