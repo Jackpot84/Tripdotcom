@@ -26,8 +26,8 @@
 </head>
 <body class="hold-transition sidebar-mini">
 	
-	<c:set var="user" value="${requestScope.user }" /> <!--로그인객체받아옴 --> 
-	<c:set var="reservationList" value="${requestScope.reservationList }"/><!-- 예약목록 객체받아옴 -->
+	<c:set var="user" value="${sessionScope.user }" /> <!--로그인객체받아옴 --> 
+	<c:set var="resList" value="${sessionScope.resList }"/><!-- 예약목록 객체받아옴 -->
 	<div class="wrapper">
 
 		<!-- Navbar -->
@@ -212,6 +212,64 @@
 						  	<div class="card text-center">
 								<div class="nav-tabs-content">
 									<c:choose>
+										<c:when test="${resList != null  and fn:length(resList)>0}">
+											<c:forEach var="res" items="${resList }">
+												<div class="card">
+													<div class="card-header">
+														<h5 class="m-0">예약번호:${res.reservation_id } 예약날짜:${res.reservation_date }</h5>
+													</div>
+													<div class="card-body">
+													<h6 class="card-title">호텔이름:트립호텔</h6>
+													<div class="txt-r">객실금액:12345원</div>
+													<p class="card-text">체크인날짜:${res.checkin_date } 체크아웃날짜:${res.checkout_date } 투숙객이름:${res.reservation_lastname}${res.reservation_firstname }</p>
+													<a href="#" class="btn btn-primary">예약확인</a>
+													</div>
+												</div>
+											</c:forEach>
+										</c:when>
+										<c:otherwise>
+										<div class="card">
+													<div class="card-header">
+														<h1 class="m-0">예약이없습니다.</h1>
+													</div>
+												</div>
+										</c:otherwise>
+									</c:choose>
+									<!--페이지이동-->
+									<nav aria-label="Page navigation example">
+										<ul class="pagination">
+										<c:if test="${nowPage > 1 }">
+											<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath }/moveResPage.do?page=${nowPage-1 }"aria-label="Previous">
+											 <span aria-hidden="true">&laquo;</span>
+											</a></li>
+										 </c:if>
+										 
+										 <c:forEach var="i" begin="${startPage}" end="${endPage }">
+												<c:choose>
+													<c:when test="${i == nowPage }">
+													<li class="page-item active"><a class="page-link " href="#">${i}</a></li>
+													</c:when>
+													<c:otherwise>
+														<li class="page-item "><a class="page-link " href="${pageContext.request.contextPath }/moveResPage.do?page=${i}&user_id=${user.user_id}">${i}</a></li>
+													</c:otherwise>					
+												</c:choose>
+											</c:forEach>
+											
+										<c:if test = "${nowPage<totalPage }">
+											<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath }/moveResPage.do?page=${nowPage+1 }"aria-label="Next">
+											<span aria-hidden="true">&raquo;</span>
+											</a></li>
+										</c:if>											
+										</ul>
+									</nav>
+									<!--/페이지이동-->
+								</div>
+							</div>
+						  </div>
+						  <div class="tab-pane" id="paymentWaiting" role="tabpanel" aria-labelledby="paymentWaiting-tab">
+						  <div class="card text-center">
+								<div class="nav-tabs-content">
+									<c:choose>
 										<c:when test="${reservationList != null  and fn:length(reservationList)>0}">
 											<c:forEach var="reservation" items="${reservationList }">
 												<div class="card">
@@ -230,13 +288,7 @@
 										<c:otherwise>
 										<div class="card">
 													<div class="card-header">
-														<h5 class="m-0">예약번호:123예약날짜:2021년xx월xx일</h5>
-													</div>
-													<div class="card-body">
-													<h6 class="card-title">호텔이름:트립호텔</h6>
-													<div class="txt-r">객실금액:12345원</div>
-													<p class="card-text">체크인날짜 체크아웃날짜 투숙객이름</p>
-													<a href="#" class="btn btn-primary">예약확인</a>
+														<h1 class="m-0">예약이없습니다.</h1>
 													</div>
 												</div>
 										</c:otherwise>
@@ -259,50 +311,33 @@
 								</div>
 							</div>
 						  </div>
-						  <div class="tab-pane" id="paymentWaiting" role="tabpanel" aria-labelledby="paymentWaiting-tab">
-						  <div class="card text-center">
-								<div class="nav-tabs-content">
-									<div class="card">
-										<div class="card-header">
-											<h5 class="m-0">예약번호:123456 예약날짜:2021년xx월xx일</h5>
-										</div>
-										<div class="card-body">
-										<h6 class="card-title">호텔이름:트립호텔객실금액:12345원</h6>
-										<p class="card-text">체크인날짜 체크아웃날짜 투숙객이름</p>
-										<a href="#" class="btn btn-primary">결제대기</a>
-										</div>
-									</div>
-									<!--페이지이동-->
-									<nav aria-label="Page navigation example">
-										<ul class="pagination">
-											<li class="page-item"><a class="page-link" href="#"aria-label="Previous">
-											 <span aria-hidden="true">&laquo;</span>
-											</a></li>
-											<li class="page-item active"><a class="page-link " href="#">1</a></li>
-											<li class="page-item"><a class="page-link" href="#">2</a></li>
-											<li class="page-item"><a class="page-link" href="#">3</a></li>
-											<li class="page-item"><a class="page-link" href="#"aria-label="Next">
-											<span aria-hidden="true">&raquo;</span>
-											</a></li>
-										</ul>
-									</nav>
-									<!--/페이지이동-->
-								</div>
-							</div>
-						  </div>
 						  <div class="tab-pane" id="paymentCompleted" role="tabpanel" aria-labelledby="paymentCompleted-tab">
 						  <div class="card text-center">
 								<div class="nav-tabs-content">
-									<div class="card">
-										<div class="card-header">
-											<h5 class="m-0">예약번호:123456 예약날짜:2021년xx월xx일</h5>
-										</div>
-										<div class="card-body">
-										<h6 class="card-title">호텔이름:트립호텔객실금액:12345원</h6>
-										<p class="card-text">체크인날짜 체크아웃날짜 투숙객이름</p>
-										<a href="#" class="btn btn-primary">예약확인</a>
-										</div>
-									</div>
+									<c:choose>
+										<c:when test="${reservationList != null  and fn:length(reservationList)>0}">
+											<c:forEach var="reservation" items="${reservationList }">
+												<div class="card">
+													<div class="card-header">
+														<h5 class="m-0">예약번호:${reservation.reservation_id } 예약날짜:${reservation.reservation_date }</h5>
+													</div>
+													<div class="card-body">
+													<h6 class="card-title">호텔이름:트립호텔</h6>
+													<div class="txt-r">객실금액:12345원</div>
+													<p class="card-text">체크인날짜:${reservation.checkin_date } 체크아웃날짜:${reservation.checkout_date } 투숙객이름:${reservation.reservation_lastname}${reservation.reservation_firstname }</p>
+													<a href="#" class="btn btn-primary">예약확인</a>
+													</div>
+												</div>
+											</c:forEach>
+										</c:when>
+										<c:otherwise>
+										<div class="card">
+													<div class="card-header">
+														<h1 class="m-0">예약이없습니다.</h1>
+													</div>
+												</div>
+										</c:otherwise>
+									</c:choose>
 									<!--페이지이동-->
 									<nav aria-label="Page navigation example">
 										<ul class="pagination">
@@ -323,17 +358,30 @@
 						  </div>
 						  <div class="tab-pane" id="reviewWrite" role="tabpanel" aria-labelledby="reviewWrite-tab">
 						  <div class="card text-center">
-								<div class="nav-tabs-content">
-									<div class="card">
-										<div class="card-header">
-											<h5 class="m-0">예약번호:123456 예약날짜:2021년xx월xx일</h5>
-										</div>
-										<div class="card-body">
-										<h6 class="card-title">호텔이름:트립호텔객실금액:12345원</h6>
-										<p class="card-text">체크인날짜 체크아웃날짜 투숙객이름</p>
-										<a href="#" class="btn btn-primary">리뷰작성</a>
-										</div>
-									</div>
+									<c:choose>
+										<c:when test="${reservationList != null  and fn:length(reservationList)>0}">
+											<c:forEach var="reservation" items="${reservationList }">
+												<div class="card">
+													<div class="card-header">
+														<h5 class="m-0">예약번호:${reservation.reservation_id } 예약날짜:${reservation.reservation_date }</h5>
+													</div>
+													<div class="card-body">
+													<h6 class="card-title">호텔이름:트립호텔</h6>
+													<div class="txt-r">객실금액:12345원</div>
+													<p class="card-text">체크인날짜:${reservation.checkin_date } 체크아웃날짜:${reservation.checkout_date } 투숙객이름:${reservation.reservation_lastname}${reservation.reservation_firstname }</p>
+													<a href="#" class="btn btn-primary">예약확인</a>
+													</div>
+												</div>
+											</c:forEach>
+										</c:when>
+										<c:otherwise>
+										<div class="card">
+													<div class="card-header">
+														<h1 class="m-0">예약이없습니다.</h1>
+													</div>
+												</div>
+										</c:otherwise>
+									</c:choose>
 									<!--페이지이동-->
 									<nav aria-label="Page navigation example">
 										<ul class="pagination">

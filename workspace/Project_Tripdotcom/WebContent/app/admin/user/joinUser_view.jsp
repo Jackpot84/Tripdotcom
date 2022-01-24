@@ -11,11 +11,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입 화면 </title> <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="dist/css/addstyle.css?ver=1">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/dist/css/addstyle.css?ver=1">
 </head>
 
 <body class="join">
-	<form action="${pageContext.request.contextPath }/joinUser.do" method="post" id="joinUser" name="joinUser"/>
+<c:if test="${not empty param.join and not param.join }">
+	<script>
+		alert("회원가입실패");
+	</script>
+</c:if>
+	<form action="${pageContext.request.contextPath }/joinUser.do" method="post" id="joinUser" name="joinUser">
 	    <div class="container">
 	        <div class="input-form-backgroud row">
 	            <div class="input-form col-md-12 mx-auto">
@@ -36,7 +41,7 @@
 	            <p class="mb-1">&copy; 2021 home3</p>
 	        </footer>
 	    </div>
-	
+	</form>
 </body>
-<script src="userValidation.js"></script>
+<script src="${pageContext.request.contextPath }/app/admin/user/userValidation.js"></script>
 </html>

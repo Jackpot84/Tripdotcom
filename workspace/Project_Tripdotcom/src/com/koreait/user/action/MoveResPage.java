@@ -1,7 +1,5 @@
 package com.koreait.user.action;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -9,27 +7,21 @@ import javax.servlet.http.HttpSession;
 import com.koreait.action.Action;
 import com.koreait.action.ActionForward;
 import com.koreait.user.dao.UserDao;
-import com.koreait.user.dto.ReservationPaymentsBean;
 import com.koreait.user.dto.UserBean;
 
-public class UserLoginAction implements Action {
-
+public class MoveResPage implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		UserDao udao = new UserDao();
 		UserBean user = new UserBean();
 		ActionForward forward = new ActionForward();
 		HttpSession session = request.getSession();
-		//로그인하기위한 파라미터값세팅
-		user.setUser_email(request.getParameter("user_email"));
-		user.setUser_pw(request.getParameter("user_pw"));
-		
-		user = udao.loginUser(user);
-//		request.setAttribute("reservationList", udao.getReservation(user.getUser_id()));
-		session.setAttribute("user", user);
+		user = (UserBean)session.getAttribute("user");
+		System.out.println(user.getUser_id());
 		//토탈예약
 		int totalCnt = udao.getReservationCount(user.getUser_id()); 
 		//페이징 처리
+		
 		//현재 넘겨받은 페이지
 		String temp = request.getParameter("page");
 		int page = 0;

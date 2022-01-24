@@ -39,7 +39,25 @@ function sendit(){
 	
 }
 
-
+function login(){
+	let frm = document.loginUser;
+	let user_email = frm.user_email;
+	let user_pw = frm.user_pw;
+	
+	//아이디 체크
+	if(user_email.value == ""){
+		alert("아이디를 입력하세요!")
+		user_email.focus();
+		return false;
+	}
+	//비밀번호
+	if(user_pw.value == ""){
+		alert("패스워드를 입력하세요!")
+		user_pw.focus();
+		return false;
+	}
+	frm.submit();
+}
 
 
 
