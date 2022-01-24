@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.koreait.action.ActionForward;
+
 import com.koreait.user.action.MoveResPage;
+
+import com.koreait.manager.action.ManagerLoginAction;
+
 import com.koreait.user.action.UserJoinAction;
 import com.koreait.user.action.UserLoginAction;
 
@@ -82,9 +86,16 @@ public class FrontController extends HttpServlet{
 				forward.setRedirect(false);
 				forward.setPath(req.getContextPath()+"/app/admin/user/myAccount.jsp");
 				break;
+
 			case "/moveResPage.do":
 				forward = new MoveResPage().execute(req, resp);
 				break;
+
+			case "/acountManager.do":
+				//중간관리자 로그인
+				forward = new ManagerLoginAction().execute(req, resp);
+				break;	
+
 			}
 		
 		

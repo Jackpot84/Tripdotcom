@@ -35,14 +35,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" action="/loginManager.do" name="">
                             <div class="card-body">
                                 
                                 <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-12 col-form-label">이메일주소</label>
                                     <div class="col-sm-12">
                                         <div class="input-group input-group-lg">
-                                            <input type="text" class="form-control" placeholder="Email">
+                                            <input type="text" class="form-control" placeholder="Email" name="Manager_Email">
                                             <span class="input-group-append">
                                                 <button type="button" class="btn btn-primary btn-flat fontsize_15">이메일 인증 보내기</button>
                                             </span>
@@ -75,8 +75,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="form-group row">
                                     <div class="col-sm-12">
                                        <span>이미 가입 하셨나요? </span>
-                                        <a class="" href="#">
-                                          로그인하기
+                                        <a class="" href="loginManager.do">
+                                       	   로그인하기
                                         </a>
                                     </div>
                                 </div>

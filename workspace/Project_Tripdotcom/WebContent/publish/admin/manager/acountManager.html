@@ -4,6 +4,7 @@ This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -171,9 +172,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Sidebar -->
             <div class="sidebar">
-
-
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -271,7 +269,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="row">
                         <div class="col-sm-12">
                             <h5></h5>
-                            <h4 class="mg_b0"><strong><i class="far fa-file-alt"></i> 예약목록</strong></h4>
+                            <h4 class="mg_b0"><strong><i class="far fa-file-alt"></i> 마이페이지</strong></h4>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
@@ -282,107 +280,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="content">
                 <div class="container-fluid">
 
-                    <!-- SEARCH -->
+                    <!-- my page -->
                     <div class="row">
                         <div class="col-lg-12">
-                            <form class="form-horizontal">
-                                <div class="form-group row">
-                                    <div class="col-sm-12 mg_b5">
-                                        <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-search fa-fw"></i> 검색</button>
-                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-redo-alt"></i> 새로고침</button>
-                                        <div class="pull-right">
-                                            <select class="form-control">
-                                                <option>NONE</option>
-                                                <option>30</option>
-                                                <option>60</option>
-                                                <option>90</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-
                             <div class="card card-info" id="multiCollapseExample2">
-                                <div class="card-header search">
-                                    <strong><i class="fa fa-search fa-fw"></i> search</strong>
-                                    <div class="card-tools pull-right" style="margin-top:-4px;">
-                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-
                                 <form class="form-horizontal" id="collapseOne" class="collapse" aria-labelledby="multiCollapseExample2" data-parent="#multiCollapseExample2">
                                     <div class="card-body">
                                         <div class="form-group row">
-                                            <label for=" " class="col-sm-1 control-label">조회기간</label>
-                                            <div class="col-sm-5">
-                                                <div class="input-group input-group-sm">
-                                                    <input type="text" class="form-control" value="2018-01-04" readonly>
-                                                    <span class="input-group-btn">
-                                                        <button class="btn btn-default btn-flat" type="button"><i class="fa fa-calendar fa-fw"></i></button>
-                                                    </span>~
-                                                    <input type="text" class="form-control" value="2018-01-05" readonly>
-                                                    <span class="input-group-btn">
-                                                        <button class="btn btn-default btn-flat" type="button"><i class="fa fa-calendar fa-fw"></i></button>
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                                            <label for=" " class="col-sm-1 control-label">호텔명칭</label>
-                                            <div class="col-sm-2">
-                                                <select class="form-control">
-                                                    <option>호텔</option>
-                                                    <option>게스트하우스</option>
-                                                </select>
-                                            </div>
-                                            <label for=" " class="col-sm-1 control-label">규격</label>
-                                            <div class="col-sm-2">
-                                                <select class="form-control">
-                                                    <option> </option>
-                                                    <option> </option>
-                                                </select>
-                                            </div>
+                                            <label for=" " class="col-sm-1 control-label">아이디</label>
+                                            <span class="col-sm-2 control-label">123456</span>
                                         </div>
                                         <div class="form-group row">
-                                            <label for=" " class="col-sm-1 control-label">스타일</label>
-                                            <div class="col-sm-2">
-                                                <select class="form-control">
-                                                    <option></option>
-                                                </select>
-                                            </div>
-
-                                            <label for=" " class="col-sm-1 control-label">객실타입</label>
-                                            <div class="col-sm-2">
-                                                <select class="form-control">
-                                                    <option></option>
-                                                </select>
-                                            </div>
-
-                                            <label for=" " class="col-sm-1 control-label">객실명</label>
-                                            <div class="col-sm-2">
-                                                <input class="form-control" type="text" placeholder="">
-                                            </div>
-
+                                            <label for=" " class="col-sm-1 control-label">가입일</label>
+                                            <span class="col-sm-2 control-label">123456</span>
                                         </div>
                                         <div class="form-group row">
-                                            <label for=" " class="col-sm-1 control-label">체크인</label>
-                                            <div class="col-sm-2">
-                                                <div class="input-group input-group-sm">
-                                                    <input type="text" class="form-control" value="2018-01-04" readonly>
-                                                    <span class="input-group-btn">
-                                                        <button class="btn btn-default btn-flat" type="button"><i class="fa fa-calendar fa-fw"></i></button>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <label for=" " class="col-sm-1 control-label">체크아웃</label>
-                                            <div class="col-sm-2">
-                                                <div class="input-group input-group-sm">
-                                                    <input type="text" class="form-control" value="2018-01-04" readonly>
-                                                    <span class="input-group-btn">
-                                                        <button class="btn btn-default btn-flat" type="button"><i class="fa fa-calendar fa-fw"></i></button>
-                                                    </span>
-                                                </div>
+                                            <label for=" " class="col-sm-1 control-label">회사명</label>
+                                            <span class="col-sm-2 control-label">123456</span>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for=" " class="col-sm-1 control-label">부서</label>
+                                            <span class="col-sm-2 control-label">123456</span>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for=" " class="col-sm-1 control-label">연락처</label>
+                                            <span class="col-sm-2 control-label">123456</span>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for=" " class="col-sm-1 control-label">이메일</label>
+                                            <span class="col-sm-2 control-label">123456</span>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for=" " class="col-sm-3 control-label">등록한 객실 숙소 수량(객실 수량)</label>
+                                            <span class="col-sm-8 control-label">123456</span>
+                                            <div class="col-sm-1 mg_b5">
+                                                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#InformationChange"><i class="fas fa-edit"></i> 편집</button>
                                             </div>
                                         </div>
                                     </div>
@@ -391,51 +323,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                     </div>
 
-                    <!--// SEARCH -->
-                    <!--table-->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="table-responsive type1">
-                                    <table class="table table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th class="txt-c">No.</th>
-                                                <th class="txt-c">조회기간</th>
-                                                <th class="txt-c">호텔명칭</th>
-                                                <th class="txt-c">규격</th>
-                                                <th class="txt-c">스타일</th>
-                                                <th class="txt-c">객실타입</th>
-                                                <th class="txt-c">객실명</th>
-                                                <th class="txt-c">체크인</th>
-                                                <th class="txt-c">체크아웃</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr onclick="" style="cursor: pointer;">
-                                                <td class="txt-r">1</td>
-                                                <td class="txt-c"> </td>
-                                                <td class="txt-c"> </td>
-                                                <td class="txt-c"> </td>
-                                                <td class="txt-c"> </td>
-                                                <td class="txt-c"> </td>
-                                                <td class="txt-c"> </td>
-                                                <td class="txt-c"> </td>
-                                                <td class="txt-c"> </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <!--          
-                    <br>
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".filter_make"> Filter</button>
-                    <button data-toggle="modal" data-target=".model_Popup">구매이력</button>
-        -->
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--table-->
+                    <!--// my page -->
 
 
 
@@ -444,6 +332,123 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="InformationChange" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">관리자 정보 수정</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>로그인계정</label>
+                                    <input class="form-control" type="text" Disabled placeholder="DB에서 불러다가 계정정보 넣기">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>아이디</label>
+                                    <input class="form-control" type="text" Disabled placeholder="DB에서 불러다가 계정정보 넣기">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>가입일자</label>
+                                    <input class="form-control" type="text" Disabled placeholder="DB에서 불러다가 계정정보 넣기">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>마지막접속일자</label>
+                                    <input class="form-control" type="text" Disabled placeholder="DB에서 불러다가 계정정보 넣기">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>비밀번호 변경</label>
+                                    <input class="form-control" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>비밀번호 확인</label>
+                                    <input class="form-control" type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>이름</label>
+                                    <input class="form-control" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>성별</label>
+                                    <div class="form-group row">
+                                        <div class="col-md-6 custom-control custom-radio">
+                                           &nbsp;&nbsp;
+                                            <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                            <label for="customRadio1" class="custom-control-label">남</label>
+                                        </div>
+                                        <div class="col-md-6 custom-control custom-radio">
+                                            <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" checked>
+                                            <label for="customRadio2" class="custom-control-label">여</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>회사명</label>
+                                    <input class="form-control" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>부서</label>
+                                    <input class="form-control" type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>연락처</label>
+                                    <input class="form-control" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>이메일</label>
+                                    <input class="form-control" type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Main Footer -->
         <footer class="main-footer">
