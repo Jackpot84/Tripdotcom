@@ -19,7 +19,7 @@ import com.koreait.user.action.UserJoinAction;
 import com.koreait.user.action.UserLoginAction;
 
 @WebServlet("*.do")
-public class FrontController extends HttpServlet{
+public class UserFrontController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -91,10 +91,6 @@ public class FrontController extends HttpServlet{
 				forward = new MoveResPage().execute(req, resp);
 				break;
 
-			case "/acountManager.do":
-				//중간관리자 로그인
-				forward = new ManagerLoginAction().execute(req, resp);
-				break;	
 
 			}
 		

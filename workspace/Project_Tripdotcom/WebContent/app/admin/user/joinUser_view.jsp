@@ -43,5 +43,5 @@
 	    </div>
 	</form>
 </body>
-<script src="${pageContext.request.contextPath }/app/admin/user/userValidation.js"></script>
+<script src="${pageContext.request.contextPath }/app/admin/user/userTool/userValidation.js"></script>
 </html>

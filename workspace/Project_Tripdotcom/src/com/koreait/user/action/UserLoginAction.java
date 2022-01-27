@@ -2,6 +2,7 @@ package com.koreait.user.action;
 
 import java.util.List;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -20,6 +21,8 @@ public class UserLoginAction implements Action {
 		UserBean user = new UserBean();
 		ActionForward forward = new ActionForward();
 		HttpSession session = request.getSession();
+		
+		
 		//로그인하기위한 파라미터값세팅
 		user.setUser_email(request.getParameter("user_email"));
 		user.setUser_pw(request.getParameter("user_pw"));
