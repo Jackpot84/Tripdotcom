@@ -2,43 +2,30 @@ package com.koreait.manager.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 import com.koreait.action.Action;
 import com.koreait.action.ActionForward;
 import com.koreait.manager.dao.ManagerDao;
 import com.koreait.manager.dto.ManagerAccountBean;
 
-public class ManagerLoginAction implements Action{
+public class ManagerJoinAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		ActionForward forward = new ActionForward();
 		ManagerAccountBean manager = new ManagerAccountBean();
-		ManagerDao mdao = new ManagerDao();
 		manager.setManager_Issued_Email(request.getParameter("Manager_Issued_Email"));
 		manager.setManager_Issue_password(request.getParameter("Manager_Issue_password"));
 		
+		ManagerDao mdao = new ManagerDao();
 		
-		manager = mdao.managerLogin(manager);	
-//		request.setAttribute("manager", manager);
-		
-		//session 객체선언
-		HttpSession session = request.getSession();
-		//세션에 저장하기
-		session.setAttribute("manager", manager);
-		
-		
-		
-		if(manager != null) {
+		if(mdao.managerJoin(manager)) {
 			forward.setRedirect(false);
-			forward.setPath(request.getContextPath()+"app/admin/manager/accountManager.jsp");
+			forward.setPath(request.getContextPath()+"app/admin/manager/loginManager.jsp");
 		}else {
 			forward.setRedirect(false);
-			forward.setPath(request.getContextPath()+"app/admin/manager/loginManager.jsp?login=false");
+			forward.setPath(request.getContextPath()+"app/admin/manager/joinManager.jsp?join=false");
 		}
-		
 		
 		return forward;
 	}

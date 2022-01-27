@@ -7,6 +7,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="managerLogin" parameterType="com.koreait.manager.dto.ManagerAccountBean" resultType="com.koreait.manager.dto.ManagerAccountBean">
 		SELECT * FROM MANAGER_ACCOUNT ma WHERE MANAGER_ISSUED_EMAIL  = #{manager_Issued_Email} AND MANAGER_ISSUE_PASSWORD =#{manager_Issue_password}
 	</select>
+	
+	<select id="managerJoin" parameterType="com.koreait.manager.dto.ManagerAccountBean" resultType="com.koreait.manager.dto.ManagerAccountBean">
+		INSERT INTO MANAGER_ACCOUNT values(Manager_id.nextval,#{manager_Issued_Email},#{manager_Issue_password},sysdate,NULL,NULL,null,null,null,sysdate,null,null)
+	</select>
 </mapper>
 
 
