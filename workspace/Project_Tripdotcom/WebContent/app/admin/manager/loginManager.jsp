@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form class="form-horizontal" action="/accountManager.do" method="post">
+                        <form class="form-horizontal" action="/accountManager.mg" method="post">
                             <div class="card-body">
                                
                                     <div class="form-group row">
@@ -97,7 +97,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <span>&nbsp; &nbsp; 계정이 없나요? </span>
-                                    <a class="" href="/joinManager_togo.do">
+                                    <a class="" href="/joinManager_togo.mg">
                                        		 회원가입 하기
                                     </a>
                                     <span class="br_6"></span>

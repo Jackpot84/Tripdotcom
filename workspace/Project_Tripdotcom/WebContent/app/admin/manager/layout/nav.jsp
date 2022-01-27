@@ -107,7 +107,7 @@
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-header">${manager.manager_Issued_Email }</span>
                         <div class="dropdown-divider"></div>
-                        <a href="/accountManager_into.do" class="dropdown-item">
+                        <a href="/accountManager_into.mg" class="dropdown-item">
                             <i class="fas fa-user-cog"></i> &nbsp; 마이 페이지
                             <!-- <span class="float-right text-muted text-sm">3 mins</span> -->
                         </a>

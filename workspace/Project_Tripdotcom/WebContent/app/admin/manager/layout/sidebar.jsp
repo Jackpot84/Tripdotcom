@@ -43,7 +43,7 @@
 					</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item">
-							<a href="/bookingList.do" class="nav-link"> 
+							<a href="/bookingList.mg" class="nav-link"> 
 								<i class="nav-icon fas fa-list"></i><p>예약목록</p>
 							</a>
 						</li>
@@ -80,7 +80,7 @@
 					</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item">
-							<a href="/accountManager_into.do" class="nav-link"> 
+							<a href="/accountManager_into.mg" class="nav-link"> 
 								<i class="nav-icon fas fa-list"></i>
 								<p>조회/수정</p>
 							</a>

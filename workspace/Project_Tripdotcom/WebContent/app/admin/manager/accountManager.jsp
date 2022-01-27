@@ -12,7 +12,7 @@
 
     <script>
     alert("로그인을 해주세요");
-    location.href = "/loginManager_back.do";
+    location.href = "/loginManager_back.mg";
     </script>
 
 <%//${pageContext.request.contextPath} %>
@@ -246,7 +246,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../../dist/js/demo.js"></script>
 <!-- Page specific script -->
-<script src="layout/sidebarController.js"></script>
+<script src="${pageContext.request.contextPath }/app/admin/manager/layout/sidebarController.js"></script>
 
 <script>
 $(function () {
