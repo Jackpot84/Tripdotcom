@@ -2,6 +2,7 @@ package com.koreait.manager.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 import com.koreait.action.Action;
@@ -20,13 +21,19 @@ public class ManagerLoginAction implements Action{
 		manager.setManager_Issue_password(request.getParameter("Manager_Issue_password"));
 		
 		
-		manager = mdao.managerLogin(manager);
+		manager = mdao.managerLogin(manager);	
+//		request.setAttribute("manager", manager);
 		
-		request.setAttribute("manager", manager);
+		//session 객체선언
+		HttpSession session = request.getSession();
+		//세션에 저장하기
+		session.setAttribute("manager", manager);
+		
+		
 		
 		if(manager != null) {
 			forward.setRedirect(false);
-			forward.setPath(request.getContextPath()+"app/admin/manager/acountManager.jsp");
+			forward.setPath(request.getContextPath()+"app/admin/manager/accountManager.jsp");
 		}else {
 			forward.setRedirect(false);
 			forward.setPath(request.getContextPath()+"app/admin/manager/loginManager.jsp?login=false");

@@ -11,7 +11,7 @@ public class ManagerAccountBean {
 	private String manager_firstname;
 	private String manager_Company;
 	private String manager_Department;
-	private int manager_PhoneNumber;
+	private String manager_PhoneNumber;
 	private String manager_LastAccessdate;
 	private String manager_gender;
 	public int getManager_id() {
@@ -62,10 +62,10 @@ public class ManagerAccountBean {
 	public void setManager_Department(String manager_Department) {
 		this.manager_Department = manager_Department;
 	}
-	public int getManager_PhoneNumber() {
+	public String getManager_PhoneNumber() {
 		return manager_PhoneNumber;
 	}
-	public void setManager_PhoneNumber(int manager_PhoneNumber) {
+	public void setManager_PhoneNumber(String manager_PhoneNumber) {
 		this.manager_PhoneNumber = manager_PhoneNumber;
 	}
 	public String getManager_LastAccessdate() {
