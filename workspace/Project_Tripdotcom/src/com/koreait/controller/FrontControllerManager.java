@@ -16,7 +16,7 @@ import com.koreait.manager.action.ManagerLoginAction;
 import com.koreait.user.action.UserJoinAction;
 import com.koreait.user.action.UserLoginAction;
 
-@WebServlet("*.do")
+@WebServlet("*.mg")
 public class FrontControllerManager extends HttpServlet{
 
 		@Override
@@ -34,37 +34,37 @@ public class FrontControllerManager extends HttpServlet{
 			ActionForward forward = null;
 			
 			switch(requestURI) {
-				case "/loginManager.do":
+				case "/loginManager.mg":
 					//중간관리자 회원가입
 					forward = new ManagerJoinAction().execute(req, resp);
 					break;	
-				case "/loginManager_back.do":
+				case "/loginManager_back.mg":
 					//로그인 화면에서 회원가입 클릭
 					forward = new ActionForward();
 					forward.setRedirect(true);
 					forward.setPath(req.getContextPath()+"/app/admin/manager/loginManager.jsp");
 					break;
-				case "/accountManager.do":
+				case "/accountManager.mg":
 					//중간관리자 로그인
 					forward = new ManagerLoginAction().execute(req, resp);
 					break;	
-				case "/joinManager_togo.do":
+				case "/joinManager_togo.mg":
 					//로그인 화면에서 회원가입 클릭
 					forward = new ActionForward();
 					forward.setRedirect(true);
 					forward.setPath(req.getContextPath()+"/app/admin/manager/joinManager.jsp");
 					break;
-				case "/loginManager_togo.do":
+				case "/loginManager_togo.mg":
 					//회원가입 화면에서 로그인 클릭
 					forward = new ActionForward();
 					forward.setRedirect(true);
 					forward.setPath(req.getContextPath()+"/app/admin/manager/loginManager.jsp");
 					break;
-				case "/accountManager_into.do":
+				case "/accountManager_into.mg":
 					//마이페이지 화면에서 드랍다운 마이페이지 클릭
 					forward = new AcountManagerIntoAction().execute(req, resp);
 					break;
-				case "/bookingList.do":
+				case "/bookingList.mg":
 					//사이드바에서 예약조회클릭
 					forward = new ActionForward();
 					forward.setRedirect(false);
