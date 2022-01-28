@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../../../dist/css/masterLogin_style">
+</head>
+<body>
+
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form method="post" action="">
+			<h1>회원가입</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>등록을 위해 이름과 이메일을 입력해주세요.</span>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button id="insertLogin">회원가입</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action=""method="post">
+			<h1>로그인</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#">비밀번호찾기</a>
+			<button id ="login">로그인</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<p>로그인하실려면 이쪽으로</p>
+				<button class="ghost" id="signIn">로그인</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>안녕하세요!</h1>
+				<p>회원가입을 하시려면 이쪽으로 이동해주세요.</p>
+				<button class="ghost" id="signUp">회원가입</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+<script>
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+</script>
+</html>
