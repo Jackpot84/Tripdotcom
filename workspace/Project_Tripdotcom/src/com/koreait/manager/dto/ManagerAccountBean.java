@@ -14,6 +14,8 @@ public class ManagerAccountBean {
 	private String manager_PhoneNumber;
 	private String manager_LastAccessdate;
 	private String manager_gender;
+	private String manager_Using_Email;
+	
 	public int getManager_id() {
 		return manager_id;
 	}
@@ -80,7 +82,12 @@ public class ManagerAccountBean {
 	public void setManager_gender(String manager_gender) {
 		this.manager_gender = manager_gender;
 	}
-	
+	public String getManager_Using_Email() {
+		return manager_Using_Email;
+	}
+	public void setManager_Using_Email(String manager_Using_Email) {
+		this.manager_Using_Email = manager_Using_Email;
+	}
 
 }
   

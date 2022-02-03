@@ -37,5 +37,20 @@ public class ManagerDao {
 	}
 	
 	
+	public boolean informationChange(ManagerAccountBean manager) {
+		boolean result = false;
+
+		int result_int  = sqlsession.update("Manager.informationChange", manager);
+
+		if(result_int == 1) {
+			result = true;
+		}
+		
+		return result;
+	}
+	
+	
+	
+	
 	
 }

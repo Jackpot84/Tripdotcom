@@ -1,5 +1,5 @@
  $(function () {
-	 console.log("xxx??");
+	 console.log("bookingList.js");
 	//사이드바 active설정
 	  active_sidebar(2,1);  
     //Initialize Select2 Elements

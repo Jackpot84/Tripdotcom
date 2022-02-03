@@ -1,22 +1,52 @@
+<%@page import="com.koreait.manager.action.InformationChangeAction"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
 <%@ include file="layout/top.jsp" %>
 
 <body class="hold-transition sidebar-mini">
+
 <%-- <c:set var="manager" value="${requestScope.manager }"/> --%>
 <c:set var="manager" value="${sessionScope.manager }"/>
-
-
 <c:if test="${manager.manager_Issued_Email eq null}">
-
     <script>
-    alert("로그인을 해주세요");
+    alert("로그인을 해주세요.");
     location.href = "/loginManager_back.mg";
     </script>
-
-<%//${pageContext.request.contextPath} %>
 </c:if>
+
+<c:set var="informationChangeCheck" value="${requestScope.informationChangeCheck}"/>
+<c:choose>
+    <c:when test="${informationChangeCheck eq true}">
+        <script>
+	    console.log( ${informationChangeCheck} );
+	    alert("수정되었습니다.");
+	    </script>
+	    <% 
+	    request.setAttribute("informationChangeCheck", false);
+	    System.out.println(request.getAttribute("informationChangeCheck"));
+	    %>
+    </c:when>
+    <c:otherwise>
+     	<script>
+	    console.log(${informationChangeCheck});
+    	</script>
+    </c:otherwise>
+</c:choose>
+
+<%-- <c:if test="${informationChangeCheck eq true}">
+    <script>
+    console.log( ${informationChangeCheck} );
+    alert("수정되었습니다.");
+    </script>
+    <% 
+    request.setAttribute("informationChangeCheck", false);
+    System.out.println(request.getAttribute("informationChangeCheck"));
+    %>
+    <script>
+    console.log(${informationChangeCheck});
+    </script>
+</c:if> --%>
 
     <div class="wrapper">
 	
@@ -49,33 +79,33 @@
                                 <form class="form-horizontal" id="collapseOne" class="collapse" aria-labelledby="multiCollapseExample2" data-parent="#multiCollapseExample2">
                                     <div class="card-body">
                                         <div class="form-group row">
-                                            <label for=" " class="col-sm-1 control-label">아이디</label>
+                                            <label for=" " class="col-sm-3 col-md-1 control-label">아이디</label>
                                             <span class="col-sm-9 control-label">${manager.manager_Issued_Email }</span>
                                         </div>
                                         <div class="form-group row">
-                                            <label for=" " class="col-sm-1 control-label">가입일</label>
+                                            <label for=" " class="col-sm-3 col-md-1 control-label">가입일</label>
                                             <span class="col-sm-9 control-label">${manager.manager_joindate }</span>
                                         </div>
                                         <div class="form-group row">
-                                            <label for=" " class="col-sm-1 control-label">회사명</label>
+                                            <label for=" " class="col-sm-3 col-md-1 control-label">회사명</label>
                                             <span class="col-sm-9 control-label">${manager.manager_Company }</span>
                                         </div>
                                         <div class="form-group row">
-                                            <label for=" " class="col-sm-1 control-label">부서</label>
+                                            <label for=" " class="col-sm-3 col-md-1 control-label">부서</label>
                                             <span class="col-sm-9 control-label">${manager.manager_Department }</span>
                                         </div>
                                         <div class="form-group row">
-                                            <label for=" " class="col-sm-1 control-label">연락처</label>
+                                            <label for=" " class="col-sm-3 col-md-1 control-label">연락처</label>
                                             <span class="col-sm-9 control-label">${manager.manager_PhoneNumber }</span>
                                         </div>
                                         <div class="form-group row">
-                                            <label for=" " class="col-sm-1 control-label">이메일</label>
-                                            <span class="col-sm-9 control-label">${manager_Issued_Email}</span>
+                                            <label for=" " class="col-sm-3 col-md-1 control-label">이메일</label>
+                                            <span class="col-sm-9 control-label">${manager.manager_Using_Email}</span>
                                         </div>
                                         <div class="form-group row">
                                             <label for=" " class="col-sm-3 control-label">등록한 객실 숙소 수량(객실 수량)</label>
-                                            <span class="col-sm-8 control-label">?</span>
-                                            <div class="col-sm-1 mg_b5">
+                                            <span class="col-sm-6 control-label">?</span>
+                                            <div class="col-sm-3 mg_b5 txt-r">
                                                 <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#InformationChange"><i class="fas fa-edit"></i> 편집</button>
                                             </div>
                                         </div>
@@ -97,124 +127,12 @@
 
 
         <!-- Modal -->
-        <div class="modal fade" id="InformationChange" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">관리자 정보 수정</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>로그인계정</label>
-                                    <input class="form-control" type="text" Disabled placeholder="${manager.manager_Issued_Email }">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>아이디</label>
-                                    <input class="form-control" type="text" Disabled placeholder="${manager.manager_Issued_Email }">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>가입일자</label>
-                                    <input class="form-control" type="text" Disabled placeholder="${manager.manager_joindate }">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>마지막접속일자</label>
-                                    <input class="form-control" type="text" Disabled placeholder="${manager.manager_LastAccessdate }">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>비밀번호 변경</label>
-                                    <input class="form-control" type="text" placeholder="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>비밀번호 확인</label>
-                                    <input class="form-control" type="text" placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>이름</label>
-                                    <input class="form-control" type="text" placeholder="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>성별</label>
-                                    <div class="form-group row">
-                                        <div class="col-md-6 custom-control custom-radio">
-                                           &nbsp;&nbsp;
-                                            <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
-                                            <label for="customRadio1" class="custom-control-label">남</label>
-                                        </div>
-                                        <div class="col-md-6 custom-control custom-radio">
-                                            <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" checked>
-                                            <label for="customRadio2" class="custom-control-label">여</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>회사명</label>
-                                    <input class="form-control" type="text" placeholder="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>부서</label>
-                                    <input class="form-control" type="text" placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>연락처</label>
-                                    <input class="form-control" type="text" placeholder="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>이메일</label>
-                                    <input class="form-control" type="text" placeholder="">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
+        <%@ include file='/app/admin/manager/informationChange_POP.jsp' %>
+        <!-- /.Modal -->
+       
         <%@ include file="layout/footer.jsp" %>
     </div>
-    <!-- ./wrapper -->
+    <!-- /.wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
 <!-- REQUIRED SCRIPTS -->
@@ -252,8 +170,19 @@
 $(function () {
 	//사이드바 active설정
 	active_sidebar(4,1); 	
-	console.log("어카운트");
+	console.log("accountManager.jsp");
 });
+
+<%-- function informationChangeCheck() {
+	var informationChangeCheck = <%= request.getParameter("informationChangeCheck") %>;
+	   
+	console.log(informationChangeCheck);
+	
+	if(informationChangeCheck == true){
+	    alert("수정되었습니다.");
+	}
+} --%>
+
   
 </script>
 </body>
