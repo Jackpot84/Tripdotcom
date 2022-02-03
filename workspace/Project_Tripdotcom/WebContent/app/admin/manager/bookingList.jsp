@@ -74,43 +74,22 @@
 										<div class="form-group row">
 											<label for=" " class="col-sm-1 control-label">조회기간</label>
 											<div class="col-sm-5">
-
-
-												<div class="input-group date" id="reservationdatetime"
-													data-target-input="nearest">
-													<input type="text"
-														class="form-control datetimepicker-input"
-														data-target="#reservationdatetime">
-													<div class="input-group-append"
-														data-target="#reservationdatetime"
-														data-toggle="datetimepicker">
+												<div class="input-group date" id="reservationdatetime" data-target-input="nearest">
+													
+													<input type="text" data-target="#reservationdatetime" readonly>
+													<div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
+														<div class="input-group-text">
+															<i class="fa fa-calendar"></i>
+														</div>
+													</div>
+													~
+													<input type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime">
+													<div class="input-group-append"	data-target="#reservationdatetime" data-toggle="datetimepicker">
 														<div class="input-group-text">
 															<i class="fa fa-calendar"></i>
 														</div>
 													</div>
 												</div>
-
-
-												<div class="input-group input-group-sm">
-													<input type="text" class="form-control" value="2018-01-04"
-														readonly> <span class="input-group-btn">
-														<button class="btn btn-default btn-flat" type="button">
-															<i class="fa fa-calendar fa-fw"></i>
-														</button>
-													</span>~ <input type="text" class="form-control"
-														value="2018-01-05" readonly> <span
-														class="input-group-btn">
-														<button class="btn btn-default btn-flat" type="button">
-															<i class="fa fa-calendar fa-fw"></i>
-														</button>
-
-
-													</span>
-												</div>
-
-
-
-
 											</div>
 
 											<label for=" " class="col-sm-1 control-label">호텔명칭</label>
@@ -268,13 +247,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../../dist/js/demo.js"></script>
 <!-- Page specific script -->
-<script src="layout/sidebarController.js"></script>
-<script src="js/bookingList.js"></script>
-<script>
-console.log("xxx1");
-active_sidebar(2,1);  
-console.log("xxx2");
-active_sidebar(2,1);  
-</script>
+<script src="${pageContext.request.contextPath }/app/admin/manager/layout/sidebarController.js"></script>
+<script src="${pageContext.request.contextPath }/app/admin/manager/js/bookingList.js"></script>
 </body>
 </html>

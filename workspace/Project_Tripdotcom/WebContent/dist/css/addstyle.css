@@ -12,6 +12,8 @@
 .txt-c{
     text-align: center;
 }
+.txt-r{text-align: right;}
+.required{color:red;}
 .form-control {
     height: calc(1.85rem + 2px);
     padding-top: 4px;
@@ -175,3 +177,8 @@ span.br_6 {
 }
 
 /*    // loginManager   */
+
+.modal .row{
+margin-bottom: 6px;
+}
+.modal label{    margin-bottom: 3px;}

@@ -5,12 +5,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="Manager">
 	<select id="managerLogin" parameterType="com.koreait.manager.dto.ManagerAccountBean" resultType="com.koreait.manager.dto.ManagerAccountBean">
-		SELECT * FROM MANAGER_ACCOUNT ma WHERE MANAGER_ISSUED_EMAIL  = #{manager_Issued_Email} AND MANAGER_ISSUE_PASSWORD =#{manager_Issue_password}
+		SELECT * FROM MANAGER_ACCOUNT WHERE MANAGER_ISSUED_EMAIL = #{manager_Issued_Email} AND MANAGER_ISSUE_PASSWORD =#{manager_Issue_password}
 	</select>
 	
-	<select id="managerJoin" parameterType="com.koreait.manager.dto.ManagerAccountBean" resultType="com.koreait.manager.dto.ManagerAccountBean">
-		INSERT INTO MANAGER_ACCOUNT values(Manager_id.nextval,#{manager_Issued_Email},#{manager_Issue_password},sysdate,NULL,NULL,null,null,null,sysdate,null,null)
-	</select>
+	<insert id="managerJoin" parameterType="com.koreait.manager.dto.ManagerAccountBean" >
+		INSERT INTO MANAGER_ACCOUNT values(Manager_id.nextval,#{manager_Issued_Email},#{manager_Issue_password},sysdate,NULL,NULL,null,null,null,sysdate,null,null,null)
+	</insert>
+	
+	<update id="informationChange" parameterType="com.koreait.manager.dto.ManagerAccountBean">
+		UPDATE MANAGER_ACCOUNT SET MANAGER_ISSUE_PASSWORD = #{manager_Issue_password}, MANAGER_LASTNAME = #{manager_lastname},MANAGER_FIRSTNAME = #{manager_firstname},MANAGER_COMPANY = #{manager_Company},MANAGER_DEPARTMENT = #{manager_Department},MANAGER_PHONENUMBER = #{manager_PhoneNumber},MANAGER_GENDER = #{manager_gender},MANAGER_USING_EMAIL = #{manager_Using_Email} WHERE Manager_Issued_Email = #{manager_Issued_Email}
+	</update>
 </mapper>
 
 
