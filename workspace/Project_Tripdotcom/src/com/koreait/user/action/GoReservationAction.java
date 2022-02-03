@@ -20,7 +20,8 @@ public class GoReservationAction implements Action {
 		HttpSession session = request.getSession();
 		UserBean user =(UserBean)session.getAttribute("user");
 		int totalCnt = 0;
-
+//		String tab = request.getParameter("tab");
+		request.setAttribute("tab",request.getParameter("tab"));
 		//페이징 처리
 		//현재 넘겨받은 페이지
 		String temp = request.getParameter("page");
@@ -58,7 +59,8 @@ public class GoReservationAction implements Action {
 				request.setAttribute("resList", udao.getPaidList(startRow,endRow,user.getUser_id()));
 				break;
 			case "four":
-				totalCnt = udao.getReservationCount(user.getUser_id());
+				totalCnt = udao.getCanReviewCount(user.getUser_id());
+				request.setAttribute("resList", udao.getCanReviewList(startRow,endRow,user.getUser_id()));
 				break;
 			}
 		}
@@ -71,7 +73,6 @@ public class GoReservationAction implements Action {
 		request.setAttribute("nowPage", page);
 		request.setAttribute("startPage",startPage);
 		request.setAttribute("endPage", endPage);
-		
 		
 		request.setAttribute("getBoardCount",totalCnt);
 		

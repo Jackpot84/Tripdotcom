@@ -4,7 +4,6 @@
 
 //내 예약 전체탭
 function tabOneAction(){
-	alert('ho')
 	location.href="/goReservationAll.do?page=1&tab=one";
 }
 //내 예약 결제대기탭
@@ -15,17 +14,21 @@ function tabTwoAction(){
 function tabThreeAction(){
 	location.href="/goReservationAll.do?page=1&tab=three";
 }
-
-
-function getParameterByName(name)
-{ name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search);
-return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
-
-
-function test(){
-	alert(getParameterByName('tab'))
+//내 예약 리뷰작성탭  
+function tabFourAction(){
+	location.href="/goReservationAll.do?page=1&tab=four";
 }
+
+
+//function getParameterByName(name)
+//{ name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+//var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search);
+//return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
+//
+//
+//function test(){
+//	alert(getParameterByName('tab'))
+//}
 
 
 //트립코인 이용내역 탭

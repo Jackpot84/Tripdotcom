@@ -30,6 +30,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <c:set var="useList" value="${requestScope.useTripCoin }"/>
 <c:set var="chargeList" value="${requestScope.chargeTripCoin }"/>
+<c:set var="tab" value="${requestScope.tab }"/>
+<input type="hidden" id="tabId" name="tabId" value="${tab }">
 <script>
 	window.addEventListener('DOMContentLoaded', function()
 		{
@@ -37,7 +39,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			
 				let mainTab = document.getElementById("coinTab1").className;
 			
-			switch(getParameterByName('tab')){
+			switch(document.getElementById('tabId').value){
 				case 'one':
 					document.getElementById("coinTab1").className += ' active';
 					break;

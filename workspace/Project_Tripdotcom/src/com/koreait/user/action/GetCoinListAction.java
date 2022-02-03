@@ -16,6 +16,7 @@ public class GetCoinListAction implements Action {
 		ActionForward forward = new ActionForward();
 		HttpSession session = request.getSession();
 		UserBean user =(UserBean)session.getAttribute("user");
+		request.setAttribute("tab", request.getParameter("tab"));
 		
 		if(request.getParameter("tab")==null) {
 			request.setAttribute("useTripCoin", udao.getUseCoinList(user.getUser_id()));
