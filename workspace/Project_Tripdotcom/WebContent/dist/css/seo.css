@@ -17,12 +17,19 @@
   padding:0;
   display: flex;
 }
+.mainSearchBox {
+    width: 66%;
+    margin: 0 auto;
+}
 .searchbox{
+	border: 1px solid #ededed;
+    padding: 20px;
   text-align: center;
-  border: 0;
+  margin-bottom: 30px;
+}
 }
 .searchbox div{
-  border: 1px solid #111;
+ /*  border: 1px solid #111; */
 }
 .searchsmallBox{
   width: 100%;
@@ -45,4 +52,11 @@
 .cardHome{
   display: flex;
   margin: 0 auto;
+}
+.carousel-control-prev, .carousel-control-next{
+	border-color: #fff0;
+    opacity: 0 !important;
+}
+.carousel-control-prev:hover, .carousel-control-next:hover{
+    opacity: .25 !important;
 }
