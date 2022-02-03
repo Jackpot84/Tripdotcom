@@ -79,6 +79,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getChargeCoinList" parameterType="_int" resultType="com.koreait.user.dto.TripCoinBean">
 		SELECT * FROM TRIP_COIN tc WHERE USER_ID =#{user_id} AND COIN_CHARGE_MONEY IS NOT null
 	</select>
+
+	<select id="getCanReviewList" parameterType="hashmap" resultType="com.koreait.user.dto.ReservationPaymentsBean">
+		SELECT * FROM 
+		(SELECT rownum R, d.*
+			FROM (SELECT * FROM (SELECT * FROM RESERVATION_PAYMENTS WHERE USER_ID = #{user_id})
+		WHERE RESERVATION_STATE ='결제완료'
+		AND TO_CHAR(SYSDATE,'yyyymmdd') > TO_CHAR(checkout_date,'yyyymmdd')) D ) B
+		 WHERE B.R BETWEEN #{startRow} AND #{endRow}
+	</select>
+
+	<select id="getCanReviewCount" parameterType="_int" resultType="_int">
+		SELECT COUNT(*) FROM (SELECT * FROM RESERVATION_PAYMENTS WHERE USER_ID = 43)
+		WHERE RESERVATION_STATE ='결제완료'
+		AND TO_CHAR(SYSDATE,'yyyymmdd') > TO_CHAR(checkout_date,'yyyymmdd')
+	</select>
 </mapper>
 
 

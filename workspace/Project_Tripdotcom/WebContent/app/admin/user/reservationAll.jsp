@@ -24,7 +24,11 @@
 <link rel="stylesheet" href="dist/css/adminlte.css">
 </head>
 <body class="hold-transition sidebar-mini">
+	<c:set var="resList" value="${requestScope.resList }"/><!-- 예약목록 객체받아옴 -->
+	<c:set var="tab" value="${requestScope.tab }"/>
+	<input type="hidden" id="tabId" name="tabId" value="${tab }">
 <script>
+		alert(document.getElementById('tabId').value);
 window.addEventListener('DOMContentLoaded', function()
 		{
 	let tabClass = document.getElementById("reservationAllSide").className;
@@ -35,8 +39,7 @@ window.addEventListener('DOMContentLoaded', function()
 			document.getElementById("myAccountSide").className = 'nav-link'			
 			document.getElementById("reservationAllSide").className += ' active'
 		}
-	
-	switch(getParameterByName('tab')){
+	switch(document.getElementById('tabId').value){
 		case 'one':
 			document.getElementById("Maintab1").className += ' active';
 			break;
@@ -56,8 +59,6 @@ window.addEventListener('DOMContentLoaded', function()
 			
 	});
 </script>
-	<c:set var="resList" value="${requestScope.resList }"/><!-- 예약목록 객체받아옴 -->
-
 		<!-- Navbar -->
 			<%@ include file="userTool/userNav.jsp" %>
 		<!-- /Navbar -->
@@ -82,7 +83,7 @@ window.addEventListener('DOMContentLoaded', function()
 					    <a class="nav-link" id="Maintab3" data-toggle="tab" href="#paymentCompleted" onclick="tabThreeAction()" role="tab" aria-controls="paymentCompleted" aria-selected="false">결제완료</a>
 					  </li>
 					  <li class="nav-item" role="presentation">
-					    <a class="nav-link" id="Maintab4" data-toggle="tab" href="#reviewWrite" role="tab" aria-controls="reviewWrite" aria-selected="false">리뷰작성</a>
+					    <a class="nav-link" id="Maintab4" data-toggle="tab" href="#reviewWrite" role="tab" onclick="tabFourAction()" aria-controls="reviewWrite" aria-selected="false">리뷰작성</a>
 					  </li>
 					  
 				</ul>
@@ -155,7 +156,6 @@ window.addEventListener('DOMContentLoaded', function()
 										</c:otherwise>
 									</c:choose>
 									<!--페이지이동-->
-										<%@ include file="pageExcute/yetPaidPage.jsp" %>
 									<!--/페이지이동-->
 									</div>
 								</div>
@@ -189,7 +189,6 @@ window.addEventListener('DOMContentLoaded', function()
 										</c:otherwise>
 									</c:choose>
 									<!--페이지이동-->
-										<%@ include file="pageExcute/PaidPage.jsp" %>
 									<!--/페이지이동-->
 								</div>
 							</div>
@@ -197,8 +196,8 @@ window.addEventListener('DOMContentLoaded', function()
 						  <div class="tab-pane" id="reviewWrite" role="tabpanel" aria-labelledby="reviewWrite-tab">
 						  <div class="card text-center">
 									<c:choose>
-										<c:when test="${reservationList != null  and fn:length(reservationList)>0}">
-											<c:forEach var="reservation" items="${reservationList }">
+										<c:when test="${resList != null  and fn:length(resList)>0}">
+											<c:forEach var="reservation" items="${resList }">
 												<div class="card">
 													<div class="card-header">
 														<h5 class="m-0">예약번호:${reservation.reservation_id } 예약날짜:${reservation.reservation_date }</h5>
@@ -207,7 +206,7 @@ window.addEventListener('DOMContentLoaded', function()
 													<h6 class="card-title">호텔이름:트립호텔</h6>
 													<div class="txt-r">객실금액:12345원</div>
 													<p class="card-text">체크인날짜:${reservation.checkin_date } 체크아웃날짜:${reservation.checkout_date } 투숙객이름:${reservation.reservation_lastname}${reservation.reservation_firstname }</p>
-													<a href="#" class="btn btn-primary">예약확인</a>
+													<a href="#" class="btn btn-primary">리뷰작성</a>
 													</div>
 												</div>
 											</c:forEach>
@@ -221,19 +220,6 @@ window.addEventListener('DOMContentLoaded', function()
 										</c:otherwise>
 									</c:choose>
 									<!--페이지이동-->
-									<nav aria-label="Page navigation example">
-										<ul class="pagination">
-											<li class="page-item"><a class="page-link" href="#"aria-label="Previous">
-											 <span aria-hidden="true">&laquo;</span>
-											</a></li>
-											<li class="page-item active"><a class="page-link " href="#">1</a></li>
-											<li class="page-item"><a class="page-link" href="#">2</a></li>
-											<li class="page-item"><a class="page-link" href="#">3</a></li>
-											<li class="page-item"><a class="page-link" href="#"aria-label="Next">
-											<span aria-hidden="true">&raquo;</span>
-											</a></li>
-										</ul>
-									</nav>
 									<!--/페이지이동-->
 								</div>
 							</div>
