@@ -7,7 +7,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.koreait.mybatis.SqlMapConfig;
+import com.koreait.user.dto.BookmarkBean;
 import com.koreait.user.dto.ReservationPaymentsBean;
+import com.koreait.user.dto.TripCoinBean;
 import com.koreait.user.dto.UserBean;
 
 public class UserDao {
@@ -52,14 +54,21 @@ public class UserDao {
 
 
 	public int getReservationCount(int user_id) {
-		return sqlsession.selectOne("User.resCount", user_id);
+		return sqlsession.selectOne("User.resAllCount", user_id);
+	}
+
+	public int getYetPaidCount(int user_id) {
+		return sqlsession.selectOne("User.yetPaidCount", user_id);
 	}
 
 
-	public int getResCount(int user_id) {
-		return sqlsession.selectOne("User.getResCount", user_id);
+	public int getPaidCount(int user_id) {
+		return sqlsession.selectOne("User.PaidCount", user_id);
 	}
-
+	
+	public int getBookmarkCount(int user_id) {
+		return sqlsession.selectOne("User.bookmarkCount", user_id);
+	}
 
 	public List<ReservationPaymentsBean> getResList(int startRow, int endRow, int user_id) {
 		HashMap<String, Integer> datas = new HashMap<>();
@@ -68,6 +77,61 @@ public class UserDao {
 		datas.put("user_id", user_id);
 		List<ReservationPaymentsBean> resList = sqlsession.selectList("User.getResList",datas);
 		return resList;
+	}
+
+	public List<ReservationPaymentsBean> getYetPaidList(int startRow, int endRow, int user_id) {
+		HashMap<String, Integer> datas = new HashMap<>();
+		datas.put("startRow", startRow);
+		datas.put("endRow", endRow);
+		datas.put("user_id", user_id);
+		List<ReservationPaymentsBean> resList = sqlsession.selectList("User.getYetPaidList",datas);
+		return resList;	}
+
+
+	public List<ReservationPaymentsBean> getPaidList(int startRow, int endRow, int user_id) {
+		HashMap<String, Integer> datas = new HashMap<>();
+		datas.put("startRow", startRow);
+		datas.put("endRow", endRow);
+		datas.put("user_id", user_id);
+		List<ReservationPaymentsBean> resList = sqlsession.selectList("User.getPaidList",datas);
+		return resList;
+	}
+
+
+	public List<BookmarkBean> getBookmarkList(int startRow, int endRow, int user_id) {
+		HashMap<String, Integer> datas = new HashMap<>();
+		datas.put("startRow", startRow);
+		datas.put("endRow", endRow);
+		datas.put("user_id", user_id);
+		List<BookmarkBean> bookmarkList = sqlsession.selectList("User.getBookmarkList",datas);
+		return bookmarkList;
+	}
+
+
+	public void bookmarkDelete(int bookmarkId) {
+		sqlsession.selectOne("User.bookmarkDelete",bookmarkId);
+	}
+
+
+	public void userInfoUpdate(UserBean user) {
+		sqlsession.update("User.userInfoUpdate", user);
+	}
+
+
+	public void userAccountUpdate(UserBean user) {
+		sqlsession.update("User.userAccountUpdate", user);
+	}
+
+
+	public List<TripCoinBean> getUseCoinList(int user_id) {
+		List<TripCoinBean> tripCoin = sqlsession.selectList("User.getUseCoinList", user_id);
+		return tripCoin;
+	}
+
+
+	public List<TripCoinBean> getChargeCoinList(int user_id) {
+		List<TripCoinBean> tripCoin = sqlsession.selectList("User.getChargeCoinList", user_id);
+		return tripCoin;
 	}
 	
 	

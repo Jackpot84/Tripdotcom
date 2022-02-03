@@ -18,9 +18,39 @@ public class ManagerDao {
 
 	public ManagerAccountBean managerLogin(ManagerAccountBean manager) {
 		ManagerAccountBean result = new ManagerAccountBean();
-		System.out.println(result.getManager_Issued_Email()+2);
 		result = sqlsession.selectOne("Manager.managerLogin", manager);
-		System.out.println(result.getManager_Issued_Email());
 		return result;
 	}
+
+
+	public boolean managerJoin(ManagerAccountBean manager) {
+		boolean result = false;
+		
+		int result_int = sqlsession.insert("Manager.managerJoin", manager);
+		System.out.println("result_int:"+result_int);
+		
+		if(result_int == 1) {
+			result = true;
+		}
+		
+		return result;
+	}
+	
+	
+	public boolean informationChange(ManagerAccountBean manager) {
+		boolean result = false;
+
+		int result_int  = sqlsession.update("Manager.informationChange", manager);
+
+		if(result_int == 1) {
+			result = true;
+		}
+		
+		return result;
+	}
+	
+	
+	
+	
+	
 }

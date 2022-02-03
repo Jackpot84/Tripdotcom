@@ -2,6 +2,7 @@ package com.koreait.user.action;
 
 import java.util.List;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -20,6 +21,8 @@ public class UserLoginAction implements Action {
 		UserBean user = new UserBean();
 		ActionForward forward = new ActionForward();
 		HttpSession session = request.getSession();
+		
+		
 		//로그인하기위한 파라미터값세팅
 		user.setUser_email(request.getParameter("user_email"));
 		user.setUser_pw(request.getParameter("user_pw"));
@@ -28,6 +31,7 @@ public class UserLoginAction implements Action {
 //		request.setAttribute("reservationList", udao.getReservation(user.getUser_id()));
 		session.setAttribute("user", user);
 		//토탈예약
+		if(user != null) {
 		int totalCnt = udao.getReservationCount(user.getUser_id()); 
 		//페이징 처리
 		//현재 넘겨받은 페이지
@@ -50,15 +54,15 @@ public class UserLoginAction implements Action {
 		
 		endPage = endPage > totalPage ? totalPage : endPage;
 		
-		session.setAttribute("totalPage", totalPage);
-		session.setAttribute("nowPage", page);
-		session.setAttribute("startPage",startPage);
-		session.setAttribute("endPage", endPage);
+		request.setAttribute("totalPage", totalPage);
+		request.setAttribute("nowPage", page);
+		request.setAttribute("startPage",startPage);
+		request.setAttribute("endPage", endPage);
 		
 		
-		session.setAttribute("getBoardCount",totalCnt);
-		session.setAttribute("resList", udao.getResList(startRow,endRow,user.getUser_id()));
-	
+		request.setAttribute("getBoardCount",totalCnt);
+		request.setAttribute("resList", udao.getResList(startRow,endRow,user.getUser_id()));
+		}
 		
 		
 		

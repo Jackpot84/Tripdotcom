@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -8,7 +12,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Starter</title>
+    <title>Trip.com</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -40,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form class="form-horizontal" action="/acountManager.do" method="post">
+                        <form class="form-horizontal" action="/accountManager.mg" method="post">
                             <div class="card-body">
                                
                                     <div class="form-group row">
@@ -74,7 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="form-group row">
                                         <div class="col-sm-12">
                                            <!--  <button type="button" class="btn btn-block btn-primary btn-lg">가입하기</button> -->
-                                            <input type="submit" value="가입하기" >
+                                            <input type="submit" value="가입하기" class="btn btn-block btn-primary btn-lg">
                                            <!--  <a href="" class="btn btn-block btn-primary btn-lg">로그인하기</a> -->
                                         </div>
                                     </div>
@@ -93,8 +97,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <span>&nbsp; &nbsp; 계정이 없나요? </span>
-                                    <a class="" href="#">
-                                        회원가입 하기
+                                    <a class="" href="/joinManager_togo.mg">
+                                       		 회원가입 하기
                                     </a>
                                     <span class="br_6"></span>
                                 </div>
