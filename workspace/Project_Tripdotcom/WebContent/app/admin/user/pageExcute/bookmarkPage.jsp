@@ -12,7 +12,7 @@
 	<nav aria-label="Page navigation example">
 		<ul class="pagination">
 		<c:if test="${nowPage > 1 }">
-			<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath }/moveResPage.do?page=${nowPage-1 }"aria-label="Previous">
+			<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath }/goMyFavorite.do?page=${nowPage-1 }"aria-label="Previous">
 			 <span aria-hidden="true">&laquo;</span>
 			</a></li>
 		 </c:if>
@@ -20,16 +20,16 @@
 		 <c:forEach var="i" begin="${startPage}" end="${endPage }">
 				<c:choose>
 					<c:when test="${i == nowPage }">
-					<li class="page-item active"><a class="page-link " href="#">${i}</a></li>
+					<li class="page-item active"><a class="page-link " href="${pageContext.request.contextPath }/goMyFavorite.do?page=${i}">${i}</a></li>
 					</c:when>
 					<c:otherwise>
-						<li class="page-item "><a class="page-link " href="${pageContext.request.contextPath }/moveResPage.do?page=${i}&user_id=${user.user_id}">${i}</a></li>
+						<li class="page-item "><a class="page-link " href="${pageContext.request.contextPath }/goMyFavorite.do?page=${i}">${i}</a></li>
 					</c:otherwise>					
 				</c:choose>
 			</c:forEach>
 			
 		<c:if test = "${nowPage<totalPage }">
-			<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath }/moveResPage.do?page=${nowPage+1 }"aria-label="Next">
+			<li class="page-item"><a class="page-link" href="${pageContext.request.contextPath }/goMyFavorite.do?page=${nowPage+1 }" aria-label="Next">
 			<span aria-hidden="true">&raquo;</span>
 			</a></li>
 		</c:if>											

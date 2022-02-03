@@ -28,6 +28,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 <body class="hold-transition sidebar-mini">
 
+<c:set var="useList" value="${requestScope.useTripCoin }"/>
+<c:set var="chargeList" value="${requestScope.chargeTripCoin }"/>
+<script>
+	window.addEventListener('DOMContentLoaded', function()
+		{
+			document.getElementById("myTripcoinSide").className += ' active'
+			
+				let mainTab = document.getElementById("coinTab1").className;
+			
+			switch(getParameterByName('tab')){
+				case 'one':
+					document.getElementById("coinTab1").className += ' active';
+					break;
+				case 'two':
+					document.getElementById("coinTab2").className += ' active';
+					break;
+				case '' : 
+					document.getElementById("coinTab1").className += ' active';
+					break;
+				}
+		});
+</script>
 		<!-- Navbar -->
 			<%@ include file="userTool/userNav.jsp" %>
 		<!-- /Navbar -->
@@ -39,76 +61,76 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
-			<!-- Content Header (Page header) -->
+			<div>
+				<!-- Nav tabs -->
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+					  <li class="nav-item" role="presentation">
+					    <a class="nav-link" id="coinTab1" data-toggle="tab" href="#useCoin" onclick="coinTabOneAction()" role="tab" aria-controls="useCoin" aria-selected="false" >이용내역</a>
+					  </li>
+					  <li class="nav-item" role="presentation">
+					    <a class="nav-link" id="coinTab2" data-toggle="tab" href="#chargeCoin" onclick="coinTabTwoAction()" role="tab" aria-controls="chargeCoin" aria-selected="false">충전내역</a>
+					  </li>
+				</ul>
 
-			<!-- Main content -->
-			<div class="card text-center">
-			
-				<div class="nav-tabs-content"> 
-					<div class="content">
-						<div class="card mb-3" style="max-width: 1080px;" >
-						  <div class="row no-gutters">
-						    <div class="col-md-4">
-						      	<i class="far fa-copyright"></i>
-						    </div>
-						    <div class="col-md-8">
-						      <div class="card-body">
-						        <h5 class="card-title">100,000,000,000C</h5>
-						      </div>
-						    </div>
-						  </div>
+				<!-- Tab panes -->
+					  <div class="tab-content">
+					 	 <div class="tab-pane active" id="useCoin" role="tabpanel" aria-labelledby="useCoin-tab">
+					 	 	<div class="nav-tabs-content">
+								<div class="content">
+									<section class="ftco-section">
+										<table class="table">
+											<c:choose>
+											<c:when test="${useTripCoin != null  and fn:length(useTripCoin)>0}">
+												<thead class="thead-dark">
+													<tr>
+														<th>이용번호</th>
+														<th>이용날짜</th>
+														<th>이용금액</th>
+														<th>트립코인</th>
+														<th>&nbsp;</th>
+													</tr>
+												</thead>
+												<c:forEach var="useList" items="${useList }">
+													<tbody>
+														<tr class="alert" role="alert">
+															<th scope="row">${useList.coin_id }</th>
+															<td>${useList.coin_use_date }</td>
+															<td>${useList.coin_use_money }</td>
+															<td>${user.user_coin }</td>
+														</tr>
+													</tbody>
+												</c:forEach>
+											</c:when>
+												<c:otherwise>
+												<thead class="thead-dark">
+													<tr>
+														<th>충전번호</th>
+														<th>충전날짜</th>
+														<th>충전금액</th>
+														<th>트립코인</th>	
+														<th>&nbsp;</th>
+													</tr>
+												</thead>
+												<c:forEach var="chargeList" items="${chargeList }">
+													<tbody>
+														<tr class="alert" role="alert">
+															<th scope="row">${chargeList.coin_id }</th>
+															<td>${chargeList.coin_charge_date }</td>
+															<td>${chargeList.coin_charge_money }</td>
+															<td>${user.user_coin }</td>
+														</tr>
+													</tbody>
+												</c:forEach>
+												</c:otherwise>
+											</c:choose>
+										</table>
+									</section>
+								</div>
+							</div>
 						</div>
-					</div>
-					<!-- /.content -->
-				</div>
-			</div>
-			<div class="card text-center">
-				<div class="card-header">
-					<ul class="nav nav-tabs card-header-tabs">
-						<li class="nav-item"><a class="nav-link active" href="#">즐겨찾기 목록</a></li>
-
-					</ul>
-				</div>
-				<div class="nav-tabs-content"> 
-					<div class="content">
-						<div class="card mb-3" style="max-width: 1080px;" >
-						  <div class="row no-gutters">
-						    <div class="col-md-4">
-						      <img src="..." alt="...">
-						    </div>
-						    <div class="col-md-8">
-						      <div class="card-body">
-						      	<input type="button" class="btn btn-light" value="X">
-						        <h5 class="card-title">호텔이름 별점</h5>
-						        <p class="card-text">지역 평균별점</p>
-						        <p class="card-text"><small class="text-muted">리뷰갯수</small></p>
-						        <input type="button" class="btn btn-warning" value="선택">
-						      </div>
-						    </div>
-						  </div>
-						</div>
-						<div class="card mb-3" style="max-width: 1080px;" >
-						  <div class="row no-gutters">
-						    <div class="col-md-4">
-						      <img src="..." alt="...">
-						    </div>
-						    <div class="col-md-8">
-						      <div class="card-body">
-						      	<input type="button" class="btn btn-light" value="X">
-						        <h5 class="card-title">호텔이름 별점</h5>
-						        <p class="card-text">지역 평균별점</p>
-						        <p class="card-text"><small class="text-muted">리뷰갯수</small></p>
-						        <input type="button" class="btn btn-warning" value="선택">
-						      </div>
-						    </div>
-						  </div>
-						</div>
-					</div>
-					<!-- /.content -->
-				</div>
-			</div>
-			<!-- /.content-wrapper -->
-		
+					  </div>
+				  </div>
+			  </div>
 		<!-- Main Footer -->
 			<%@ include file="userTool/userFooter.jsp" %>
 		<!-- /Main Footer -->

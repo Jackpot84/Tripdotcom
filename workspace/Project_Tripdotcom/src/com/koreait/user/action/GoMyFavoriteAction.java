@@ -7,21 +7,21 @@ import javax.servlet.http.HttpSession;
 import com.koreait.action.Action;
 import com.koreait.action.ActionForward;
 import com.koreait.user.dao.UserDao;
+import com.koreait.user.dto.BookmarkBean;
 import com.koreait.user.dto.UserBean;
 
-public class MoveResPage implements Action {
+public class GoMyFavoriteAction implements Action{
+
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		UserDao udao = new UserDao();
-		UserBean user = new UserBean();
 		ActionForward forward = new ActionForward();
 		HttpSession session = request.getSession();
-		user = (UserBean)session.getAttribute("user");
-		System.out.println(user.getUser_id());
-		//토탈예약
-		int totalCnt = udao.getReservationCount(user.getUser_id()); 
-		//페이징 처리
+		UserBean user =(UserBean)session.getAttribute("user");
 		
+		int totalCnt = 0;
+
+		//페이징 처리
 		//현재 넘겨받은 페이지
 		String temp = request.getParameter("page");
 		int page = 0;
@@ -38,29 +38,23 @@ public class MoveResPage implements Action {
 		// [1][2]...[10] 에서의 앤드페이지= [10] /  [21],[22],...[30] 에서의 앤드페이지 = [30]
 		int endPage = startPage + pageSize -1;
 		
+			totalCnt = udao.getBookmarkCount(user.getUser_id());
+			request.setAttribute("bookmarkList", udao.getBookmarkList(startRow,endRow,user.getUser_id()));
+			forward.setRedirect(false);
+			forward.setPath(request.getContextPath()+"/app/admin/user/myFavorite.jsp");
+		
 		int totalPage = (totalCnt - 1)/pageSize +1;
 		
 		endPage = endPage > totalPage ? totalPage : endPage;
 		
-		session.setAttribute("totalPage", totalPage);
-		session.setAttribute("nowPage", page);
-		session.setAttribute("startPage",startPage);
-		session.setAttribute("endPage", endPage);
+		request.setAttribute("totalPage", totalPage);
+		request.setAttribute("nowPage", page);
+		request.setAttribute("startPage",startPage);
+		request.setAttribute("endPage", endPage);
+		
+//		request.setAttribute("getBoardCount",totalCnt);
 		
 		
-		session.setAttribute("getBoardCount",totalCnt);
-		session.setAttribute("resList", udao.getResList(startRow,endRow,user.getUser_id()));
-	
-		
-		
-		
-		if(user != null) {
-			forward.setRedirect(false);
-			forward.setPath(request.getContextPath()+"app/admin/user/reservationAll.jsp");
-		}else {
-			forward.setRedirect(true);
-			forward.setPath(request.getContextPath()+"app/admin/user/login_view.jsp?loginTest=false");
-		}
 		return forward;
 	}
 }
