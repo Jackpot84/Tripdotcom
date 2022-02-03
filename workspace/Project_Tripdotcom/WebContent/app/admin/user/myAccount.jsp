@@ -27,6 +27,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <link rel="stylesheet" href="dist/css/adminlte.css">
 </head>
 <body class="hold-transition sidebar-mini">
+<script>
+	window.addEventListener('DOMContentLoaded', function()
+		{
+			document.getElementById("myAccountSide").className += ' active'
+		});
+</script>
 		<!-- Navbar -->
 			<%@ include file="userTool/userNav.jsp" %>
 		<!-- /Navbar -->
@@ -45,15 +51,52 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<div class="nav-tabs-content">
 				    <!-- content --> 
 					<div class="content">
-						비밀번호 <br>
-						****** <a href="">비밀번호 변경</a> <br><br>
-						이메일 <br>
-						abc**23@naver.com <a href="">변경</a><br><br>
-						회원가입일 <br>
-						2022년1월11일  
+						비밀번호 : ******<br>
+						이메일 : ${user.user_email }<br>
+						회원가입일 : ${user.user_joindate }<br>
+						<button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#InformationChange"><i class="fas fa-edit"></i> 수정하기</button>
 					<!-- /.content -->
 				</div>
 			</div>
+	        <div class="modal fade" id="InformationChange" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	            <div class="modal-dialog modal-lg">
+	                <div class="modal-content">
+	                    <div class="modal-header">
+	                        <h5 class="modal-title" id="exampleModalLabel">이메일 및 비밀번호 수정</h5>
+	                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                            <span aria-hidden="true">&times;</span>
+	                        </button>
+	                    </div>
+	                    <form action="userAccountUpdate.do" name="userAccountUpdate" id="userAccountUpdate">
+		                    <div class="modal-body">
+		                        <div class="row">
+		                            <div class="col-md-6">
+		                                <div class="form-group">
+		                                    <label>이메일</label>
+		                                    <input class="form-control" type="text"  name="user_email" placeholder="${user.user_email }">
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="row">
+		                            <div class="col-md-6">
+		                                <div class="form-group">
+		                                    <label>비밀번호</label>
+		                                    <input class="form-control" type="password" name="user_pw" placeholder="비밀번호">
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="modal-footer">
+		                        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+		                       <input type="button" class="btn btn-primary" onclick="accountUpdate()" value="수정하기">
+<!-- 		                        <button type="button" class="btn btn-primary" onclick="userAccountUpdate()">수정하기</button> -->
+		                    </div>
+	                    </form>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</div>
 
 			<!-- /.content-wrapper -->
 		
@@ -61,4 +104,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			<%@ include file="userTool/userFooter.jsp" %>
 		<!-- /Main Footer -->
 </body>
+<script src="${pageContext.request.contextPath }/app/admin/user/userTool/userValidation.js"></script>
 </html>

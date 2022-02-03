@@ -1,8 +1,5 @@
 package com.koreait.user.action;
 
-import java.util.List;
-
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -13,26 +10,17 @@ import com.koreait.user.dao.UserDao;
 import com.koreait.user.dto.ReservationPaymentsBean;
 import com.koreait.user.dto.UserBean;
 
-public class UserLoginAction implements Action {
-
+public class GoReservationAction implements Action {
+	
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-		UserDao udao = new UserDao();
-		UserBean user = new UserBean();
 		ActionForward forward = new ActionForward();
+		UserDao udao = new UserDao();
+		ReservationPaymentsBean res = new ReservationPaymentsBean();
 		HttpSession session = request.getSession();
-		
-		
-		//로그인하기위한 파라미터값세팅
-		user.setUser_email(request.getParameter("user_email"));
-		user.setUser_pw(request.getParameter("user_pw"));
-		
-		user = udao.loginUser(user);
-//		request.setAttribute("reservationList", udao.getReservation(user.getUser_id()));
-		session.setAttribute("user", user);
-		//토탈예약
-		if(user != null) {
-		int totalCnt = udao.getReservationCount(user.getUser_id()); 
+		UserBean user =(UserBean)session.getAttribute("user");
+		int totalCnt = 0;
+
 		//페이징 처리
 		//현재 넘겨받은 페이지
 		String temp = request.getParameter("page");
@@ -50,6 +38,31 @@ public class UserLoginAction implements Action {
 		// [1][2]...[10] 에서의 앤드페이지= [10] /  [21],[22],...[30] 에서의 앤드페이지 = [30]
 		int endPage = startPage + pageSize -1;
 		
+		if(request.getParameter("tab") == null) {
+			System.out.println("탭널임");
+			totalCnt = udao.getReservationCount(user.getUser_id());
+//			user =(UserBean)session.getAttribute("user");
+			request.setAttribute("resList", udao.getResList(startRow,endRow,user.getUser_id()));
+		}else {
+			switch(request.getParameter("tab")){
+			case "one":
+				totalCnt = udao.getReservationCount(user.getUser_id());
+				request.setAttribute("resList", udao.getResList(startRow,endRow,user.getUser_id()));
+				break;
+			case "two":
+				totalCnt = udao.getYetPaidCount(user.getUser_id());
+				request.setAttribute("resList", udao.getYetPaidList(startRow,endRow,user.getUser_id()));
+				break;
+			case "three":
+				totalCnt = udao.getPaidCount(user.getUser_id());
+				request.setAttribute("resList", udao.getPaidList(startRow,endRow,user.getUser_id()));
+				break;
+			case "four":
+				totalCnt = udao.getReservationCount(user.getUser_id());
+				break;
+			}
+		}
+		
 		int totalPage = (totalCnt - 1)/pageSize +1;
 		
 		endPage = endPage > totalPage ? totalPage : endPage;
@@ -61,10 +74,6 @@ public class UserLoginAction implements Action {
 		
 		
 		request.setAttribute("getBoardCount",totalCnt);
-		request.setAttribute("resList", udao.getResList(startRow,endRow,user.getUser_id()));
-		}
-		
-		
 		
 		if(user != null) {
 			forward.setRedirect(false);

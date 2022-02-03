@@ -27,7 +27,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <link rel="stylesheet" href="dist/css/adminlte.css">
 </head>
 <body class="hold-transition sidebar-mini">
+<script>
+	window.addEventListener('DOMContentLoaded', function()
+		{
+			document.getElementById("myFavoriteSide").className += ' active'
+		});
 
+</script>
+<c:set var="bookmarkList" value="${requestScope.bookmarkList }"/>
 		<!-- Navbar -->
 			<%@ include file="userTool/userNav.jsp" %>
 		<!-- /Navbar -->
@@ -45,71 +52,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<div class="card-header">
 					<ul class="nav nav-tabs card-header-tabs">
 						<li class="nav-item"><a class="nav-link active" href="#">즐겨찾기 목록</a></li>
-
 					</ul>
 				</div>
 				<div class="nav-tabs-content"> 
 					<div class="content">
-						<div class="card mb-3" style="max-width: 1080px;" >
-						  <div class="row no-gutters">
-						    <div class="col-md-4">
-						      <img src="..." alt="...">
-						    </div>
-						    <div class="col-md-8">
-						      <div class="card-body">
-						      	<button type="button" class="close" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						        <h5 class="card-title">호텔이름 별점</h5>
-						        <p class="card-text">지역 평균별점</p>
-						        <p class="card-text"><small class="text-muted">리뷰갯수</small></p>
-						        <input type="button" class="btn btn-warning" value="선택">
-						      </div>
-						    </div>
-						  </div>
-						</div>
-						<div class="card mb-3" style="max-width: 1080px;" >
-						  <div class="row no-gutters">
-						    <div class="col-md-4">
-						      <img src="..." alt="...">
-						    </div>
-						    <div class="col-md-8">
-						      <div class="card-body">
-						      	<button type="button" class="close" aria-label="Close">
-								  <span aria-hidden="true">&times;</span>
-								</button>
-						        <h5 class="card-title">호텔이름 별점</h5>
-						        <p class="card-text">지역 평균별점</p>
-						        <p class="card-text"><small class="text-muted">리뷰갯수</small></p>
-						        <input type="button" class="btn btn-warning" value="선택">
-						      </div>
-						    </div>
-						  </div>
-						</div>
+						<c:choose>
+							<c:when test="${bookmarkList != null and fn:length(bookmarkList)>0}">
+								<c:forEach var="bookmarkList" items="${bookmarkList }">
+									<div class="card mb-3" style="max-width: 1080px;" >
+									  <div class="row no-gutters">
+									    <div class="col-md-4">
+									      <img src="..." alt="...">
+									    </div>
+									    <div class="col-md-8">
+									      <div class="card-body">
+									      	<button type="button" class="close" aria-label="Close" onclick="location.href='bookmarkDelete.do?bookmarkId=${bookmarkList.bookmark_id }'">
+											  <span aria-hidden="true">&times;</span><div>${bookmarkList.bookmark_id }</div>
+											</button>
+									        <h5 class="card-title">${bookmarkList.like_click_hotel } 별점</h5>
+									        <p class="card-text">지역 평균별점</p>
+									        <p class="card-text"><small class="text-muted">리뷰갯수</small></p>
+									        <input type="button" class="btn btn-warning" value="이동하기">
+									      </div>
+									    </div>
+									  </div>
+									</div>
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+								<div class="card">
+									<div class="nav-tabs-content">
+										<h1 class="m-0">등록된 호텔이 없습니다.</h1>
+									</div>
+								</div>
+							</c:otherwise>
+						</c:choose>	
+			<!--페이지이동-->
+				<%@ include file="pageExcute/bookmarkPage.jsp" %>
+				</nav>
+			<!--/페이지이동-->
 					</div>
 					<!-- /.content -->
 				</div>
 			</div>
 			<!-- /.content-wrapper -->
-			<!--페이지이동-->
-				<nav aria-label="Page navigation example">
-					  <ul class="pagination">
-					    <li class="page-item">
-					      <a class="page-link" href="#" aria-label="Previous">
-					        <span aria-hidden="true">&laquo;</span>
-					      </a>
-					    </li>
-					    <li class="page-item"><a class="page-link" href="#">1</a></li>
-					    <li class="page-item"><a class="page-link" href="#">2</a></li>
-					    <li class="page-item"><a class="page-link" href="#">3</a></li>
-					    <li class="page-item">
-					      <a class="page-link" href="#" aria-label="Next">
-					        <span aria-hidden="true">&raquo;</span>
-					      </a>
-					    </li>
-					  </ul>
-				</nav>
-			<!--/페이지이동-->
 
 			
 		</div>

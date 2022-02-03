@@ -21,12 +21,9 @@
 <link rel="stylesheet" href="dist/css/styleAdd.css">
 <link rel="stylesheet" href="dist/css/bg.css">
 <link rel="stylesheet" href="dist/css/adminlte.css">
-<link rel="stylesheet" href="dist/css/min.css">
 </head>
 <body class="hold-transition sidebar-mini">
-	
-	<c:set var="user" value="${sessionScope.user }" /> <!--로그인객체받아옴 --> 
-	<c:set var="resList" value="${sessionScope.resList }"/><!-- 예약목록 객체받아옴 -->
+		<c:set var="user" value="${sessionScope.user }" /> <!--로그인객체받아옴 --> 
 	<div class="wrapper">
 
 		<nav
@@ -76,21 +73,21 @@
 					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 					
 						<div class="dropdown-divider"></div>
-						<a href="goReservationAll.do" class="dropdown-item text-sm text-muted"><i
+						<a href="goReservationAll.do" class="dropdown-item text-sm text-muted" id="reservationAll"><i
 							class="fas fa-caret-right"></i> 내 예약 </a>
 						<div class="dropdown-divider"></div>
-						<a href="goMyFavorite.do" class="dropdown-item text-sm text-muted" > <i
+						<a href="goMyFavorite.do" class="dropdown-item text-sm text-muted" id="myFavorite"> <i
 							class="fas fa-caret-right"></i> 즐겨찾기
 						</a>
 						<div class="dropdown-divider"></div>
-						<a href="goMyTripcoin.do" class="dropdown-item text-sm text-muted"> <i
+						<a href="getCoinList.do" class="dropdown-item text-sm text-muted" id="myTripcoin"> <i
 							class="fas fa-caret-right"></i> 트립코인
 						</a>
 						<div class="dropdown-divider"></div>
-						<a href="goMyInformation.do" class="dropdown-item text-sm text-muted"> <i
+						<a href="goMyInformation.do" class="dropdown-item text-sm text-muted" id="myInformation"> <i
 							class="fas fa-caret-right"></i> 내 정보
 						</a>
-						<div class="dropdown-divider"></div>
+						<div class="dropdown-divider" id="myAccount"></div>
 						<a href="goMyAccount.do" class="dropdown-item text-sm text-muted"> <i
 							class="fas fa-caret-right"></i> 계정 및 비밀번호
 						</a>

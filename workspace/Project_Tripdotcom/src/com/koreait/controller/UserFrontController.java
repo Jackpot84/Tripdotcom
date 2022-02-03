@@ -10,13 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.koreait.action.ActionForward;
-
-import com.koreait.user.action.MoveResPage;
-
+import com.koreait.user.action.GoReservationAction;
+import com.koreait.user.action.UserAccountUpdateAction;
+import com.koreait.user.action.UserInfoUpdateAction;
 import com.koreait.manager.action.ManagerLoginAction;
 
 import com.koreait.user.action.UserJoinAction;
 import com.koreait.user.action.UserLoginAction;
+import com.koreait.user.action.BookmarkDeleteAction;
+import com.koreait.user.action.GetCoinListAction;
+import com.koreait.user.action.GoMyFavoriteAction;
 
 @WebServlet("*.do")
 public class UserFrontController extends HttpServlet{
@@ -58,15 +61,11 @@ public class UserFrontController extends HttpServlet{
 				break;
 			case "/goReservationAll.do":
 				//내 예약 페이지로 이동
-				forward = new ActionForward();
-				forward.setRedirect(false);
-				forward.setPath(req.getContextPath()+"/app/admin/user/reservationAll.jsp");
+				forward = new GoReservationAction().execute(req, resp);
 				break;
 			case "/goMyFavorite.do":
 				//즐겨찾기 페이지로 이동
-				forward = new ActionForward();
-				forward.setRedirect(false);
-				forward.setPath(req.getContextPath()+"/app/admin/user/myFavorite.jsp");
+				forward = new GoMyFavoriteAction().execute(req, resp);
 				break;
 			case "/goMyTripcoin.do":
 				//트립코인 페이지로 이동
@@ -86,12 +85,22 @@ public class UserFrontController extends HttpServlet{
 				forward.setRedirect(false);
 				forward.setPath(req.getContextPath()+"/app/admin/user/myAccount.jsp");
 				break;
-
-			case "/moveResPage.do":
-				forward = new MoveResPage().execute(req, resp);
+			case "/bookmarkDelete.do":
+				//즐겨찾기 삭제
+				forward = new BookmarkDeleteAction().execute(req, resp);
 				break;
-
-
+			case "/userInfoUpdate.do":
+				//내 정보 수정
+				forward = new UserInfoUpdateAction().execute(req, resp);
+				break;
+			case "/userAccountUpdate.do":
+				//내 계정 수정
+				forward = new UserAccountUpdateAction().execute(req, resp);
+				break;
+			case "/getCoinList.do" :
+				//코인 충전,이용 리스트
+				forward = new GetCoinListAction().execute(req, resp);
+				break;
 			}
 		
 		
