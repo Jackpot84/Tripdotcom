@@ -19,28 +19,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <!-- Font Awesome -->
-<link rel="stylesheet"	href="../../../plugins/fontawesome-free/css/all.min.css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath }/plugins/admiplugins/fontawesome-free/css/all.min.css">
 <!-- daterange picker -->
-<link rel="stylesheet"	href="../../../plugins/daterangepicker/daterangepicker.css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath }/plugins/daterangepicker/daterangepicker.css">
 <!-- iCheck for checkboxes and radio inputs -->
-<link rel="stylesheet"	href="../../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath }/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 <!-- Bootstrap Color Picker -->
-<link rel="stylesheet"	href="../../../plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath }/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
 <!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet"	href="../../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath }/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
 <!-- Select2 -->
-<link rel="stylesheet"	href="../../../plugins/select2/css/select2.min.css">
-<link rel="stylesheet"	href="../../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath }/plugins/select2/css/select2.min.css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath }/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 <!-- Bootstrap4 Duallistbox -->
-<link rel="stylesheet"	href="../../../plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath }/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
 <!-- BS Stepper -->
-<link rel="stylesheet"	href="../../../plugins/bs-stepper/css/bs-stepper.min.css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath }/plugins/bs-stepper/css/bs-stepper.min.css">
 <!-- dropzonejs -->
-<link rel="stylesheet"	href="../../../plugins/dropzone/min/dropzone.min.css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath }/plugins/dropzone/min/dropzone.min.css">
 <!-- Theme style -->
-<link rel="stylesheet" href="../../../dist/css/add.css?ver=1">
-<link rel="stylesheet" href="../../../dist/css/styleAdd.css?ver=1">
-<link rel="stylesheet" href="../../../dist/css/bg.css?ver=1">
-<link rel="stylesheet" href="../../../dist/css/adminlte.css?ver=1">
-<link rel="stylesheet" href="../../../dist/css/addstyle.css?ver=1">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/dist/css/add.css?ver=1">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/dist/css/styleAdd.css?ver=1">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/dist/css/bg.css?ver=1">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/dist/css/adminlte.css?ver=1">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/dist/css/addstyle.css?ver=1">
 </head>

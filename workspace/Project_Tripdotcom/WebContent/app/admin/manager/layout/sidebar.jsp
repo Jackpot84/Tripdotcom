@@ -3,9 +3,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 	<!-- Brand Logo -->
 	<a href="#" class="brand-link"> <img
-		src="../../../dist/img/booking.PNG" alt="ebooking Logo"
+		src="${pageContext.request.contextPath }/dist/img/booking.PNG" alt="ebooking Logo"
 		class="brand-image modify" style="opacity: .8"> <img
-		src="../../../dist/img/booking_short.PNG" alt="ebooking Logo"
+		src="${pageContext.request.contextPath }/dist/img/booking_short.PNG" alt="ebooking Logo"
 		class="brand-text ebookingImg" style="opacity: .8">
 	</a>
 

@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.koreait.action.ActionForward;
 
-import com.koreait.user.action.MoveResPage;
 
 import com.koreait.manager.action.ManagerLoginAction;
 import com.koreait.managerAdd.action.ManagerAccomodationCatecoryAction;
