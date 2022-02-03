@@ -2,277 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>    
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Starter</title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="../../../../plugins/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="../../../../plugins/fontawesome-free-5.15.4-web/css/all.min.css">
-  <!-- Theme style -->
-    <link rel="stylesheet" href="../../../../dist/css/add.css">
-    <link rel="stylesheet" href="../../../../dist/css/styleAdd.css">
-    <link rel="stylesheet" href="../../../../dist/css/bg.css">
-    <link rel="stylesheet" href="../../../../dist/css/adminlte.css">
-    <link rel="stylesheet" href="../../../../dist/css/managerHotelAdd.css">
-</head>
+<%@ include file="../layout/top.jsp" %>
+
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-    </ul>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search -->
-      <li class="nav-item">
-<!--
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
--->
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
-
-      <!-- 연락처 -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-<!--          <i class="fas fa-phone-volume"></i>-->
-          <i class="fas fa-phone-square-alt"></i>
-          <span class="text-xsm">연락처</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">호텔 서포트팀</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="far fa fa-phone-alt mr-2"></i> <span class="text-sm"> 글로벌 핫라인</span>
-            <span class="float-right text-muted text-sm">+44-20-3929 3737</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="far fa fa-phone-alt mr-2"></i> <span class="text-sm"> 한국</span>
-            <span class="float-right text-muted text-sm">+82-2610 52115</span>
-            <span class="display-right text-muted text-sm">every day 9:00-18:00</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="far fa fa-phone-alt mr-2"></i> <span class="text-sm"> 미국</span>
-            <span class="float-right text-muted text-sm">+61-2905 67676</span>
-            <span class="display-right text-muted text-sm">every day 9:00-18:00</span>
-          </a>
-        </div>
-      </li>
-
-      <!-- 도움센터 -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-<!--          <i class="fas fa-question"></i>-->
-<!--          <i class="far fa-question-circle"></i>-->
-          <i class="fas fa-question-circle"></i>
-          <span class="text-xsm">도움센터</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">
-            <form class="">
-              <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                  <button class="btn btn-navbar" type="submit">
-                    <i class="fas fa-search"></i>
-                  </button>
-                  <button class="btn btn-navbar" type="button">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </span>
-          <span class="dropdown-header">FAQ</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item text-sm text-muted">
-            <i class="fas fa-question mr-2"></i> 호텔의 리뷰 수량이 왜 줄었나요?
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item text-sm text-muted">
-            <i class="fas fa-question mr-2"></i> 선불금 추후 입금이란?
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item text-sm text-muted">
-            <i class="fas fa-question mr-2"></i> 경쟁 호텔 관리 방법
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer text-xsm text-muted">
-            <i class="fas fa-plus mr-2"></i>더보기
-          </a>
-        </div>
-      </li>
-
-      <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="#" class="brand-link">
-      <img src="../../../../dist/img/booking.PNG" alt="ebooking Logo" class="brand-image modify" style="opacity: .8">
-      <img src="../../../../dist/img/booking_short.PNG" alt="ebooking Logo" class="brand-text ebookingImg" style="opacity: .8">
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-
-
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-bed"></i>
-              <p>
-                호텔관리
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="nav-icon fas fa-hotel"></i>
-                  <p>호텔등록</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-list"></i>
-                  <p>호텔목록</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-calendar-check"></i>
-              <p>
-                예약관리
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-list"></i>
-                  <p>예약목록</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-list fas"></i>
-                  <p>취소목록</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                예약자관리
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-list"></i>
-                  <p>예약자목록</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-
-
-          <!--<li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>-->
-
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+  <%@ include file="../layout/nav.jsp" %>
+  <%@ include file="../layout/sidebar.jsp" %>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -328,13 +64,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="tab-pane fade" id="nav-contractInfo" role="tabpanel" aria-labelledby="nav-contractInfo-tab">계약정보로 넘어가는 html</div>
             </div>
 
-
-
-
-			
-
-
-
           </div>
           <!-- /.col-md-6 -->
         </div>
@@ -345,17 +74,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div>
   <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
 
-  <!-- Main Footer -->
+<!-- Main Footer -->
   <footer class="main-footer">
     <!-- To the right -->
     <div class="d-none d-sm-inline">
@@ -367,7 +87,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     	<div class="col-sm-2">
      		 <button type="button" class="btn btn-block btn-default btn-lg disabled">등록</button>
     	</div>
-  	</div>
+  	  </div>
   <!-- <div class="row">
     <div class="col-sm-2">
       <button type="button" class="btn btn-block btn-default btn-lg disabled">저장 </button>
@@ -378,20 +98,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div> -->
     <!-- Default to the left -->
 
-
-
 	</div>
   </footer>
+</div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
-<script src="../../../../plugins/jquery/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath }/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="${pageContext.request.contextPath }/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../../../dist/js/adminlte.js"></script>
+<script src="${pageContext.request.contextPath }/dist/js/adminlte.js"></script>
+<!-- Select2 -->
+<script src="${pageContext.request.contextPath }/plugins/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="${pageContext.request.contextPath }/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="${pageContext.request.contextPath }/plugins/moment/moment.min.js"></script>
+<script src="${pageContext.request.contextPath }/plugins/inputmask/jquery.inputmask.min.js"></script>
+<!-- date-range-picker -->
+<script src="${pageContext.request.contextPath }/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="${pageContext.request.contextPath }/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="${pageContext.request.contextPath }/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="${pageContext.request.contextPath }/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- BS-Stepper -->
+<script src="${pageContext.request.contextPath }/plugins/bs-stepper/js/bs-stepper.min.js"></script>
+<!-- dropzonejs -->
+<script src="${pageContext.request.contextPath }/plugins/dropzone/min/dropzone.min.js"></script>
+<!-- AdminLTE App -->
+<script src="${pageContext.request.contextPath }/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="${pageContext.request.contextPath }/dist/js/demo.js"></script>
+
 <script src="${pageContext.request.contextPath }/app/admin/manager/managerAdd/accommodationCategory.js"></script>
 </body>
 </html>
+

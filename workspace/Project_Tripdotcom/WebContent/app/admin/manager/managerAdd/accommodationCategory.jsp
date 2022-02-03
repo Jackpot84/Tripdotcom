@@ -4,16 +4,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>    
 
 <form action="${pageContext.request.contextPath}/managerAdd/accommodationCategory.mga" name="accommodationCategory" method="post">
- <p><h3></h3></p>
+  <p><h3></h3></p>
   <div class="card card-outline card-primary">
-<!--     <div class="card-header"> -->
+     <div class="card-header"> 
       <h3 class="card-title">건물 소재지</h3>
-      <div class="card-tools">
-        <!-- Buttons, labels, and many other things can be placed here! -->
-        <!-- Here is a label for example -->
       </div>
-      <!-- /.card-tools -->
-    </div>
     <!-- /.card-header -->
     <div class="card-body">
     
