@@ -15,7 +15,6 @@ function testChange(sVal) {
 		vRegions = new Array("");
 	} else if (sVal == "서울") {
 		Regions = new Array("강남구", "강북구", "종로구");
-		vRegions = new Array("1-1", "1-2", "1-3");
 //		vRegions = new Array("1-1", "1-2", "1-3");
 	} else if (sVal == "강릉") {
 		Regions = new Array("교동", "초당");

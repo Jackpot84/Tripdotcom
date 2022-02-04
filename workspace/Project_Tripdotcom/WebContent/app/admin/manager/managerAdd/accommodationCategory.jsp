@@ -13,14 +13,14 @@
     <div class="card-body">
     
       <input type="text" name="country" value="대한민국">
-		 <select name="Region" id="Region" onchange="testChange(this.value)">
+		 <select name="region" id="region" onchange="testChange(this.value)">
 		  <option value="지역선택"> 지역선택  </option>
 		  <option value="서울"> 서울  </option>
 		  <option value="강릉"> 강릉  </option>
 		  <option value="부산"> 부산  </option>
 		  <option value="제주"> 제주  </option>
 		</select>
-		<select name="Location" id="Location">
+		<select name="location" id="location">
 		  <option value="구역선택">구역선택</option>
 	    </select>
     </div>
