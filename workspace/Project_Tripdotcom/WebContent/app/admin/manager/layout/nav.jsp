@@ -105,7 +105,7 @@
                         <i class="fas fa-user"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-header">${manager.manager_Issued_Email }</span>
+                        <span class="dropdown-header"><strong>${manager.manager_Issued_Email }</strong> 님 어서오세요.</span>
                         <div class="dropdown-divider"></div>
                         <a href="/accountManager_in.mg" class="dropdown-item">
                             <i class="fas fa-user-cog"></i> &nbsp; 마이 페이지
