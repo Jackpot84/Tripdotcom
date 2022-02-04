@@ -12,7 +12,7 @@
     <!-- /.card-header -->
     <div class="card-body">
     
-      <input type="text" name="country" value="대한민국" disabled>
+      <input type="text" name="country" value="대한민국">
 		 <select name="Region" id="Region" onchange="testChange(this.value)">
 		  <option value="지역선택"> 지역선택  </option>
 		  <option value="서울"> 서울  </option>

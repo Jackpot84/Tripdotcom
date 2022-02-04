@@ -1,4 +1,4 @@
-//$(function(){
+
 
 //전체 문서
 var f = document.accommodationCategory;
@@ -16,15 +16,16 @@ function testChange(sVal) {
 	} else if (sVal == "서울") {
 		Regions = new Array("강남구", "강북구", "종로구");
 		vRegions = new Array("1-1", "1-2", "1-3");
+//		vRegions = new Array("1-1", "1-2", "1-3");
 	} else if (sVal == "강릉") {
 		Regions = new Array("교동", "초당");
-		vRegions = new Array("2-1", "2-2");
+//		vRegions = new Array("2-1", "2-2");
 	} else if (sVal == "부산") {
 		Regions = new Array("수영구", "해운대구", "부산진구");
-		vRegions = new Array("3-1", "3-2", "3-3");
+//		vRegions = new Array("3-1", "3-2", "3-3");
 	} else {
 		Regions = new Array("애월", "한림", "세화");
-		vRegions = new Array("4-1", "4-2", "4-3");
+//		vRegions = new Array("4-1", "4-2", "4-3");
 	}
 
 	
@@ -33,7 +34,7 @@ function testChange(sVal) {
 	}
 
 	for (var i = 0; i < Regions.length; i++) {
-		f.Location.options[i] = new Option(Regions[i], vRegions[i]);
+		f.Location.options[i] = new Option(Regions[i]);
 	}
 
 }
@@ -145,11 +146,10 @@ for (var i = 0; i < stay_type2.length; i++) {
 //각각의 값 담아주기
 function toCheck(){
 	
-	alert(stay);
-	alert(stay_type);
-	
 	document.getElementsByName("stay")[0].value = stay;
 	document.getElementsByName("stay_type")[0].value = stay_type;
+	
+	location.href="hotelInformation.jsp";
 	
 	f.submit();
 }
@@ -158,4 +158,4 @@ function toCheck(){
 
 
 
-//});
+//, vRegions[i]

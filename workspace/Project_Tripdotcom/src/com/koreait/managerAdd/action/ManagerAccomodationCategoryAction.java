@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.koreait.action.Action;
 import com.koreait.action.ActionForward;
 
-public class ManagerAccomodationCatecoryAction implements Action{
+public class ManagerAccomodationCategoryAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
@@ -18,11 +18,9 @@ public class ManagerAccomodationCatecoryAction implements Action{
 		String stay = request.getParameter("stay");
 		String stay_type = request.getParameter("stay_type");
 		
-		System.out.println(country);
-		System.out.println(Region);
-		System.out.println(Location);
-		System.out.println(stay);
-		System.out.println(stay_type);
+		
+		
+		
 		
 		return forward;
 	}
