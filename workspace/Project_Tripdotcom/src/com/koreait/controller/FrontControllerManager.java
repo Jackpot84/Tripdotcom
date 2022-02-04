@@ -81,6 +81,22 @@ public class FrontControllerManager extends HttpServlet{
 					//accountManager페이지에서 관리자정보수정 팝업->수정버튼 클릭
 					forward = new InformationChangeAction().execute(req, resp);
 					break;
+					
+				//사이드바
+				case "/hotelCategoryHead.mg":
+					//사이드바에서 예약조회클릭
+					forward = new ActionForward();
+					forward.setRedirect(false);
+					forward.setPath(req.getContextPath()+"/app/admin/manager/managerAdd/hotelCategoryHead.jsp");
+					break;
+				case "/cancleList.mg":
+					//사이드바에서 예약조회클릭
+					forward = new ActionForward();
+					forward.setRedirect(false);
+					forward.setPath(req.getContextPath()+"/app/admin/manager/cancleList.jsp");
+					break;	
+					
+					
 				}
 			
 

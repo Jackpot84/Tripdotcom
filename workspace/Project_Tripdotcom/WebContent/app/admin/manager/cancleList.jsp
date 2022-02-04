@@ -6,12 +6,7 @@
 <%@ include file="layout/top.jsp"%>
 
 <body class="hold-transition sidebar-mini">
-<c:set var="manager" value="${sessionScope.manager }"/>
-<c:if test="${manager.manager_Issued_Email eq null}">
-    <script>
-    console.log(${manager.manager_Issued_Email});
-    </script>
-</c:if>
+
 	<div class="wrapper">
 
 		<%@ include file="layout/nav.jsp"%>
@@ -26,7 +21,7 @@
 						<div class="col-sm-12">
 							<h5></h5>
 							<h4 class="mg_b0">
-								<strong><i class="far fa-file-alt"></i> 예약목록</strong>
+								<strong><i class="far fa-file-alt"></i> 취소목록</strong>
 							</h4>
 						</div>
 					</div>
@@ -81,7 +76,7 @@
 									<div class="card-body">
 										<div class="form-group row">
 											<label for=" " class="col-sm-1 control-label">조회기간<span class="required">*</span></label>
-											<div class="col-sm-2_5" style="padding-right: 7px; position: relative;">
+											<div class="col-sm-2_5">
 												<div class="input-group date" id="datetimepicker_to"
 													data-target-input="nearest">
 													<input type="text" readonly class="form-control datetimepicker-input disabled readonly" value="" data-target="#datetimepicker_to" onkeydown="return false"  />
@@ -93,9 +88,8 @@
 														</div>
 													</div>
 												</div>
-											<div style="position: absolute;top:3px;right:-3px;">~</div>
-											</div>
-											<div class="col-sm-2_5" style="padding-left: 7px;">
+											</div>~
+											<div class="col-sm-2_5">
 												<div class="input-group date" id="datetimepicker_from"
 													data-target-input="nearest">
 													<input type="text" readonly class="form-control datetimepicker-input disabled readonly" value="" data-target="#datetimepicker_from" onkeydown="return false"/>
@@ -111,11 +105,12 @@
 
 									
 
-										<label for=" " class="col-sm-1 control-label">호텔명칭</label>
+										<label for=" " class="col-sm-1 control-label">상태<span class="required">*</span></label>
 										<div class="col-sm-2">
 											<select class="form-control">
-												<option>호텔</option>
-												<option>게스트하우스</option>
+												<option>환불완료</option>
+												<option>취소 후 환불대기</option>
+												<option>오류</option>
 											</select>
 										</div>
 										<label for=" " class="col-sm-1 control-label">규격</label>
@@ -293,7 +288,7 @@
 	<script type="text/javascript">
 		$(function() {
 			//사이드바 active설정
-			  active_sidebar(2,1);  
+			  active_sidebar(2,2);  
 			//datetimepicker
 			$('#datetimepicker_to,#datetimepicker_from,#datetimepicker_checkin,#datetimepicker_checkout').datetimepicker({
 				weekStart: 1,
