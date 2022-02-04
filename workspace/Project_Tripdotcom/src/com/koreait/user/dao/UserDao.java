@@ -2,9 +2,7 @@ package com.koreait.user.dao;
 
 import java.util.HashMap;
 import java.util.List;
-
 import javax.websocket.Session;
-
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -31,7 +29,7 @@ public class UserDao {
 		userbean.setUser_pw(user_pw);
 		
 		if(sqlsession.insert("User.join", userbean) == 1) {
-			//조인 성공
+			
 			result = true;
 		}else {
 			result = false;

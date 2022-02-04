@@ -3,13 +3,11 @@ package com.koreait.manager.action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
-
 import com.koreait.action.Action;
 import com.koreait.action.ActionForward;
 import com.koreait.manager.dao.ManagerDao;
 import com.koreait.manager.dto.ManagerAccountBean;
-
+import javax.websocket.Session;
 public class ManagerLoginAction implements Action{
 
 	@Override
@@ -24,9 +22,9 @@ public class ManagerLoginAction implements Action{
 		manager = mdao.managerLogin(manager);	
 //		request.setAttribute("manager", manager);
 		
-		//session 객체선언
+		//session 媛앹껜�꽑�뼵
 		HttpSession session = request.getSession();
-		//세션에 저장하기
+		//�꽭�뀡�뿉 ���옣�븯湲�
 		session.setAttribute("manager", manager);
 		
 		

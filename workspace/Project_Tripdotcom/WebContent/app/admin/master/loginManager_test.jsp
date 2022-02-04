@@ -89,11 +89,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck2">
                                                 <label class="form-check-label" for="exampleCheck2">트립닷컴 직원 입니다</label>
                                             </div>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                                                <label class="form-check-label" for="exampleCheck2">최고관리자 로그인</label>
-                                                <input type="button" id = "submitMaster" value="최고관리자 로그인" onclick="submit()">
-                                            </div>
+                                            
+                                                <a id="box" href="masterLogin.html">최고관리자 로그인</a>
                                         </div>
                                     </div>
 
@@ -136,9 +133,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- AdminLTE App -->
     <script src="../../../dist/js/adminlte.js"></script>
     <script>
+    $("#box").attr("disabled", true);
     function submit() {
-		location.href = "masterLogin.html";
+		location.href = 'masterLogin.html';
+			  
 	}
+    
+   
+        
     </script>
 </body>
 

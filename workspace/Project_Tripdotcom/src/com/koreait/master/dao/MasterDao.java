@@ -19,15 +19,15 @@ public class MasterDao {
 
 	public Master_AdminDTO managerLogin(Master_AdminDTO master) {
 		Master_AdminDTO result = new Master_AdminDTO();
-		result = sqlsession.selectOne("Manager.managerLogin", master);
+		result = sqlsession.selectOne("Manager.masterLogin", master);
 		return result;
 	}
 
 
-	public boolean managerJoin(ManagerAccountBean manager) {
+	public boolean Master_Join(Master_AdminDTO master) {
 		boolean result = false;
 		
-		int result_int = sqlsession.insert("Manager.managerJoin", manager);
+		int result_int = sqlsession.insert("Master.masterJoin", master);
 		System.out.println("result_int:"+result_int);
 		
 		if(result_int == 1) {
@@ -38,10 +38,10 @@ public class MasterDao {
 	}
 	
 	
-	public boolean informationChange(ManagerAccountBean manager) {
+	public boolean informationChange(Master_AdminDTO master) {
 		boolean result = false;
 
-		int result_int  = sqlsession.update("Manager.informationChange", manager);
+		int result_int  = sqlsession.update("Master.informationChange", master);
 
 		if(result_int == 1) {
 			result = true;
