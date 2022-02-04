@@ -3,6 +3,8 @@ package com.koreait.user.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.websocket.Session;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -132,6 +134,21 @@ public class UserDao {
 	public List<TripCoinBean> getChargeCoinList(int user_id) {
 		List<TripCoinBean> tripCoin = sqlsession.selectList("User.getChargeCoinList", user_id);
 		return tripCoin;
+	}
+
+
+	public int getCanReviewCount(int user_id) {
+		return sqlsession.selectOne("User.getCanReviewCount", user_id);
+	}
+
+
+	public List<ReservationPaymentsBean> getCanReviewList(int startRow, int endRow, int user_id) {
+		HashMap<String, Integer> datas = new HashMap<>();
+		datas.put("startRow", startRow);
+		datas.put("endRow", endRow);
+		datas.put("user_id", user_id);
+		List<ReservationPaymentsBean> reviewList = sqlsession.selectList("User.getCanReviewList", datas);
+		return reviewList;
 	}
 	
 	

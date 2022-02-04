@@ -104,11 +104,13 @@
 
 
 
+
 <script src="${pageContext.request.contextPath }/app/admin/manager/js/accommodationCategory.js"></script>
 <script src="${pageContext.request.contextPath }/app/admin/manager/layout/sidebarController.js"></script>
 <script>
 active_sidebar(1,1);  
 </script>
+
 </body>
 </html>
 

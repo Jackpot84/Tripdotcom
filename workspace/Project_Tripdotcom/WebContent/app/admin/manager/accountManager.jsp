@@ -1,6 +1,8 @@
 <%@page import="com.koreait.manager.action.InformationChangeAction"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <%@ include file="layout/top.jsp" %>
 
@@ -114,11 +116,7 @@
                             </div>
                         </div>
                     </div>
-
                     <!--// my page -->
-
-
-
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content -->
@@ -134,7 +132,6 @@
     </div>
     <!-- /.wrapper -->
 
-    <!-- REQUIRED SCRIPTS -->
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="../../../plugins/jquery/jquery.min.js"></script>
@@ -163,7 +160,7 @@
 <script src="../../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../../dist/js/demo.js"></script>
-<!-- Page specific script -->
+
 <script src="${pageContext.request.contextPath }/app/admin/manager/layout/sidebarController.js"></script>
 
 <script>

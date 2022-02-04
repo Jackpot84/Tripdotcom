@@ -19,7 +19,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <!-- Font Awesome -->
-<link rel="stylesheet"	href="${pageContext.request.contextPath }/plugins/admiplugins/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/plugins/fontawesome-free/css/all.min.css?ver=1">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/plugins/fontawesome-free-5.15.4-web/css/all.min.css?ver=1">
 <!-- daterange picker -->
 <link rel="stylesheet"	href="${pageContext.request.contextPath }/plugins/daterangepicker/daterangepicker.css">
 <!-- iCheck for checkboxes and radio inputs -->
