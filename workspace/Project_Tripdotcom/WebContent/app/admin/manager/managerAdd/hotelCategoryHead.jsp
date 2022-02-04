@@ -82,7 +82,6 @@
       <div class="row">
       	<div class="col-sm-2">
      		<button type="button" class="btn btn-block btn-primary btn-lg" onclick="toCheck()">저장 </button>
-<!--      		<input type="submit" class="btn btn-block btn-primary btn-lg" value="저장" onclick="acsendit()"> -->
    		</div>
     	<div class="col-sm-2">
      		 <button type="button" class="btn btn-block btn-default btn-lg disabled">등록</button>
@@ -103,38 +102,15 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
-<!-- jQuery -->
-<script src="${pageContext.request.contextPath }/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="${pageContext.request.contextPath }/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="${pageContext.request.contextPath }/dist/js/adminlte.js"></script>
-<!-- Select2 -->
-<script src="${pageContext.request.contextPath }/plugins/select2/js/select2.full.min.js"></script>
-<!-- Bootstrap4 Duallistbox -->
-<script src="${pageContext.request.contextPath }/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
-<!-- InputMask -->
-<script src="${pageContext.request.contextPath }/plugins/moment/moment.min.js"></script>
-<script src="${pageContext.request.contextPath }/plugins/inputmask/jquery.inputmask.min.js"></script>
-<!-- date-range-picker -->
-<script src="${pageContext.request.contextPath }/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- bootstrap color picker -->
-<script src="${pageContext.request.contextPath }/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="${pageContext.request.contextPath }/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Bootstrap Switch -->
-<script src="${pageContext.request.contextPath }/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
-<!-- BS-Stepper -->
-<script src="${pageContext.request.contextPath }/plugins/bs-stepper/js/bs-stepper.min.js"></script>
-<!-- dropzonejs -->
-<script src="${pageContext.request.contextPath }/plugins/dropzone/min/dropzone.min.js"></script>
-<!-- AdminLTE App -->
-<script src="${pageContext.request.contextPath }/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="${pageContext.request.contextPath }/dist/js/demo.js"></script>
 
-<script src="${pageContext.request.contextPath }/app/admin/manager/managerAdd/accommodationCategory.js"></script>
+
+
+<script src="${pageContext.request.contextPath }/app/admin/manager/js/accommodationCategory.js"></script>
+<script src="${pageContext.request.contextPath }/app/admin/manager/layout/sidebarController.js"></script>
+<script>
+active_sidebar(1,1);  
+</script>
+
 </body>
 </html>
 

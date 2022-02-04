@@ -25,7 +25,9 @@
 					</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item">
-							<a href="#" class="nav-link">
+
+							<a href="/hotelCategoryHead.mga" class="nav-link">
+
 								<i class="nav-icon fas fa-hotel"></i><p>호텔등록</p>
 							</a>
 						</li>
@@ -48,7 +50,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link"> 
+							<a href="/cancleList.mg" class="nav-link"> 
 								<i class="nav-icon fas fa-list fas"></i>
 								<p>취소목록</p>
 							</a>

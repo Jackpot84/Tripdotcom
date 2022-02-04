@@ -58,13 +58,13 @@
 	                            <div class="col-sm-6">
 	                                <div class="form-group">
 	                                    <label>성</label>
-	                                    <input class="form-control" type="text" name="manager_lastname">
+	                                    <input class="form-control" type="text" name="manager_lastname" value="${manager.manager_lastname }">
 	                                </div>
 	                            </div>
 	                            <div class="col-sm-6">
 	                                <div class="form-group">
 	                                    <label>이름</label>
-	                                    <input class="form-control" type="text" name="manager_firstname">
+	                                    <input class="form-control" type="text" name="manager_firstname" value="${manager.manager_firstname }">
 	                                </div>
 	                            </div>
                             </div>
@@ -90,13 +90,13 @@
 	                            <div class="col-sm-6">
 	                                <div class="form-group">
 	                                    <label>회사명</label>
-	                                    <input class="form-control" type="text" name="manager_Company">
+	                                    <input class="form-control" type="text" name="manager_Company" value="${manager.manager_Company }">
 	                                </div>
 	                            </div>
 	                            <div class="col-sm-6">
 	                                <div class="form-group">
 	                                    <label>부서</label>
-	                                    <input class="form-control" type="text" name="manager_Department">
+	                                    <input class="form-control" type="text" name="manager_Department" value="${manager.manager_Department }">
 	                                </div>
 	                            </div>
 	                        </div>
@@ -104,13 +104,13 @@
 	                            <div class="col-sm-6">
 	                                <div class="form-group">
 	                                    <label>연락처</label>
-	                                    <input class="form-control" type="text" name="manager_PhoneNumber">
+	                                    <input class="form-control" type="text" name="manager_PhoneNumber" value="${manager.manager_PhoneNumber }">
 	                                </div>
 	                            </div>
 	                            <div class="col-sm-6">
 	                                <div class="form-group">
 	                                    <label>이메일</label>
-	                                    <input class="form-control" type="text" name="manager_Using_Email">
+	                                    <input class="form-control" type="text" name="manager_Using_Email" value="${manager.manager_Using_Email }">
 	                                </div>
 	                            </div>
 	                        </div>

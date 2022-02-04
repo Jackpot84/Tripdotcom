@@ -78,7 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="form-group row">
                                         <div class="col-sm-12">
                                            <!--  <button type="button" class="btn btn-block btn-primary btn-lg">가입하기</button> -->
-                                            <input type="submit" value="가입하기" class="btn btn-block btn-primary btn-lg">
+                                            <input type="submit" value="로그인하기" class="btn btn-block btn-primary btn-lg">
                                            <!--  <a href="" class="btn btn-block btn-primary btn-lg">로그인하기</a> -->
                                         </div>
                                     </div>
