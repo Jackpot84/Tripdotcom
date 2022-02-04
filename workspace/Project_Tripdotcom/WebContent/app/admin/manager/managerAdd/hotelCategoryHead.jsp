@@ -82,7 +82,6 @@
       <div class="row">
       	<div class="col-sm-2">
      		<button type="button" class="btn btn-block btn-primary btn-lg" onclick="toCheck()">저장 </button>
-<!--      		<input type="submit" class="btn btn-block btn-primary btn-lg" value="저장" onclick="acsendit()"> -->
    		</div>
     	<div class="col-sm-2">
      		 <button type="button" class="btn btn-block btn-default btn-lg disabled">등록</button>
@@ -103,7 +102,15 @@
 </div>
 <!-- ./wrapper -->
 
-<script src="${pageContext.request.contextPath }/app/admin/manager/managerAdd/accommodationCategory.js"></script>
+
+
+
+<script src="${pageContext.request.contextPath }/app/admin/manager/js/accommodationCategory.js"></script>
+<script src="${pageContext.request.contextPath }/app/admin/manager/layout/sidebarController.js"></script>
+<script>
+active_sidebar(1,1);  
+</script>
+
 </body>
 </html>
 

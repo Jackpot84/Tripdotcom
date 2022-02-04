@@ -1,27 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Starter</title>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>    
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="../../../../plugins/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="../../../../plugins/fontawesome-free-5.15.4-web/css/all.min.css">
-  <!-- Theme style -->
-    <link rel="stylesheet" href="../../../../dist/css/add.css">
-    <link rel="stylesheet" href="../../../../dist/css/styleAdd.css">
-    <link rel="stylesheet" href="../../../../dist/css/bg.css">
-    <link rel="stylesheet" href="../../../../dist/css/adminlte.css">
-<body>
-
+<form action="${pageContext.request.contextPath}/managerAdd/hotelInformation.mga" name="hotelInformation" method="post">
  <p><h3>기본 정보(*반드시 입력해주세요)</h3></p>
  
 	<table class="table table-bordered">
@@ -32,7 +14,7 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr>
+	    <tr>5
 	      <th scope="row">*호텔명칭(영어)</th>
 	      <td colspan="3"><input type="text" name="Hotel_name_eng"></td>
 	    </tr>
@@ -182,14 +164,6 @@
 	    </tr>
 	  </tbody>
 	  
-	  
-	  
-	</table>	
-<!-- jQuery -->
-<script src="../../../../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../../../../dist/js/adminlte.js"></script>
-</body>
-</html>
+	</table>
+ </form>
+
