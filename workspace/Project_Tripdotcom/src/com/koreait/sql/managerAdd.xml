@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="managerAdd">
+	<insert id="register" parameterType="com.koreait.managerAdd.dto.AccomodationCategoryDTO" >
+		INSERT INTO AccomodationCategory values (Accomo_seq.nextval, #{country_id}, #{region_id}, #{location_id}, #{stay_id}, #{stay_type_id})
+	</insert>
+	
+ 	<insert id="informHotel" parameterType="com.koreait.managerAdd.dto.HotelsBean">
+		INSERT INTO HOTELS VALUES ( hotel_seq.nextval, #{hotel_name_eng}, #{hotel_name_kor}, #{hotel_add_eng}, #{hotel_add_kor}, #{zip_code_eng}, #{zip_code_kor}, #{main_phonenumber1}, #{main_phonenumber2}, #{main_phonenumber3}, #{star}, #{open_date}, #{hotel_total_room}, #{service_pay}, #{homepage}, #{hotel_intro_eng}, #{hotel_intro_kor}, #{currency}, #{stay_type_id}, null)
+ 	</insert>
+ 	
+ 	<insert id="informKeeper" parameterType="com.koreait.managerAdd.dto.KeeperBean">
+		INSERT INTO KEEPER VALUES ( keeper_seq.nextval, #{keeper_name}, #{keeper_homenum1}, #{keeper_homenum2}, #{keeper_homenum3}, #{keeper_phonenum1}, #{keeper_phonenum2}, #{keeper_phonenum3}, #{keeper_email}, null)
+ 	</insert>
+ 	
+
+ 	
+	
+	
+<!-- 	<update id="informationChange" parameterType="com.koreait.manager.dto.ManagerAccountBean"> -->
+<!-- 		UPDATE MANAGER_ACCOUNT SET MANAGER_ISSUE_PASSWORD = #{manager_Issue_password}, MANAGER_LASTNAME = #{manager_lastname},MANAGER_FIRSTNAME = #{manager_firstname},MANAGER_COMPANY = #{manager_Company},MANAGER_DEPARTMENT = #{manager_Department},MANAGER_PHONENUMBER = #{manager_PhoneNumber},MANAGER_GENDER = #{manager_gender},MANAGER_USING_EMAIL = #{manager_Using_Email} WHERE Manager_Issued_Email = #{manager_Issued_Email} -->
+<!-- 	</update> -->
+</mapper>
+
+
+
+
+

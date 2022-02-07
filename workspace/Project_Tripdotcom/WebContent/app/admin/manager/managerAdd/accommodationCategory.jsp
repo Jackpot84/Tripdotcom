@@ -11,7 +11,7 @@
       </div>
     <!-- /.card-header -->
     <div class="card-body">
-    
+  
       <input type="text" name="country" value="대한민국">
 		 <select name="region" id="region" onchange="testChange(this.value)">
 		  <option value="지역선택"> 지역선택  </option>
@@ -70,7 +70,7 @@
     <!-- /.card-body -->
 <p></p>
 
-    <div class="card card-outline card-primary" id="stay_type">
+    <div class="card card-outline card-primary" id="stay_types">
         <div class="card-header">
           <h3 class="card-title">상세 분류</h3>
           <input type="hidden" name="stay_type">
