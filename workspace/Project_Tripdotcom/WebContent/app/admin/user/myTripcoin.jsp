@@ -76,9 +76,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 				<!-- Tab panes -->
 					  <div class="tab-content">
+					  
 					 	 <div class="tab-pane active" id="useCoin" role="tabpanel" aria-labelledby="useCoin-tab">
 					 	 	<div class="nav-tabs-content">
 								<div class="content">
+								
 									<section class="ftco-section">
 										<table class="table">
 											<c:choose>
@@ -88,7 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 														<th>이용번호</th>
 														<th>이용날짜</th>
 														<th>이용금액</th>
-														<th>트립코인</th>
+<!-- 														<th>트립코인</th> -->
 														<th>&nbsp;</th>
 													</tr>
 												</thead>
@@ -98,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 															<th scope="row">${useList.coin_id }</th>
 															<td>${useList.coin_use_date }</td>
 															<td>${useList.coin_use_money }</td>
-															<td>${user.user_coin }</td>
+<%-- 															<td>${user.user_coin }</td> --%>
 														</tr>
 													</tbody>
 												</c:forEach>
@@ -109,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 														<th>충전번호</th>
 														<th>충전날짜</th>
 														<th>충전금액</th>
-														<th>트립코인</th>	
+<!-- 														<th>트립코인</th>	 -->
 														<th>&nbsp;</th>
 													</tr>
 												</thead>
@@ -119,13 +121,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 															<th scope="row">${chargeList.coin_id }</th>
 															<td>${chargeList.coin_charge_date }</td>
 															<td>${chargeList.coin_charge_money }</td>
-															<td>${user.user_coin }</td>
+<%-- 															<td>${user.user_coin }</td> --%>
 														</tr>
 													</tbody>
 												</c:forEach>
 												</c:otherwise>
 											</c:choose>
 										</table>
+										<%@ include file="pageExcute/tripCoinPage.jsp"%>
 									</section>
 								</div>
 							</div>

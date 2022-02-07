@@ -27,12 +27,10 @@
 	        <div class="input-form-backgroud row">	
 	            <div class="input-form col-md-12 mx-auto">
 	                <h4 class="mb-3">로그인</h4>
-	                <form class="validation-form" novalidate>
 	                    <div class="mb-3"><label for="email">이메일</label> <input type="email" class="form-control" name="user_email" placeholder="you@example.com" >
 	                    </div>
 	                    <div class="mb-3"> <label for="email">비밀번호</label> <input type="password" class="form-control" name="user_pw"  >
 	                     </div>
-	                </form>
 	                    <div class="mb-4"></div> <input type="button" class="btn btn-primary btn-lg btn-block" value="회원가입 하기" onclick="location.href='${pageContext.request.contextPath }/goUserJoin.do'">
 	                    <div class="mb-4"></div> <input type="button" class="btn btn-primary btn-lg btn-block" onclick="login()" value="로그인하기">
 	            </div>

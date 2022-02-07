@@ -1,6 +1,6 @@
 package com.koreait.user.dto;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class UserBean {
 	private int user_id;
@@ -8,9 +8,9 @@ public class UserBean {
 	private String user_pw ;
 	private String user_lastname;
 	private String user_firstname;
-	private Date user_birth;
+	private String user_birth;
 	private String user_gender ;
-	private Date user_joindate;
+	private String user_joindate;
 	private int user_coin ;
 	private String join_code;
 	
@@ -44,10 +44,10 @@ public class UserBean {
 	public void setUser_firstname(String user_firstname) {
 		this.user_firstname = user_firstname;
 	}
-	public Date getUser_birth() {
+	public String getUser_birth() {
 		return user_birth;
 	}
-	public void setUser_birth(Date user_birth) {
+	public void setUser_birth(String user_birth) {
 		this.user_birth = user_birth;
 	}
 	public String getUser_gender() {
@@ -56,10 +56,10 @@ public class UserBean {
 	public void setUser_gender(String user_gender) {
 		this.user_gender = user_gender;
 	}
-	public Date getUser_joindate() {
+	public String getUser_joindate() {
 		return user_joindate;
 	}
-	public void setUser_joindate(Date user_joindate) {
+	public void setUser_joindate(String user_joindate) {
 		this.user_joindate = user_joindate;
 	}
 	public int getUser_coin() {

@@ -8,9 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.koreait.action.ActionForward;
 import com.koreait.user.action.GoReservationAction;
+import com.koreait.user.action.InsertReviewAction;
+import com.koreait.user.action.UpdateReviewAction;
 import com.koreait.user.action.UserAccountUpdateAction;
 import com.koreait.user.action.UserInfoUpdateAction;
 import com.koreait.manager.action.ManagerLoginAction;
@@ -18,7 +21,8 @@ import com.koreait.manager.action.ManagerLoginAction;
 import com.koreait.user.action.UserJoinAction;
 import com.koreait.user.action.UserLoginAction;
 import com.koreait.user.action.BookmarkDeleteAction;
-import com.koreait.user.action.GetCoinListAction;
+import com.koreait.user.action.DeleteReviewAction;
+import com.koreait.user.action.GoMyTripCoinAction;
 import com.koreait.user.action.GoMyFavoriteAction;
 
 @WebServlet("*.do")
@@ -69,9 +73,7 @@ public class UserFrontController extends HttpServlet{
 				break;
 			case "/goMyTripcoin.do":
 				//트립코인 페이지로 이동
-				forward = new ActionForward();
-				forward.setRedirect(false);
-				forward.setPath(req.getContextPath()+"/app/admin/user/myTripcoin.jsp");
+				forward = new GoMyTripCoinAction().execute(req, resp);
 				break;
 			case "/goMyInformation.do":
 				//내정보 페이지로 이동
@@ -97,10 +99,32 @@ public class UserFrontController extends HttpServlet{
 				//내 계정 수정
 				forward = new UserAccountUpdateAction().execute(req, resp);
 				break;
-			case "/getCoinList.do" :
-				//코인 충전,이용 리스트
-				forward = new GetCoinListAction().execute(req, resp);
+//			case "/getCoinList.do" :
+//				//코인 충전,이용 리스트
+//				forward = new GetCoinListAction().execute(req, resp);
+//				break;
+			case "/reviewInsert.do":
+				//리뷰작성
+				forward = new InsertReviewAction().execute(req, resp);
 				break;
+			case "/reviewUpdate.do":
+				//리뷰작성
+				forward = new UpdateReviewAction().execute(req, resp);
+				break;
+			case "/replyDelete.do":
+				//리뷰작성
+				forward = new DeleteReviewAction().execute(req, resp);
+				break;
+			case "/index.do" :
+				 forward = new ActionForward();
+				 forward.setRedirect(true);
+				 forward.setPath(req.getContextPath()+"/Project_Tripdotcom/app/index/seo/index.jsp");
+			case "/userLogout.do" :
+				forward = new ActionForward();
+				HttpSession session = req.getSession();
+				session.removeAttribute("user");
+				forward.setRedirect(true);
+				forward.setPath(req.getContextPath()+"/Project_Tripdotcom/app/index/seo/index.jsp");
 			}
 		
 		

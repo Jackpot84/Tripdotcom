@@ -72,7 +72,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									        <h5 class="card-title">${bookmarkList.like_click_hotel } 별점</h5>
 									        <p class="card-text">지역 평균별점</p>
 									        <p class="card-text"><small class="text-muted">리뷰갯수</small></p>
-									        <input type="button" class="btn btn-warning" value="이동하기">
+<!-- 									        <input type="button" class="btn btn-warning" value="이동하기"> -->
 									      </div>
 									    </div>
 									  </div>
@@ -89,8 +89,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						</c:choose>	
 			<!--페이지이동-->
 				<%@ include file="pageExcute/bookmarkPage.jsp" %>
-				</nav>
 			<!--/페이지이동-->
+			
 					</div>
 					<!-- /.content -->
 				</div>

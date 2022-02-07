@@ -80,7 +80,7 @@
 							class="fas fa-caret-right"></i> 즐겨찾기
 						</a>
 						<div class="dropdown-divider"></div>
-						<a href="getCoinList.do" class="dropdown-item text-sm text-muted" id="myTripcoin"> <i
+						<a href="/goMyTripcoin.do" class="dropdown-item text-sm text-muted" id="myTripcoin"> <i
 							class="fas fa-caret-right"></i> 트립코인
 						</a>
 						<div class="dropdown-divider"></div>
@@ -90,6 +90,10 @@
 						<div class="dropdown-divider" id="myAccount"></div>
 						<a href="goMyAccount.do" class="dropdown-item text-sm text-muted"> <i
 							class="fas fa-caret-right"></i> 계정 및 비밀번호
+						</a>
+						<div class="dropdown-divider" ></div>
+						<a href="userLogout.do" class="dropdown-item text-sm text-muted"> <i
+							class="fas fa-caret-right"></i> 로그아웃
 						</a>
 
 					</div></li>

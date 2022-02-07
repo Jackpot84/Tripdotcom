@@ -18,6 +18,10 @@ function tabThreeAction(){
 function tabFourAction(){
 	location.href="/goReservationAll.do?page=1&tab=four";
 }
+//내 예약 리뷰수정탭  
+function tabFiveAction(){
+	location.href="/goReservationAll.do?page=1&tab=five";
+}
 
 
 //function getParameterByName(name)
@@ -33,15 +37,19 @@ function tabFourAction(){
 
 //트립코인 이용내역 탭
 function coinTabOneAction(){
-	location.href="/getCoinList.do?page=1&tab=one";
+	location.href="/goMyTripcoin.do?page=1&tab=one";
 }
 //트립코인 충전내역 탭
 function coinTabTwoAction(){
-	location.href="/getCoinList.do?page=1&tab=two";
+	location.href="/goMyTripcoin.do?page=1&tab=two";
 }
 
 
-
+function getResNum(){
+	alert(document.getElementById("reviewResNum").value);
+	
+	
+}
 
 
 

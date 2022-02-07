@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.koreait.mybatis.SqlMapConfig;
 import com.koreait.user.dto.BookmarkBean;
 import com.koreait.user.dto.ReservationPaymentsBean;
+import com.koreait.user.dto.ReviewBean;
 import com.koreait.user.dto.TripCoinBean;
 import com.koreait.user.dto.UserBean;
 
@@ -114,7 +115,9 @@ public class UserDao {
 
 
 	public void userInfoUpdate(UserBean user) {
+		System.out.println("1번구역");
 		sqlsession.update("User.userInfoUpdate", user);
+		System.out.println("2번구역");
 	}
 
 
@@ -123,14 +126,22 @@ public class UserDao {
 	}
 
 
-	public List<TripCoinBean> getUseCoinList(int user_id) {
-		List<TripCoinBean> tripCoin = sqlsession.selectList("User.getUseCoinList", user_id);
+	public List<TripCoinBean> getUseCoinList(int startRow, int endRow, int user_id) {
+		HashMap<String, Integer> datas = new HashMap<>();
+		datas.put("startRow", startRow);
+		datas.put("endRow", endRow);
+		datas.put("user_id", user_id);
+		List<TripCoinBean> tripCoin = sqlsession.selectList("User.getUseCoinList", datas);
 		return tripCoin;
 	}
 
 
-	public List<TripCoinBean> getChargeCoinList(int user_id) {
-		List<TripCoinBean> tripCoin = sqlsession.selectList("User.getChargeCoinList", user_id);
+	public List<TripCoinBean> getChargeCoinList(int startRow, int endRow, int user_id) {
+		HashMap<String, Integer> datas = new HashMap<>();
+		datas.put("startRow", startRow);
+		datas.put("endRow", endRow);
+		datas.put("user_id", user_id);
+		List<TripCoinBean> tripCoin = sqlsession.selectList("User.getChargeCoinList", datas);
 		return tripCoin;
 	}
 
@@ -147,6 +158,58 @@ public class UserDao {
 		datas.put("user_id", user_id);
 		List<ReservationPaymentsBean> reviewList = sqlsession.selectList("User.getCanReviewList", datas);
 		return reviewList;
+	}
+
+
+	public boolean insertReview(ReviewBean review) {
+		boolean result = false;
+		if(sqlsession.insert("User.insertReview", review) == 1) {
+			result = true;
+		}
+		return result;
+	}
+
+
+	public int getCanUpdateReviewCount(int user_id) {
+		return sqlsession.selectOne("User.getCanUpdateReviewCount", user_id);
+	}
+
+
+	public List<ReviewBean> getCanUpdateReviewList(int startRow, int endRow, int user_id) {
+		HashMap<String, Integer> datas = new HashMap<>();
+		datas.put("startRow", startRow);
+		datas.put("endRow", endRow);
+		datas.put("user_id", user_id);
+		List<ReviewBean> reviewList = sqlsession.selectList("User.getCanUpdateReviewList", datas);
+		return reviewList;
+	}
+
+
+	public boolean updateReview(ReviewBean review) {
+		boolean result = false;
+		if(sqlsession.update("User.updateReview", review) == 1) {
+			result = true;
+		}
+		return result;
+	}
+
+
+	public int getUseCoinCount(int user_id) {
+		return sqlsession.selectOne("User.getUseCoinCount", user_id);
+	}
+
+
+	public int getChargeCoinCount(int user_id) {
+		return sqlsession.selectOne("User.getChargeCoinCount", user_id);
+	}
+
+
+	public boolean deleteReview(int review_id) {
+		boolean result = false;
+		if(sqlsession.delete("User.deleteReview", review_id)==1) {
+			result = true;
+		}
+		return result;
 	}
 	
 	
