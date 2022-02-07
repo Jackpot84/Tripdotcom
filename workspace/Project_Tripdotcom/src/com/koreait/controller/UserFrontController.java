@@ -20,6 +20,7 @@ import com.koreait.manager.action.ManagerLoginAction;
 
 import com.koreait.user.action.UserJoinAction;
 import com.koreait.user.action.UserLoginAction;
+import com.koreait.user.dto.UserBean;
 import com.koreait.user.action.BookmarkDeleteAction;
 import com.koreait.user.action.DeleteReviewAction;
 import com.koreait.user.action.GoMyTripCoinAction;
@@ -41,7 +42,6 @@ public class UserFrontController extends HttpServlet{
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
-		
 		switch(requestURI) {
 			//회원가입 db 인서트
 			case "/joinUser.do":
@@ -99,10 +99,6 @@ public class UserFrontController extends HttpServlet{
 				//내 계정 수정
 				forward = new UserAccountUpdateAction().execute(req, resp);
 				break;
-//			case "/getCoinList.do" :
-//				//코인 충전,이용 리스트
-//				forward = new GetCoinListAction().execute(req, resp);
-//				break;
 			case "/reviewInsert.do":
 				//리뷰작성
 				forward = new InsertReviewAction().execute(req, resp);
@@ -116,15 +112,17 @@ public class UserFrontController extends HttpServlet{
 				forward = new DeleteReviewAction().execute(req, resp);
 				break;
 			case "/index.do" :
-				 forward = new ActionForward();
+				forward = new ActionForward();
 				 forward.setRedirect(true);
-				 forward.setPath(req.getContextPath()+"/Project_Tripdotcom/app/index/seo/index.jsp");
+				 forward.setPath(req.getContextPath()+"/app/index/seo/index.jsp");
+				 break;
 			case "/userLogout.do" :
 				forward = new ActionForward();
 				HttpSession session = req.getSession();
 				session.removeAttribute("user");
 				forward.setRedirect(true);
-				forward.setPath(req.getContextPath()+"/Project_Tripdotcom/app/index/seo/index.jsp");
+				forward.setPath(req.getContextPath()+"/app/index/seo/index.jsp");
+				break;
 			}
 		
 		
