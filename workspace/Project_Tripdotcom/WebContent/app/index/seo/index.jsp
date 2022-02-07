@@ -79,8 +79,8 @@
     <div class="container">
 		<div class="jumbotron">
 			<div class="container">
-				<h1>♥함께 일할 호텔매니저님을 찾습니다♥</h1>
-				<p>여행을 떠나는 고객에게 최고의 서비스와 추억을 제공할 매니저분들을 모집하고 있습니다.</p>
+				<h1>♥함께 일할 호텔 매니저님을 찾습니다♥</h1>
+				<p>여행을 떠나는 고객에게 최고의 서비스와 추억을 제공할 매니저분들을 모집하고 있습니다. 자세한 사항은 아래에 링크를 클릭해 주세요♥</p>
 				<p><a class="btn btn-primary btn-pull" href="#" role="button">자세히 알아보기</a></p>
 			</div>
 		</div>
@@ -359,6 +359,8 @@
       }
       // DropzoneJS Demo Code End
     </script>
+    <a style="display:scroll;position:fixed;bottom:150px;right:50px;" rel="nofollow"
+href="#" title="Back to Top" style="font-size:2.0em"><img src="${pageContext.request.contextPath }/dist/img/seoimg/up.jpg" width="50px" border="0"/></a>
 </body>
 
 </html>

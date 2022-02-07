@@ -148,92 +148,52 @@
  <div class="col-lg-8">
   <div class="row no-gutters bg-light position-relative">
   <div class="col-md-6 mb-md-0 p-md-4">
-    <img src="..." class="w-100" alt="...">
+    <img src="${pageContext.request.contextPath }/dist/img/seoimg/hotel1.jpg" class="w-100" alt="...">
   </div>
   <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">Columns with stretched link</h5>
+    <h5 class="mt-0">나인트리 프리미어 호텔 명동</h5>
     <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">Go somewhere</a>
+    <a href="#" class="stretched-link">예약가능여부 확인</a>
   </div>
 </div>
 <div class="row no-gutters bg-light position-relative">
   <div class="col-md-6 mb-md-0 p-md-4">
-    <img src="..." class="w-100" alt="...">
+    <img src="${pageContext.request.contextPath }/dist/img/seoimg/hotel2.jpg" class="w-100" alt="...">
   </div>
   <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">Columns with stretched link</h5>
+    <h5 class="mt-0">아리랑힐 호텔 동대문</h5>
     <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">Go somewhere</a>
+    <a href="#" class="stretched-link">예약가능여부 확인</a>
   </div>
 </div>
 <div class="row no-gutters bg-light position-relative">
   <div class="col-md-6 mb-md-0 p-md-4">
-    <img src="..." class="w-100" alt="...">
+    <img src="${pageContext.request.contextPath }/dist/img/seoimg/hotel3.jpg" class="w-100" alt="...">
   </div>
   <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">Columns with stretched link</h5>
+    <h5 class="mt-0">그레이스리 호텔 서울</h5>
     <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">Go somewhere</a>
+    <a href="#" class="stretched-link">예약가능여부 확인</a>
   </div>
 </div>
 <div class="row no-gutters bg-light position-relative">
   <div class="col-md-6 mb-md-0 p-md-4">
-    <img src="..." class="w-100" alt="...">
+    <img src="${pageContext.request.contextPath }/dist/img/seoimg/hotel4.jpg" class="w-100" alt="...">
   </div>
   <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">Columns with stretched link</h5>
+    <h5 class="mt-0">코리아나 호텔</h5>
     <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">Go somewhere</a>
+    <a href="#" class="stretched-link">예약가능여부 확인</a>
   </div>
 </div>
 <div class="row no-gutters bg-light position-relative">
   <div class="col-md-6 mb-md-0 p-md-4">
-    <img src="..." class="w-100" alt="...">
+    <img src="${pageContext.request.contextPath }/dist/img/seoimg/hotel5.jpg" class="w-100" alt="...">
   </div>
   <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">Columns with stretched link</h5>
+    <h5 class="mt-0">토요토 인 서울 강남</h5>
     <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">Go somewhere</a>
-  </div>
-</div>
-<div class="row no-gutters bg-light position-relative">
-  <div class="col-md-6 mb-md-0 p-md-4">
-    <img src="..." class="w-100" alt="...">
-  </div>
-  <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">Columns with stretched link</h5>
-    <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">Go somewhere</a>
-  </div>
-</div>
-<div class="row no-gutters bg-light position-relative">
-  <div class="col-md-6 mb-md-0 p-md-4">
-    <img src="..." class="w-100" alt="...">
-  </div>
-  <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">Columns with stretched link</h5>
-    <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">Go somewhere</a>
-  </div>
-</div>
-<div class="row no-gutters bg-light position-relative">
-  <div class="col-md-6 mb-md-0 p-md-4">
-    <img src="..." class="w-100" alt="...">
-  </div>
-  <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">Columns with stretched link</h5>
-    <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">Go somewhere</a>
-  </div>
-</div>
-<div class="row no-gutters bg-light position-relative">
-  <div class="col-md-6 mb-md-0 p-md-4">
-    <img src="..." class="w-100" alt="...">
-  </div>
-  <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">Columns with stretched link</h5>
-    <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">Go somewhere</a>
+    <a href="#" class="stretched-link">예약가능여부 확인</a>
   </div>
 </div>
 </div>
@@ -421,6 +381,8 @@
       }
       // DropzoneJS Demo Code End
     </script>
+    <a style="display:scroll;position:fixed;bottom:150px;right:50px;" rel="nofollow"
+href="#" title="Back to Top" style="font-size:2.0em"><img src="${pageContext.request.contextPath }/dist/img/seoimg/up.jpg" width="50px" border="0"/></a>
 </body>
 
 </html>
