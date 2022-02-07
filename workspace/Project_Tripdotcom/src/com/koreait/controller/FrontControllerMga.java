@@ -14,6 +14,7 @@ import com.koreait.action.ActionForward;
 
 import com.koreait.manager.action.ManagerLoginAction;
 import com.koreait.managerAdd.action.ManagerAccomodationCategoryAction;
+import com.koreait.managerAdd.action.ManagerHotelInforAction;
 import com.koreait.user.action.UserJoinAction;
 import com.koreait.user.action.UserLoginAction;
 
@@ -41,12 +42,17 @@ public class FrontControllerMga extends HttpServlet{
            //사이드바에서 예약조회클릭
            forward = new ActionForward();
            forward.setRedirect(false);
-           forward.setPath(req.getContextPath()+"/app/admin/manager/managerAdd/hotelCategoryHead.jsp");
+           forward.setPath(req.getContextPath()+"/app/admin/manager/managerAdd/hotelCategoryHead1.jsp");
            break;
 		
 		//첫번째 숙박시설분류
 		case "/managerAdd/accommodationCategory.mga":
 			forward = new ManagerAccomodationCategoryAction().execute(req, resp);
+			break;
+			
+		//두번째 호텔정보
+		case "/managerAdd/hotelInformation.mga":
+			forward = new ManagerHotelInforAction().execute(req, resp);
 			break;
 		
 		

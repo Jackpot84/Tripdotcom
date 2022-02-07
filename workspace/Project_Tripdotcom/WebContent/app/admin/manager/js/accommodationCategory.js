@@ -1,14 +1,24 @@
+// 페이지들
+var accommodationCategory = document.accommodationCategory;
+var hotelInformation = document.hotelInformation;
+var tabs = document.getElementsByClassName("tabs");
+var tab = document.getElementsByClassName("tab");
 
 
-//전체 문서
-var f = document.accommodationCategory;
+//정규표현식
+var check_num = /[0-9]/;
+var check_eng = /[a-zA-Z]/; 
+var check_spc = /[~!@#$%^&*()_+|<>?:{}]/;
+var check_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+
+
 
 // 상세분류 숨김처리
-document.getElementById("stay_type").style.visibility = 'hidden';
+document.getElementById("stay_types").style.visibility = 'hidden';
 
 // select 분기처리
 function testChange(sVal) {
-	var opt = $("#Location option").length;
+	var opt = $("#location option").length;
 
 	if (sVal == "지역선택") {
 		Regions = new Array("구역선택");
@@ -29,12 +39,14 @@ function testChange(sVal) {
 
 	
 	for (var i = 0; i < opt; i++) {
-		f.Location.options[0] = null;
+		accommodationCategory.location.options[0] = null;
 	}
 
 	for (var i = 0; i < Regions.length; i++) {
-		f.Location.options[i] = new Option(Regions[i]);
+		accommodationCategory.location.options[i] = new Option(Regions[i]);
 	}
+	
+//	, vRegions[i]
 
 }
 
@@ -70,7 +82,7 @@ function StayClick() {
 		stay = '호텔';
 		
 		// 숙박 시설분류 호텔 선택시 상세분류 노출
-		document.getElementById("stay_type").style.visibility = 'visible';
+		document.getElementById("stay_types").style.visibility = 'visible';
 		
 		//호텔 선택시 상세분류
 		stay_type1_id.innerText = '호텔';
@@ -88,7 +100,7 @@ function StayClick() {
 		stay = '게스트하우스';
 		
 		// 숙박 시설 분류 게스트하우스 선택시 상세분류 노출
-		document.getElementById("stay_type").style.visibility = 'visible';
+		document.getElementById("stay_types").style.visibility = 'visible';
 		//게스트하우스 선택 시 상세분류
 		stay_type1_id.innerText = '주택';
 		stay_type1_exp.innerText = '주택 설명';
@@ -142,19 +154,116 @@ for (var i = 0; i < stay_type2.length; i++) {
 }
 
 
-//각각의 값 담아주기
-function toCheck(){
+// 1번째 페이지에서 각각의 값 담아주고 전송
+function accomoCategory(){
 	
-	document.getElementsByName("stay")[0].value = stay;
-	document.getElementsByName("stay_type")[0].value = stay_type;
+	Stay = document.getElementsByName("stay")[0];
+	Stay_type = document.getElementsByName("stay_type")[0];
 	
-	location.href="hotelInformation.jsp";
+	Stay.value = stay;
+	Stay_type.value = stay_type;
 	
-	f.submit();
+	
+	let region = accommodationCategory.region;
+	let location = accommodationCategory.location;
+	
+
+	//validation check
+	//지역 체크
+	if(region.value == "지역선택"){
+		alert("지역을 선택하세요!");
+		region.focus();
+		return false;
+	}
+	
+
+	//숙박시설 분류 체크
+	if( Stay.value =="" || Stay.value==null ){
+		alert("숙박시설 분류를 선택해주세요!");
+		return false;
+	}
+	
+	
+	//상세분류 체크
+	if( Stay_type.value =="" || Stay_type.value==null ){
+		alert("상세 분류를 선택해주세요!");
+		return false;
+	}
+	
+	
+	accommodationCategory.submit();
+	
+}
+
+// 2번째 페이지에서 전송
+function hotelinfo(){
+	
+	let hotel_name_kor = hotelInformation.hotel_name_kor;
+	let hotel_name_eng = hotelInformation.hotel_name_eng;
+	
+	//아이디
+	if( hotel_name_kor.value==""){
+		alert("빈칸을 입력하세요!");
+		hotel_name_kor.focus();
+		return false;
+	}
+	
+		
+	if(!check_kor.test(hotel_name_kor.value)){
+		alert("한글만 입력하세요!");
+		hotel_name_kor.focus();
+		return false;
+	}
+	
+	
+	if(!check_eng.test(hotel_name_eng.value)){
+		alert("영어만 입력하세요!");
+		hotel_name_eng.focus();
+		return false;
+	}
+	
+
+	
+	
+
+	hotelInformation.submit();
+	
+}
+
+//3번째 페이지에서 객실추가 
+function roomAdd(){
+	location.href="/app/admin/manager/managerAdd/hotelCategoryHead4.jsp";
+}
+
+function addBed(){
+	let roomInformation = document.roomInformation;
+	let div = document.createElement('div')
+	let AddBed = document.getElementById("Addbed");
+	
+	div.innerHTML = AddBed.innerHTML;
+	
+	document.getElementById("field").appendChild(div);
+}
+
+
+function removeBed(obj){
+	
+	
+	var child = document.getElementById("field");
+	child.parentNode.removeChild(child);
+
+
+
+
+}
+
+function hotelRule(){
+	location.href="hotelCategoryHead5.jsp";
+}
+
+function Facility(){
+	location.href="hotelCategoryHead6.jsp";
 }
 
 
 
-
-
-//, vRegions[i]
