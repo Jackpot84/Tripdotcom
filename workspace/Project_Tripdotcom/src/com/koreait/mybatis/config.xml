@@ -25,6 +25,7 @@
 		<mapper resource="com/koreait/sql/user.xml" />
 		<mapper resource="com/koreait/sql/manager.xml" />
 		<mapper resource="com/koreait/sql/managerAdd.xml" />
+		<mapper resource="com/koreait/sql/Index.xml" />
 	</mappers>
 
 	
