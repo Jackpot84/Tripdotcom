@@ -15,7 +15,7 @@ public class HotelsBean {
 	private String star;
 	private String open_date;
 	private int hotel_total_room;
-	private int service_pay;
+	private String service_pay;
 	private String homepage;
 	private String hotel_intro_eng;
 	private String hotel_intro_kor;
@@ -48,6 +48,12 @@ public class HotelsBean {
 	}
 	public void setOpen_date(String open_date) {
 		this.open_date = open_date;
+	}
+	public String getService_pay() {
+		return service_pay;
+	}
+	public void setService_pay(String service_pay) {
+		this.service_pay = service_pay;
 	}
 	public String getStay_type_id() {
 		return stay_type_id;
@@ -116,12 +122,7 @@ public class HotelsBean {
 	public void setHotel_total_room(int hotel_total_room) {
 		this.hotel_total_room = hotel_total_room;
 	}
-	public int getService_pay() {
-		return service_pay;
-	}
-	public void setService_pay(int service_pay) {
-		this.service_pay = service_pay;
-	}
+
 	public String getHomepage() {
 		return homepage;
 	}
