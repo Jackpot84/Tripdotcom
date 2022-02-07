@@ -101,9 +101,12 @@
   </footer>
 </div>
 <!-- ./wrapper -->
-
-
-
+	<!-- jQuery -->
+    <script src="${pageContext.request.contextPath }/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="${pageContext.request.contextPath }/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="${pageContext.request.contextPath }/dist/js/adminlte.js"></script>
 
 <script src="${pageContext.request.contextPath }/app/admin/manager/js/accommodationCategory.js"></script>
 <script src="${pageContext.request.contextPath }/app/admin/manager/layout/sidebarController.js"></script>

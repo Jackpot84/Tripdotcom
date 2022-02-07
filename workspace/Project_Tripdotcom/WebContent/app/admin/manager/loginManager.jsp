@@ -123,7 +123,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
-
     <!-- jQuery -->
     <script src="../../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->

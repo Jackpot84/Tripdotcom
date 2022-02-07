@@ -15,6 +15,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="informationChange" parameterType="com.koreait.manager.dto.ManagerAccountBean">
 		UPDATE MANAGER_ACCOUNT SET MANAGER_ISSUE_PASSWORD = #{manager_Issue_password}, MANAGER_LASTNAME = #{manager_lastname},MANAGER_FIRSTNAME = #{manager_firstname},MANAGER_COMPANY = #{manager_Company},MANAGER_DEPARTMENT = #{manager_Department},MANAGER_PHONENUMBER = #{manager_PhoneNumber},MANAGER_GENDER = #{manager_gender},MANAGER_USING_EMAIL = #{manager_Using_Email} WHERE Manager_Issued_Email = #{manager_Issued_Email}
 	</update>
+	
+	 <select id="bookingList" parameterType="String" resultType="com.koreait.manager.dto.BookingListBean">
+		SELECT rp.RESERVATION_DATE,m.STAY_TYPE as Stay_typeas, m.STANDARD , m.STYLE_ , m.ROOMTYPE , m.HOTEL_NAME_KOR , m.ROOM_NAME_MANAGER_KOR , rp.RESERVATION_ID ,rp.CHECKIN_DATE ,rp.CHECKOUT_DATE , m.MANAGER_ISSUED_EMAIL as test_manager
+		FROM MYHOTELS m 
+		LEFT OUTER JOIN RESERVATION_PAYMENTS rp ON m.MYHOTELS_ID = rp.MYHOTELS_ID 
+		WHERE  	m.MANAGER_ISSUED_EMAIL = #{manager_Issued_Email}
+		AND rp.RESERVATION_ID IS NOT null
+	</select>
+	 
+<!-- 	<select id="bookingList" resultType="com.koreait.manager.dto.BookingListBean"> -->
+<!-- 		SELECT * FROM myhotels -->
+<!-- 	</select> -->
 </mapper>
 
 

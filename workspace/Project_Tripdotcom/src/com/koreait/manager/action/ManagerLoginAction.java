@@ -29,7 +29,10 @@ public class ManagerLoginAction implements Action{
 		//세션에 저장하기
 		session.setAttribute("manager", manager);
 		
-		
+		/* 겟 test
+		//ManagerAccountBean manager2 = (ManagerAccountBean)session.getAttribute("manager");
+		//System.out.println("manager2.getManager_Issued_Email():"+manager2.getManager_Issued_Email());
+		*/
 		
 		if(manager != null) {
 			forward.setRedirect(false);
