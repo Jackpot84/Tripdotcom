@@ -7,16 +7,13 @@ import javax.servlet.http.HttpSession;
 import com.koreait.action.Action;
 import com.koreait.action.ActionForward;
 import com.koreait.user.dao.UserDao;
-import com.koreait.user.dto.ReservationPaymentsBean;
 import com.koreait.user.dto.UserBean;
 
-public class GoReservationAction implements Action {
-	
+public class GoMyTripCoinAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-		ActionForward forward = new ActionForward();
 		UserDao udao = new UserDao();
-		ReservationPaymentsBean res = new ReservationPaymentsBean();
+		ActionForward forward = new ActionForward();
 		HttpSession session = request.getSession();
 		UserBean user =(UserBean)session.getAttribute("user");
 		int totalCnt = 0;
@@ -37,32 +34,18 @@ public class GoReservationAction implements Action {
 		int startPage = (page-1)/pageSize*pageSize +1;
 		// [1][2]...[10] 에서의 앤드페이지= [10] /  [21],[22],...[30] 에서의 앤드페이지 = [30]
 		int endPage = startPage + pageSize -1;
-		
-		if(request.getParameter("tab") == null) {
-			System.out.println("탭널임");
-			totalCnt = udao.getReservationCount(user.getUser_id());
-			request.setAttribute("resList", udao.getResList(startRow,endRow,user.getUser_id()));
+		if(request.getParameter("tab")==null) {
+			totalCnt = udao.getUseCoinCount(user.getUser_id());
+			request.setAttribute("useTripCoin", udao.getUseCoinList(startRow,endRow,user.getUser_id()));
 		}else {
-			switch(request.getParameter("tab")){
+		switch(request.getParameter("tab")) {
 			case "one":
-				totalCnt = udao.getReservationCount(user.getUser_id());
-				request.setAttribute("resList", udao.getResList(startRow,endRow,user.getUser_id()));
+				totalCnt = udao.getUseCoinCount(user.getUser_id());
+				request.setAttribute("useTripCoin", udao.getUseCoinList(startRow,endRow,user.getUser_id()));
 				break;
 			case "two":
-				totalCnt = udao.getYetPaidCount(user.getUser_id());
-				request.setAttribute("resList", udao.getYetPaidList(startRow,endRow,user.getUser_id()));
-				break;
-			case "three":
-				totalCnt = udao.getPaidCount(user.getUser_id());
-				request.setAttribute("resList", udao.getPaidList(startRow,endRow,user.getUser_id()));
-				break;
-			case "four":
-				totalCnt = udao.getCanReviewCount(user.getUser_id());
-				request.setAttribute("resList", udao.getCanReviewList(startRow,endRow,user.getUser_id()));
-				break;
-			case "five":
-				totalCnt = udao.getCanUpdateReviewCount(user.getUser_id());
-				request.setAttribute("reviewList", udao.getCanUpdateReviewList(startRow,endRow,user.getUser_id()));
+				totalCnt = udao.getChargeCoinCount(user.getUser_id());
+				request.setAttribute("chargeTripCoin", udao.getChargeCoinList(startRow,endRow,user.getUser_id()));
 				break;
 			}
 		}
@@ -77,13 +60,9 @@ public class GoReservationAction implements Action {
 		request.setAttribute("endPage", endPage);
 		
 		
-		if(user != null) {
-			forward.setRedirect(false);
-			forward.setPath(request.getContextPath()+"app/admin/user/reservationAll.jsp");
-		}else {
-			forward.setRedirect(true);
-			forward.setPath(request.getContextPath()+"app/admin/user/login_view.jsp?loginTest=false");
-		}
+		forward.setPath(request.getContextPath()+"/app/admin/user/myTripcoin.jsp");
+		forward.setRedirect(false);
+		
 		return forward;
 	}
 }

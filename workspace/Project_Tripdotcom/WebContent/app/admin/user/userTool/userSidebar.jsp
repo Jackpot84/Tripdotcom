@@ -11,7 +11,7 @@
 <body>
 		<aside class="main-sidebar sidebar-dark-primary elevation-4">
 			<!-- Brand Logo -->
-			<a href="#" class="brand-link"> <img
+			<a href="${pageContext.request.contextPath }/index.do" class="brand-link"> <img
 				src="dist/img/tripdotcomLogo.PNG" alt="tripdotcomLogo"
 				class="brand-text ebookingImg" style="opacity: .8">
 			</a>
@@ -33,7 +33,7 @@
 									class="nav-icon fas fa-list"></i>
 									<p>즐겨찾기</p>
 							</a></li>
-							<li class="nav-item"><a href="/getCoinList.do" class="nav-link" id="myTripcoinSide"> <i
+							<li class="nav-item"><a href="/goMyTripcoin.do" class="nav-link" id="myTripcoinSide"> <i
 									class="nav-icon fas fa-list"></i>
 									<p>트립코인</p>
 							</a></li>

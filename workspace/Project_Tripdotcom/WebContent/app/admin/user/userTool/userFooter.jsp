@@ -24,5 +24,6 @@
 		<!-- AdminLTE App -->
 		<script src="${pageContext.request.contextPath }dist/js/adminlte.js"></script>
 		<script src="${pageContext.request.contextPath }/app/admin/user/userTool/userTabMove.js"></script>
+		<script src="${pageContext.request.contextPath }/app/admin/user/userTool/reviewValidation.js"></script>
 </body>
 </html>
