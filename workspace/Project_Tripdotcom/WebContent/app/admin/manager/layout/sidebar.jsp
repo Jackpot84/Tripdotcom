@@ -45,7 +45,7 @@
 					</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item">
-							<a href="/bookingList.mg" class="nav-link"> 
+							<a href="${pageContext.request.contextPath }app/admin/manager/bookingList.jsp" class="nav-link"> 
 								<i class="nav-icon fas fa-list"></i><p>예약목록</p>
 							</a>
 						</li>

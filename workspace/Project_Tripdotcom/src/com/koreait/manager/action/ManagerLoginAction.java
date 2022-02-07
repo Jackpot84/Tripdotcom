@@ -27,7 +27,10 @@ public class ManagerLoginAction implements Action{
 		//�꽭�뀡�뿉 ���옣�븯湲�
 		session.setAttribute("manager", manager);
 		
-		
+		/* 겟 test
+		//ManagerAccountBean manager2 = (ManagerAccountBean)session.getAttribute("manager");
+		//System.out.println("manager2.getManager_Issued_Email():"+manager2.getManager_Issued_Email());
+		*/
 		
 		if(manager != null) {
 			forward.setRedirect(false);

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.koreait.action.ActionForward;
 import com.koreait.manager.action.AcountManagerIntoAction;
+import com.koreait.manager.action.BookingListSearchAction;
 import com.koreait.manager.action.InformationChangeAction;
 import com.koreait.manager.action.ManagerJoinAction;
 import com.koreait.manager.action.ManagerLoginAction;
@@ -71,31 +72,33 @@ public class FrontControllerManager extends HttpServlet{
 					//사이드바에서 마이페이지 클릭
 					forward = new AcountManagerIntoAction().execute(req, resp);
 					break;
-				case "/bookingList.mg":
-					//사이드바에서 예약조회클릭
-					forward = new ActionForward();
-					forward.setRedirect(false);
-					forward.setPath(req.getContextPath()+"/app/admin/manager/bookingList.jsp");
-					break;
+				/*case "/bookingList_search.mg":
+					//예약목록에서 검색클릭
+					forward = new BookingListSearchAction().execute(req, resp);
+					break;*/
 				case "/informationChange.mg":
 					//accountManager페이지에서 관리자정보수정 팝업->수정버튼 클릭
 					forward = new InformationChangeAction().execute(req, resp);
 					break;
 					
 				//사이드바
-				case "/hotelCategoryHead.mg":
+				/*case "/hotelCategoryHead.mg":
 					//사이드바에서 예약조회클릭
 					forward = new ActionForward();
 					forward.setRedirect(false);
 					forward.setPath(req.getContextPath()+"/app/admin/manager/managerAdd/hotelCategoryHead.jsp");
-					break;
+					break;*/
 				case "/cancleList.mg":
 					//사이드바에서 예약조회클릭
 					forward = new ActionForward();
 					forward.setRedirect(false);
 					forward.setPath(req.getContextPath()+"/app/admin/manager/cancleList.jsp");
 					break;	
-					
+				case "/bookingList.mg":
+					//사이드바에서 예약조회클릭
+					//DB조회가 필요한화면
+					forward = new BookingListSearchAction().execute(req, resp);
+					break;
 					
 				}
 			

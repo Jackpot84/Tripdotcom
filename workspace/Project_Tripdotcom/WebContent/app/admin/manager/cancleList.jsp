@@ -76,7 +76,7 @@
 									<div class="card-body">
 										<div class="form-group row">
 											<label for=" " class="col-sm-1 control-label">조회기간<span class="required">*</span></label>
-											<div class="col-sm-2_5">
+											<div class="col-sm-2_5" style="padding-right: 7px; position: relative;">
 												<div class="input-group date" id="datetimepicker_to"
 													data-target-input="nearest">
 													<input type="text" readonly class="form-control datetimepicker-input disabled readonly" value="" data-target="#datetimepicker_to" onkeydown="return false"  />
@@ -88,8 +88,9 @@
 														</div>
 													</div>
 												</div>
-											</div>~
-											<div class="col-sm-2_5">
+											<div style="position: absolute;top:3px;right:-3px;">~</div>
+											</div>
+											<div class="col-sm-2_5" style="padding-left: 7px;">
 												<div class="input-group date" id="datetimepicker_from"
 													data-target-input="nearest">
 													<input type="text" readonly class="form-control datetimepicker-input disabled readonly" value="" data-target="#datetimepicker_from" onkeydown="return false"/>
@@ -248,38 +249,18 @@
 	</div>
 	<!-- ./wrapper -->
 
-	<!-- REQUIRED SCRIPTS -->
-	<!-- jQuery -->
-	<script src="../../../plugins/jquery/jquery.min.js"></script>
-	<!-- Bootstrap 4 -->
-	<script src="../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<!-- Select2 -->
-	<script src="../../../plugins/select2/js/select2.full.min.js"></script>
-	<!-- Bootstrap4 Duallistbox -->
-	<script
-		src="../../../plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="${pageContext.request.contextPath }/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="${pageContext.request.contextPath }/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="${pageContext.request.contextPath }/dist/js/adminlte.js"></script>
 	<!-- InputMask -->
-	<script src="../../../plugins/moment/moment.min.js"></script>
-	<script src="../../../plugins/inputmask/jquery.inputmask.min.js"></script>
-	<!-- date-range-picker -->
-	<script src="../../../plugins/daterangepicker/daterangepicker.js"></script>
-	<!-- bootstrap color picker -->
-	<script
-		src="../../../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+	<script src="${pageContext.request.contextPath }/plugins/moment/moment.min.js"></script>
 	<!-- Tempusdominus Bootstrap 4 -->
-	<script
-		src="../../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-	<!-- Bootstrap Switch -->
-	<script
-		src="../../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
-	<!-- BS-Stepper -->
-	<script src="../../../plugins/bs-stepper/js/bs-stepper.min.js"></script>
-	<!-- dropzonejs -->
-	<script src="../../../plugins/dropzone/min/dropzone.min.js"></script>
-	<!-- AdminLTE App -->
-	<script src="../../../dist/js/adminlte.min.js"></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="../../../dist/js/demo.js"></script>
+	<script	src="${pageContext.request.contextPath }/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+	
 	<!-- Page specific script -->
 	<script
 		src="${pageContext.request.contextPath }/app/admin/manager/layout/sidebarController.js"></script>
@@ -288,7 +269,7 @@
 	<script type="text/javascript">
 		$(function() {
 			//사이드바 active설정
-			  active_sidebar(2,2);  
+			  active_sidebar(2,1);  
 			//datetimepicker
 			$('#datetimepicker_to,#datetimepicker_from,#datetimepicker_checkin,#datetimepicker_checkout').datetimepicker({
 				weekStart: 1,
