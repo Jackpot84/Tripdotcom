@@ -160,7 +160,7 @@
 														<div class="col-sm-6" align="right">${res.reservation_state}</div>
 													</div>
 													<div class="atag" align="right">
-														<a href="javascript:test()" class="btn btn-primary">예약확인</a>
+<!-- 														<a href="javascript:test()" class="btn btn-primary">예약확인</a> -->
 													</div>
 												</div>
 											</div>
@@ -214,7 +214,7 @@
 														<div class="col-sm-6" align="right">${res.reservation_state}</div>
 													</div>
 													<div class="atag" align="right">
-														<a href="#" class="btn btn-primary">예약확인</a>
+<!-- 														<a href="#" class="btn btn-primary">예약확인</a> -->
 													</div>
 												</div>
 											</div>
@@ -267,7 +267,7 @@
 													<div class="col-sm-6" align="right">${res.reservation_state}</div>
 												</div>
 												<div class="atag" align="right">
-													<a href="#" class="btn btn-primary">예약확인</a>
+<!-- 													<a href="#" class="btn btn-primary">예약확인</a> -->
 												</div>
 											</div>
 										</div>
@@ -338,14 +338,21 @@
 													</button>
 												</div>
 												<form action="reviewInsert.do" name="reviewVal" id="reviewVal">
-													<input type="hidden" name="reservation_id" value="${reservation.reservation_id }">
+<%-- 													<input type="hidden" name="reservation_id" value="${reservation.reservation_id }"> --%>
+													<input type="hidden" id="reservation_id" name="reservation_id" value="${reservation.reservation_id }">
+													<input type="hidden" id="content_modal" name="content_modal" value="">
+													<input type="hidden" id="clean_modal" name="clean_modal" value="">
+													<input type="hidden" id="location_modal" name="location_modal" value="">
+													<input type="hidden" id="facilities_modal" name="facilities_modal" value="">
+													<input type="hidden" id="service_modal" name="service_modal" value="">
+													<input type="hidden" id="member_modal" name="member_modal" value="">
 													<div class="modal-body">
 														<div class="row">
 															<div class="col-md-4">
 																<div class="form-group">
-																	<label>여행자</label><br>
+																	<label>여행자${reservation.reservation_id }</label><br>
 																	<select name="review_trip_member"
-																		id="review_trip_member">
+																		id="review_trip_member${reservation.reservation_id }">
 																		<option value="출장">출장</option>
 																		<option value="가족">가족</option>
 																		<option value="개인">개인</option>
@@ -359,7 +366,7 @@
 															<div class="col-md-2">
 																<div class="form-group">
 																	<label>청결도</label><br> <select name="review_clean"
-																		id="review_clean">
+																		id="review_clean${reservation.reservation_id }">
 																		<option value="1">1</option>
 																		<option value="2">2</option>
 																		<option value="3">3</option>
@@ -371,7 +378,7 @@
 															<div class="col-md-2">
 																<div class="form-group">
 																	<label>위치</label><br> <select
-																		name="review_location" id="review_location">
+																		name="review_location" id="review_location${reservation.reservation_id }">
 																		<option value="1">1</option>
 																		<option value="2">2</option>
 																		<option value="3">3</option>
@@ -383,7 +390,7 @@
 															<div class="col-md-2">
 																<div class="form-group">
 																	<label>호텔시설</label><br> <select
-																		name="review_facilities" id="review_facilities">
+																		name="review_facilities" id="review_facilities${reservation.reservation_id }">
 																		<option value="1">1</option>
 																		<option value="2">2</option>
 																		<option value="3">3</option>
@@ -395,7 +402,7 @@
 															<div class="col-md-2">
 																<div class="form-group">
 																	<label>서비스</label><br> <select
-																		name="review_service" id="review_service">
+																		name="review_service" id="review_service${reservation.reservation_id }">
 																		<option value="1">1</option>
 																		<option value="2">2</option>
 																		<option value="3">3</option>
@@ -410,7 +417,7 @@
 																<div class="form-group">
 																	<label>리뷰내용</label>
 																	<textarea class="form-control" rows="5" cols=""
-																		name="review_content" id="review_content"></textarea>
+																		name="review_content" id="review_content${reservation.reservation_id }"></textarea>
 																</div>
 															</div>
 														</div>
@@ -418,7 +425,7 @@
 													<div class="modal-footer">
 														<button type="button" class="btn btn-secondary"
 															data-dismiss="modal">닫기</button>
-															<input type="button" class="btn btn-primary" onclick="reviewInsert()" value="저장하기">
+															<input type="button" class="btn btn-primary" onclick="reviewInsert(${reservation.reservation_id })" value="저장하기">
 													</div>
 												</form>
 											</div>
