@@ -45,7 +45,7 @@ public class ManagerHotelInforAction implements Action{
 		String star = request.getParameter("star");
 		String open_date = request.getParameter("open_date");
 		int hotel_total_room = Integer.parseInt(request.getParameter("hotel_total_room"));
-		int service_pay = Integer.parseInt(request.getParameter("service_pay"));
+		String service_pay = request.getParameter("service_pay");
 		String homepage = request.getParameter("homepage");
 		String hotel_intro_eng = request.getParameter("hotel_intro_eng");
 		String hotel_intro_kor = request.getParameter("hotel_intro_kor");
