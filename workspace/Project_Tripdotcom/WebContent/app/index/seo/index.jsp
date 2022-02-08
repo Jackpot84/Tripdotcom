@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,27 +78,27 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.jsp">¸ÞÀÎ</a></li>
+					<li class="active"><a href="index.jsp">ë©”ì¸</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">Á¢¼ÓÇÏ±â<span class="caret"></span></a>
+						aria-expanded="false">ì ‘ì†í•˜ê¸°<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="${pageContext.request.contextPath }/app/admin/user/login_view.jsp">·Î±×ÀÎ</a></li>
-							<li><a href="${pageContext.request.contextPath }/app/admin/user/joinUser_view.jsp">È¸¿ø°¡ÀÔ</a></li>
+							<li><a href="${pageContext.request.contextPath }/app/admin/user/login_view.jsp">ë¡œê·¸ì¸</a></li>
+							<li><a href="${pageContext.request.contextPath }/app/admin/user/joinUser_view.jsp">íšŒì›ê°€ìž…</a></li>
 						</ul></li>
 				</ul>
 		</nav>
 		<div class="container">
 			<div class="jumbotron">
 				<div class="container">
-					<h1>¢¾ÇÔ²² ÀÏÇÒ È£ÅÚ ¸Å´ÏÀú´ÔÀ» Ã£½À´Ï´Ù¢¾</h1>
-					<p>¿©ÇàÀ» ¶°³ª´Â °í°´¿¡°Ô ÃÖ°íÀÇ ¼­ºñ½º¿Í Ãß¾ïÀ» Á¦°øÇÒ ¸Å´ÏÀúºÐµéÀ» ¸ðÁýÇÏ°í ÀÖ½À´Ï´Ù. ÀÚ¼¼ÇÑ »çÇ×Àº ¾Æ·¡¿¡
-						¸µÅ©¸¦ Å¬¸¯ÇØ ÁÖ¼¼¿ä¢¾</p>
+					<h1>â™¥í•¨ê»˜ ì¼í•  í˜¸í…” ë§¤ë‹ˆì €ë‹˜ì„ ì°¾ìŠµë‹ˆë‹¤â™¥</h1>
+					<p>ì—¬í–‰ì„ ë– ë‚˜ëŠ” ê³ ê°ì—ê²Œ ìµœê³ ì˜ ì„œë¹„ìŠ¤ì™€ ì¶”ì–µì„ ì œê³µí•  ë§¤ë‹ˆì €ë¶„ë“¤ì„ ëª¨ì§‘í•˜ê³  ìžˆìŠµë‹ˆë‹¤. ìžì„¸í•œ ì‚¬í•­ì€ ì•„ëž˜ì—
+						ë§í¬ë¥¼ í´ë¦­í•´ ì£¼ì„¸ìš”â™¥</p>
 					<p>
-						<a class="btn btn-primary btn-pull" href="${pageContext.request.contextPath }/app/admin/manager/joinManager.jsp" role="button">ÀÚ¼¼È÷
-							¾Ë¾Æº¸±â</a>
+						<a class="btn btn-primary btn-pull" href="${pageContext.request.contextPath }/app/admin/manager/joinManager.jsp" role="button">ìžì„¸ížˆ
+							ì•Œì•„ë³´ê¸°</a>
 					</p>
 				</div>
 			</div>
@@ -110,24 +110,24 @@
 					<div class="row">
 						<div class=" col-md-3">
 							<div class="form-group">
-								<label>¸ñÀûÁö/È£ÅÚ ÀÌ¸§</label> <select class="select2"
+								<label>ëª©ì ì§€/í˜¸í…” ì´ë¦„</label> <select class="select2"
 									multiple="multiple" data-placeholder="Select a State"
 									style="width: 100%;" name="bbsTitle">
-									<option>¼­¿ï</option>
-									<option>ºÎ»ê</option>
-									<option>°­¸ª</option>
-									<option>Á¦ÁÖµµ</option>
+									<option>ì„œìš¸</option>
+									<option>ë¶€ì‚°</option>
+									<option>ê°•ë¦‰</option>
+									<option>ì œì£¼ë„</option>
 								</select>
 							</div>
 						</div>
 						<div class=" col-md-4">
-							<label>³¯Â¥¼±ÅÃ</label> <input type="text"
+							<label>ë‚ ì§œì„ íƒ</label> <input type="text"
 								class="form-control float-right" id="reservation"
 								style="user-select: auto;" name="bbsTitle">
 						</div>
 						<div class=" col-md-2">
 							<div class="form-group">
-								<label>°´½Ç¼ö</label> <select class="select2" style="width: 100%;"
+								<label>ê°ì‹¤ìˆ˜</label> <select class="select2" style="width: 100%;"
 									name="bbsTitle">
 									<option>1</option>
 									<option>2</option>
@@ -143,7 +143,7 @@
 						</div>
 						<div class=" col-md-2">
 							<div class="form-group">
-								<label>ÀÎ¿ø¼ö(¼ºÀÎ)</label> <select class="select2"
+								<label>ì¸ì›ìˆ˜(ì„±ì¸)</label> <select class="select2"
 									style="width: 100%;" name="bbsTitle">
 									<option>1</option>
 									<option>2</option>
@@ -159,7 +159,7 @@
 						</div>
 						<div class=" col-md-1">
 							<input type="submit" style="width: 100%; height: 100%;"
-								class="btn btn-primary pull-right" value="Ã£±â">
+								class="btn btn-primary pull-right" value="ì°¾ê¸°">
 						</div>
 					</div>
 				</form>
