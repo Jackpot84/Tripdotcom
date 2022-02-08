@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+
+encoding//WebContent/app/index/hun/payment.jsp=UTF-8
 encoding//WebContent/app/admin/manager/accountManager.jsp=UTF-8
 encoding//WebContent/app/admin/manager/joinManager.jsp=UTF-8
 encoding//WebContent/app/admin/manager/layout/nav.jsp=UTF-8
@@ -6,3 +8,4 @@ encoding//WebContent/app/admin/manager/loginManager.jsp=UTF-8
 encoding//WebContent/app/admin/manager/managerAdd/accommodationCategory.jsp=UTF-8
 encoding//src/com/koreait/manager/action/ManagerLoginAction.java=UTF-8
 encoding//src/com/koreait/user/dao/UserDao.java=UTF-8
+
