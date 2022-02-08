@@ -381,8 +381,13 @@
       }
       // DropzoneJS Demo Code End
     </script>
-    <a style="display:scroll;position:fixed;bottom:150px;right:50px;" rel="nofollow"
-href="#" title="Back to Top" style="font-size:2.0em"><img src="${pageContext.request.contextPath }/dist/img/seoimg/up.jpg" width="50px" border="0"/></a>
-</body>
+    <a
+		style="display: scroll; position: fixed; bottom: 150px; right: 10px;"
+		rel="nofollow" href="#" title="Back to Top" style="font-size:2.0em">
+		<%-- <img
+      src="${pageContext.request.contextPath }/dist/img/seoimg/up.jpg"
+      width="50px" border="0" /> --%> <i class="fas fa-arrow-circle-up"
+		style="font-size: 60px;"></i>
+	</a></body>
 
 </html>
