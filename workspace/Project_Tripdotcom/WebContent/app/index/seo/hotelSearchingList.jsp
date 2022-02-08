@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
@@ -65,15 +65,15 @@
 		
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.jsp">¸ŞÀÎ</a></li>
+				<li class="active"><a href="index.jsp">ë©”ì¸</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false">Á¢¼ÓÇÏ±â<span class="caret"></span></a>
+					aria-expanded="false">ì ‘ì†í•˜ê¸°<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li ><a href="login.jsp">·Î±×ÀÎ</a></li>
-						<li ><a href="join.jsp">È¸¿ø°¡ÀÔ</a></li>
+						<li ><a href="login.jsp">ë¡œê·¸ì¸</a></li>
+						<li ><a href="join.jsp">íšŒì›ê°€ì…</a></li>
 					</ul>				
 				</li>
 			</ul>
@@ -86,24 +86,24 @@
 			<div class="row">
 				<div class=" col-md-3">
 					<div class="form-group">
-						<label>¸ñÀûÁö/È£ÅÚ ÀÌ¸§</label> <select class="select2"
+						<label>ëª©ì ì§€/í˜¸í…” ì´ë¦„</label> <select class="select2"
 							multiple="multiple" data-placeholder="Select a State"
 							style="width: 100%;" name="bbsTitle">
-							<option>¼­¿ï</option>
-							<option>ºÎ»ê</option>
-							<option>°­¸ª</option>
-							<option>Á¦ÁÖµµ</option>
+							<option>ì„œìš¸</option>
+							<option>ë¶€ì‚°</option>
+							<option>ê°•ë¦‰</option>
+							<option>ì œì£¼ë„</option>
 						</select>
 					</div>
 				</div>
 				<div class=" col-md-4">
-					<label>³¯Â¥¼±ÅÃ</label> <input type="text"
+					<label>ë‚ ì§œì„ íƒ</label> <input type="text"
 						class="form-control float-right" id="reservation"
 						style="user-select: auto;" name="bbsTitle">
 				</div>
 				<div class=" col-md-2">
 					<div class="form-group">
-						<label>°´½Ç¼ö</label> <select class="select2" style="width: 100%;"
+						<label>ê°ì‹¤ìˆ˜</label> <select class="select2" style="width: 100%;"
 							name="bbsTitle">
 							<option>1</option>
 							<option>2</option>
@@ -119,7 +119,7 @@
 				</div>
 				<div class=" col-md-2">
 					<div class="form-group">
-						<label>ÀÎ¿ø¼ö(¼ºÀÎ)</label> <select class="select2"
+						<label>ì¸ì›ìˆ˜(ì„±ì¸)</label> <select class="select2"
 							style="width: 100%;" name="bbsTitle">
 							<option>1</option>
 							<option>2</option>
@@ -135,7 +135,7 @@
 				</div>
 				<div class=" col-md-1">
 					<input type="submit" style="width: 100%; height: 100%;"
-						class="btn btn-primary pull-right" value="Ã£±â">
+						class="btn btn-primary pull-right" value="ì°¾ê¸°">
 				</div>
 			</div>
 		</form>
@@ -151,9 +151,9 @@
     <img src="${pageContext.request.contextPath }/dist/img/seoimg/hotel1.jpg" class="w-100" alt="...">
   </div>
   <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">³ªÀÎÆ®¸® ÇÁ¸®¹Ì¾î È£ÅÚ ¸íµ¿</h5>
+    <h5 class="mt-0">ë‚˜ì¸íŠ¸ë¦¬ í”„ë¦¬ë¯¸ì–´ í˜¸í…” ëª…ë™</h5>
     <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">¿¹¾à°¡´É¿©ºÎ È®ÀÎ</a>
+    <a href="#" class="stretched-link">ì˜ˆì•½ê°€ëŠ¥ì—¬ë¶€ í™•ì¸</a>
   </div>
 </div>
 <div class="row no-gutters bg-light position-relative">
@@ -161,9 +161,9 @@
     <img src="${pageContext.request.contextPath }/dist/img/seoimg/hotel2.jpg" class="w-100" alt="...">
   </div>
   <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">¾Æ¸®¶ûÈú È£ÅÚ µ¿´ë¹®</h5>
+    <h5 class="mt-0">ì•„ë¦¬ë‘í í˜¸í…” ë™ëŒ€ë¬¸</h5>
     <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">¿¹¾à°¡´É¿©ºÎ È®ÀÎ</a>
+    <a href="#" class="stretched-link">ì˜ˆì•½ê°€ëŠ¥ì—¬ë¶€ í™•ì¸</a>
   </div>
 </div>
 <div class="row no-gutters bg-light position-relative">
@@ -171,9 +171,9 @@
     <img src="${pageContext.request.contextPath }/dist/img/seoimg/hotel3.jpg" class="w-100" alt="...">
   </div>
   <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">±×·¹ÀÌ½º¸® È£ÅÚ ¼­¿ï</h5>
+    <h5 class="mt-0">ê·¸ë ˆì´ìŠ¤ë¦¬ í˜¸í…” ì„œìš¸</h5>
     <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">¿¹¾à°¡´É¿©ºÎ È®ÀÎ</a>
+    <a href="#" class="stretched-link">ì˜ˆì•½ê°€ëŠ¥ì—¬ë¶€ í™•ì¸</a>
   </div>
 </div>
 <div class="row no-gutters bg-light position-relative">
@@ -181,9 +181,9 @@
     <img src="${pageContext.request.contextPath }/dist/img/seoimg/hotel4.jpg" class="w-100" alt="...">
   </div>
   <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">ÄÚ¸®¾Æ³ª È£ÅÚ</h5>
+    <h5 class="mt-0">ì½”ë¦¬ì•„ë‚˜ í˜¸í…”</h5>
     <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">¿¹¾à°¡´É¿©ºÎ È®ÀÎ</a>
+    <a href="#" class="stretched-link">ì˜ˆì•½ê°€ëŠ¥ì—¬ë¶€ í™•ì¸</a>
   </div>
 </div>
 <div class="row no-gutters bg-light position-relative">
@@ -191,9 +191,9 @@
     <img src="${pageContext.request.contextPath }/dist/img/seoimg/hotel5.jpg" class="w-100" alt="...">
   </div>
   <div class="col-md-6 position-static p-4 pl-md-0">
-    <h5 class="mt-0">Åä¿äÅä ÀÎ ¼­¿ï °­³²</h5>
+    <h5 class="mt-0">í† ìš”í†  ì¸ ì„œìš¸ ê°•ë‚¨</h5>
     <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-    <a href="#" class="stretched-link">¿¹¾à°¡´É¿©ºÎ È®ÀÎ</a>
+    <a href="#" class="stretched-link">ì˜ˆì•½ê°€ëŠ¥ì—¬ë¶€ í™•ì¸</a>
   </div>
 </div>
 </div>
@@ -381,8 +381,13 @@
       }
       // DropzoneJS Demo Code End
     </script>
-    <a style="display:scroll;position:fixed;bottom:150px;right:50px;" rel="nofollow"
-href="#" title="Back to Top" style="font-size:2.0em"><img src="${pageContext.request.contextPath }/dist/img/seoimg/up.jpg" width="50px" border="0"/></a>
-</body>
+    <a
+		style="display: scroll; position: fixed; bottom: 150px; right: 10px;"
+		rel="nofollow" href="#" title="Back to Top" style="font-size:2.0em">
+		<%-- <img
+      src="${pageContext.request.contextPath }/dist/img/seoimg/up.jpg"
+      width="50px" border="0" /> --%> <i class="fas fa-arrow-circle-up"
+		style="font-size: 60px;"></i>
+	</a></body>
 
 </html>
