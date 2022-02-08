@@ -1,0 +1,11 @@
+.tab_wrapper{
+	padding: 15px;
+    background: #fff;
+    border-left: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+}
+
+.black{
+	color: black;
+}
